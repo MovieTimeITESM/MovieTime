@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2001D96219FAB0180028605D /* LinkedStoryboardSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2001D96119FAB0180028605D /* LinkedStoryboardSegue.m */; };
 		23F8813519F57E0F00D82431 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F8813419F57E0F00D82431 /* main.m */; };
 		23F8813819F57E0F00D82431 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F8813719F57E0F00D82431 /* AppDelegate.m */; };
 		23F8813E19F57E0F00D82431 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23F8813C19F57E0F00D82431 /* Login.storyboard */; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2001D96019FAB0180028605D /* LinkedStoryboardSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinkedStoryboardSegue.h; sourceTree = "<group>"; };
+		2001D96119FAB0180028605D /* LinkedStoryboardSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LinkedStoryboardSegue.m; sourceTree = "<group>"; };
 		23F8812F19F57E0F00D82431 /* MovieTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F8813319F57E0F00D82431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23F8813419F57E0F00D82431 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -81,6 +84,8 @@
 		23F8813119F57E0F00D82431 /* MovieTime */ = {
 			isa = PBXGroup;
 			children = (
+				2001D96019FAB0180028605D /* LinkedStoryboardSegue.h */,
+				2001D96119FAB0180028605D /* LinkedStoryboardSegue.m */,
 				23F8815B19F5889200D82431 /* Storyboard */,
 				23F8815A19F5878F00D82431 /* Models */,
 				23F8815919F5878800D82431 /* Views and Cells */,
@@ -254,6 +259,7 @@
 				23F8815D19F5898B00D82431 /* LoginViewController.m in Sources */,
 				23F8813819F57E0F00D82431 /* AppDelegate.m in Sources */,
 				23F8813519F57E0F00D82431 /* main.m in Sources */,
+				2001D96219FAB0180028605D /* LinkedStoryboardSegue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +450,7 @@
 				23F8815419F57E0F00D82431 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		23F8815519F57E0F00D82431 /* Build configuration list for PBXNativeTarget "MovieTimeTests" */ = {
 			isa = XCConfigurationList;
@@ -452,6 +459,7 @@
 				23F8815719F57E0F00D82431 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
