@@ -14,6 +14,13 @@
 
 @implementation LoginViewController
 
+- (IBAction)goToTest {
+    UIStoryboard *testStoryboard = [UIStoryboard storyboardWithName:@"Test" bundle:nil];
+    UIViewController *initialTestVC = [testStoryboard instantiateInitialViewController];
+    initialTestVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:initialTestVC animated:YES completion:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
