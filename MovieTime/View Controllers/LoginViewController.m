@@ -21,6 +21,13 @@
     [self presentViewController:initialTestVC animated:YES completion:nil];
 }
 
+-(IBAction)goToMain {
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    UIViewController *initialMainVC = [mainStoryboard instantiateInitialViewController];
+    initialMainVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+    [self presentViewController:initialMainVC animated:YES completion:nil];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.

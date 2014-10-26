@@ -37,6 +37,15 @@
                                     <action selector="goToTest" destination="vXZ-lx-hvc" eventType="touchUpInside" id="epc-ds-vuB"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lUN-pt-FL1">
+                                <rect key="frame" x="103" y="334" width="114" height="30"/>
+                                <state key="normal" title="Main Storyboard">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="goToMain" destination="vXZ-lx-hvc" eventType="touchUpInside" id="akZ-gh-1Yy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.12549019607843137" green="0.13725490196078433" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
