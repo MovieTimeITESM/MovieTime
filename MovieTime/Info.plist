@@ -34,5 +34,9 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>FacebookAppID</key>
+	<string>754435724617602</string>
+	<key>FacebookDisplayName</key>
+	<string>MovieTime2.0</string>
 </dict>
 </plist>
