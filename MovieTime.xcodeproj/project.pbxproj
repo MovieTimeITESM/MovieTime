@@ -9,11 +9,19 @@
 /* Begin PBXBuildFile section */
 		2001D96419FAB51B0028605D /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2001D96319FAB51B0028605D /* Test.storyboard */; };
 		2001D96719FAB5B90028605D /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2001D96619FAB5B90028605D /* TestViewController.m */; };
+		203B813A1A009F2800F3C954 /* Lists.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 203B81391A009F2800F3C954 /* Lists.storyboard */; };
+		203B813F1A00A0BA00F3C954 /* MovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 203B813E1A00A0BA00F3C954 /* MovieDetailViewController.m */; };
+		203B81421A00A0D100F3C954 /* MovieTrailerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 203B81411A00A0D100F3C954 /* MovieTrailerViewController.m */; };
+		203B81451A00BCC800F3C954 /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 203B81441A00BCC800F3C954 /* MoviesViewController.m */; };
+		203B81481A00BFC200F3C954 /* MovieTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 203B81471A00BFC200F3C954 /* MovieTableViewController.m */; };
+		203B814C1A00C00100F3C954 /* MovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 203B814B1A00C00100F3C954 /* MovieTableViewCell.m */; };
+		203B814F1A00CF0300F3C954 /* ListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 203B814E1A00CF0300F3C954 /* ListsViewController.m */; };
+		203B81531A00CF3500F3C954 /* ListsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 203B81521A00CF3500F3C954 /* ListsTableViewController.m */; };
+		203B81561A00CF4400F3C954 /* ListsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 203B81551A00CF4400F3C954 /* ListsTableViewCell.m */; };
+		203B81591A00CF7300F3C954 /* ListsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 203B81581A00CF7300F3C954 /* ListsDetailViewController.m */; };
 		204ADB8C19FDABF5006652B6 /* Movies.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 204ADB8B19FDABF5006652B6 /* Movies.storyboard */; };
-		204ADB8F19FDAC07006652B6 /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 204ADB8E19FDAC07006652B6 /* MoviesViewController.m */; };
 		204ADB9119FDAC9F006652B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 204ADB9019FDAC9F006652B6 /* Main.storyboard */; };
 		204ADB9419FDAF03006652B6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 204ADB9319FDAF03006652B6 /* HomeViewController.m */; };
-		204ADB9719FDAF15006652B6 /* ListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 204ADB9619FDAF15006652B6 /* ListsViewController.m */; };
 		204ADB9A19FDAF23006652B6 /* ExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 204ADB9919FDAF23006652B6 /* ExploreViewController.m */; };
 		204ADB9D19FDAF2E006652B6 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 204ADB9C19FDAF2E006652B6 /* SettingsViewController.m */; };
 		2335168419FDBF9100456B76 /* ILLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2335168319FDBF9100456B76 /* ILLoginView.m */; };
@@ -38,17 +46,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08AA581D2DE025FF86286CA0 /* Pods-MovieTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieTime.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieTime/Pods-MovieTime.release.xcconfig"; sourceTree = "<group>"; };
 		2001D96319FAB51B0028605D /* Test.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
 		2001D96519FAB5B90028605D /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TestViewController.h; path = ../TestViewController.h; sourceTree = "<group>"; };
 		2001D96619FAB5B90028605D /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestViewController.m; path = ../TestViewController.m; sourceTree = "<group>"; };
+		203B81391A009F2800F3C954 /* Lists.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Lists.storyboard; sourceTree = "<group>"; };
+		203B813D1A00A0BA00F3C954 /* MovieDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDetailViewController.h; sourceTree = "<group>"; };
+		203B813E1A00A0BA00F3C954 /* MovieDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailViewController.m; sourceTree = "<group>"; };
+		203B81401A00A0D100F3C954 /* MovieTrailerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieTrailerViewController.h; sourceTree = "<group>"; };
+		203B81411A00A0D100F3C954 /* MovieTrailerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieTrailerViewController.m; sourceTree = "<group>"; };
+		203B81431A00BCC800F3C954 /* MoviesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviesViewController.h; sourceTree = "<group>"; };
+		203B81441A00BCC800F3C954 /* MoviesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviesViewController.m; sourceTree = "<group>"; };
+		203B81461A00BFC200F3C954 /* MovieTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieTableViewController.h; sourceTree = "<group>"; };
+		203B81471A00BFC200F3C954 /* MovieTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieTableViewController.m; sourceTree = "<group>"; };
+		203B814A1A00C00100F3C954 /* MovieTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieTableViewCell.h; sourceTree = "<group>"; };
+		203B814B1A00C00100F3C954 /* MovieTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieTableViewCell.m; sourceTree = "<group>"; };
+		203B814D1A00CF0300F3C954 /* ListsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListsViewController.h; sourceTree = "<group>"; };
+		203B814E1A00CF0300F3C954 /* ListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListsViewController.m; sourceTree = "<group>"; };
+		203B81511A00CF3500F3C954 /* ListsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListsTableViewController.h; sourceTree = "<group>"; };
+		203B81521A00CF3500F3C954 /* ListsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListsTableViewController.m; sourceTree = "<group>"; };
+		203B81541A00CF4400F3C954 /* ListsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListsTableViewCell.h; sourceTree = "<group>"; };
+		203B81551A00CF4400F3C954 /* ListsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListsTableViewCell.m; sourceTree = "<group>"; };
+		203B81571A00CF7300F3C954 /* ListsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListsDetailViewController.h; sourceTree = "<group>"; };
+		203B81581A00CF7300F3C954 /* ListsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListsDetailViewController.m; sourceTree = "<group>"; };
 		204ADB8B19FDABF5006652B6 /* Movies.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Movies.storyboard; sourceTree = "<group>"; };
-		204ADB8D19FDAC07006652B6 /* MoviesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviesViewController.h; sourceTree = "<group>"; };
-		204ADB8E19FDAC07006652B6 /* MoviesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviesViewController.m; sourceTree = "<group>"; };
 		204ADB9019FDAC9F006652B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		204ADB9219FDAF03006652B6 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		204ADB9319FDAF03006652B6 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
-		204ADB9519FDAF15006652B6 /* ListsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListsViewController.h; sourceTree = "<group>"; };
-		204ADB9619FDAF15006652B6 /* ListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListsViewController.m; sourceTree = "<group>"; };
 		204ADB9819FDAF23006652B6 /* ExploreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExploreViewController.h; sourceTree = "<group>"; };
 		204ADB9919FDAF23006652B6 /* ExploreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExploreViewController.m; sourceTree = "<group>"; };
 		204ADB9B19FDAF2E006652B6 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
@@ -68,8 +92,8 @@
 		23F8814819F57E0F00D82431 /* MovieTimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MovieTimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F8814D19F57E0F00D82431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23F8814E19F57E0F00D82431 /* MovieTimeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieTimeTests.m; sourceTree = "<group>"; };
-		66DA475747F94A4DBCECBB4A /* Pods-MovieTime.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieTime.xcconfig"; path = "Pods/Pods-MovieTime.xcconfig"; sourceTree = "<group>"; };
 		78155907DB0C4E47A8D79574 /* libPods-MovieTime.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MovieTime.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A20CB7870B1A162FB05B36CF /* Pods-MovieTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieTime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieTime/Pods-MovieTime.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,14 +115,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		203B81491A00BFCF00F3C954 /* Movies */ = {
+			isa = PBXGroup;
+			children = (
+				203B81431A00BCC800F3C954 /* MoviesViewController.h */,
+				203B81441A00BCC800F3C954 /* MoviesViewController.m */,
+				203B814A1A00C00100F3C954 /* MovieTableViewCell.h */,
+				203B814B1A00C00100F3C954 /* MovieTableViewCell.m */,
+				203B81461A00BFC200F3C954 /* MovieTableViewController.h */,
+				203B81471A00BFC200F3C954 /* MovieTableViewController.m */,
+				203B813D1A00A0BA00F3C954 /* MovieDetailViewController.h */,
+				203B813E1A00A0BA00F3C954 /* MovieDetailViewController.m */,
+				203B81401A00A0D100F3C954 /* MovieTrailerViewController.h */,
+				203B81411A00A0D100F3C954 /* MovieTrailerViewController.m */,
+			);
+			name = Movies;
+			sourceTree = "<group>";
+		};
+		203B81501A00CF0E00F3C954 /* Lists */ = {
+			isa = PBXGroup;
+			children = (
+				203B814D1A00CF0300F3C954 /* ListsViewController.h */,
+				203B814E1A00CF0300F3C954 /* ListsViewController.m */,
+				203B81541A00CF4400F3C954 /* ListsTableViewCell.h */,
+				203B81551A00CF4400F3C954 /* ListsTableViewCell.m */,
+				203B81511A00CF3500F3C954 /* ListsTableViewController.h */,
+				203B81521A00CF3500F3C954 /* ListsTableViewController.m */,
+				203B81571A00CF7300F3C954 /* ListsDetailViewController.h */,
+				203B81581A00CF7300F3C954 /* ListsDetailViewController.m */,
+			);
+			name = Lists;
+			sourceTree = "<group>";
+		};
 		23F8812619F57E0F00D82431 = {
 			isa = PBXGroup;
 			children = (
 				23F8813119F57E0F00D82431 /* MovieTime */,
 				23F8814B19F57E0F00D82431 /* MovieTimeTests */,
 				23F8813019F57E0F00D82431 /* Products */,
-				66DA475747F94A4DBCECBB4A /* Pods-MovieTime.xcconfig */,
 				F1B7147AEBDE4D87ABED06B4 /* Frameworks */,
+				8F5231EDDD5B2DB73D7FF0E3 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -162,10 +218,8 @@
 				2001D96619FAB5B90028605D /* TestViewController.m */,
 				204ADB9219FDAF03006652B6 /* HomeViewController.h */,
 				204ADB9319FDAF03006652B6 /* HomeViewController.m */,
-				204ADB8D19FDAC07006652B6 /* MoviesViewController.h */,
-				204ADB8E19FDAC07006652B6 /* MoviesViewController.m */,
-				204ADB9519FDAF15006652B6 /* ListsViewController.h */,
-				204ADB9619FDAF15006652B6 /* ListsViewController.m */,
+				203B81491A00BFCF00F3C954 /* Movies */,
+				203B81501A00CF0E00F3C954 /* Lists */,
 				204ADB9819FDAF23006652B6 /* ExploreViewController.h */,
 				204ADB9919FDAF23006652B6 /* ExploreViewController.m */,
 				204ADB9B19FDAF2E006652B6 /* SettingsViewController.h */,
@@ -197,8 +251,18 @@
 				2001D96319FAB51B0028605D /* Test.storyboard */,
 				204ADB9019FDAC9F006652B6 /* Main.storyboard */,
 				204ADB8B19FDABF5006652B6 /* Movies.storyboard */,
+				203B81391A009F2800F3C954 /* Lists.storyboard */,
 			);
 			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		8F5231EDDD5B2DB73D7FF0E3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A20CB7870B1A162FB05B36CF /* Pods-MovieTime.debug.xcconfig */,
+				08AA581D2DE025FF86286CA0 /* Pods-MovieTime.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		F1B7147AEBDE4D87ABED06B4 /* Frameworks */ = {
@@ -297,6 +361,7 @@
 				204ADB9119FDAC9F006652B6 /* Main.storyboard in Resources */,
 				23F8814019F57E0F00D82431 /* Images.xcassets in Resources */,
 				204ADB8C19FDABF5006652B6 /* Movies.storyboard in Resources */,
+				203B813A1A009F2800F3C954 /* Lists.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,7 +402,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-MovieTime-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MovieTime/Pods-MovieTime-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -347,14 +412,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				203B81531A00CF3500F3C954 /* ListsTableViewController.m in Sources */,
+				203B81561A00CF4400F3C954 /* ListsTableViewCell.m in Sources */,
 				204ADB9A19FDAF23006652B6 /* ExploreViewController.m in Sources */,
+				203B81481A00BFC200F3C954 /* MovieTableViewController.m in Sources */,
 				23F8815D19F5898B00D82431 /* LoginViewController.m in Sources */,
-				204ADB9719FDAF15006652B6 /* ListsViewController.m in Sources */,
+				203B81451A00BCC800F3C954 /* MoviesViewController.m in Sources */,
+				203B813F1A00A0BA00F3C954 /* MovieDetailViewController.m in Sources */,
 				204ADB9D19FDAF2E006652B6 /* SettingsViewController.m in Sources */,
 				23F8813819F57E0F00D82431 /* AppDelegate.m in Sources */,
+				203B814C1A00C00100F3C954 /* MovieTableViewCell.m in Sources */,
+				203B814F1A00CF0300F3C954 /* ListsViewController.m in Sources */,
 				2335168419FDBF9100456B76 /* ILLoginView.m in Sources */,
-				204ADB8F19FDAC07006652B6 /* MoviesViewController.m in Sources */,
 				23F8813519F57E0F00D82431 /* main.m in Sources */,
+				203B81421A00A0D100F3C954 /* MovieTrailerViewController.m in Sources */,
+				203B81591A00CF7300F3C954 /* ListsDetailViewController.m in Sources */,
 				2001D96719FAB5B90028605D /* TestViewController.m in Sources */,
 				204ADB9419FDAF03006652B6 /* HomeViewController.m in Sources */,
 			);
@@ -476,7 +548,7 @@
 		};
 		23F8815319F57E0F00D82431 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66DA475747F94A4DBCECBB4A /* Pods-MovieTime.xcconfig */;
+			baseConfigurationReference = A20CB7870B1A162FB05B36CF /* Pods-MovieTime.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MovieTime/Info.plist;
@@ -487,7 +559,7 @@
 		};
 		23F8815419F57E0F00D82431 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 66DA475747F94A4DBCECBB4A /* Pods-MovieTime.xcconfig */;
+			baseConfigurationReference = 08AA581D2DE025FF86286CA0 /* Pods-MovieTime.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MovieTime/Info.plist;

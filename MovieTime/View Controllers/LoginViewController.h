@@ -11,8 +11,5 @@
 
 @interface LoginViewController : UIViewController
 
-- (IBAction)goToTest;
-- (IBAction)goToMain;
-
 @end
 

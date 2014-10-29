@@ -101,18 +101,5 @@
     }
 }
 
-- (IBAction)goToTest {
-    UIStoryboard *testStoryboard = [UIStoryboard storyboardWithName:@"Test" bundle:nil];
-    UIViewController *initialTestVC = [testStoryboard instantiateInitialViewController];
-    initialTestVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    [self presentViewController:initialTestVC animated:YES completion:nil];
-}
-
--(IBAction)goToMain {
-    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIViewController *initialMainVC = [mainStoryboard instantiateInitialViewController];
-    initialMainVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    [self presentViewController:initialMainVC animated:YES completion:nil];
-}
 
 @end
