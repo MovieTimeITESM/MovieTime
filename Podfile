@@ -4,9 +4,10 @@
 target "MovieTime" do
 pod 'Facebook-iOS-SDK'
 pod 'MBProgressHUD', '~> 0.8'
+pod 'RestKit', git: 'https://github.com/kurenn/RestKit.git', branch: 'paginatorPatternWithParameters'
+pod 'HexColors'
 end
 
 target "MovieTimeTests" do
 
 end
-
