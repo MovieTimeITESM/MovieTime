@@ -7,7 +7,7 @@
 
 #import <AFNetworking/AFHTTPClient.h>
 
-static NSString * const ILBaseURLString = @"http://localhost:3000/api";
+static NSString * const ILBaseURLString = @"http://movietimeapp.herokuapp.com/api";
 
 @interface ILApiClient : AFHTTPClient
 
