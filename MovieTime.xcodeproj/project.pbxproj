@@ -243,14 +243,14 @@
 		23F8815819F5877E00D82431 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				203B81491A00BFCF00F3C954 /* Movies */,
+				203B81501A00CF0E00F3C954 /* Lists */,
 				23F8813919F57E0F00D82431 /* LoginViewController.h */,
 				23F8813A19F57E0F00D82431 /* LoginViewController.m */,
 				2320E7511A05F926008D146F /* TestViewController.h */,
 				2001D96619FAB5B90028605D /* TestViewController.m */,
 				204ADB9219FDAF03006652B6 /* HomeViewController.h */,
 				204ADB9319FDAF03006652B6 /* HomeViewController.m */,
-				203B81491A00BFCF00F3C954 /* Movies */,
-				203B81501A00CF0E00F3C954 /* Lists */,
 				204ADB9819FDAF23006652B6 /* ExploreViewController.h */,
 				204ADB9919FDAF23006652B6 /* ExploreViewController.m */,
 				204ADB9B19FDAF2E006652B6 /* SettingsViewController.h */,
