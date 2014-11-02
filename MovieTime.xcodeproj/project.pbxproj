@@ -24,6 +24,11 @@
 		204ADB9419FDAF03006652B6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 204ADB9319FDAF03006652B6 /* HomeViewController.m */; };
 		204ADB9A19FDAF23006652B6 /* ExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 204ADB9919FDAF23006652B6 /* ExploreViewController.m */; };
 		204ADB9D19FDAF2E006652B6 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 204ADB9C19FDAF2E006652B6 /* SettingsViewController.m */; };
+		2320E7551A060297008D146F /* ILMappingManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2320E7541A060297008D146F /* ILMappingManager.m */; };
+		2320E75A1A0602AB008D146F /* ILApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 2320E7571A0602AB008D146F /* ILApiClient.m */; };
+		2320E75B1A0602AB008D146F /* ILSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 2320E7591A0602AB008D146F /* ILSession.m */; };
+		2320E75E1A060371008D146F /* ILUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2320E75D1A060371008D146F /* ILUser.m */; };
+		2320E7611A060423008D146F /* ILUserMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 2320E7601A060423008D146F /* ILUserMapping.m */; };
 		2335168419FDBF9100456B76 /* ILLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2335168319FDBF9100456B76 /* ILLoginView.m */; };
 		23F8813519F57E0F00D82431 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F8813419F57E0F00D82431 /* main.m */; };
 		23F8813819F57E0F00D82431 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F8813719F57E0F00D82431 /* AppDelegate.m */; };
@@ -77,6 +82,16 @@
 		204ADB9B19FDAF2E006652B6 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		204ADB9C19FDAF2E006652B6 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		2320E7511A05F926008D146F /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
+		2320E7531A060297008D146F /* ILMappingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILMappingManager.h; sourceTree = "<group>"; };
+		2320E7541A060297008D146F /* ILMappingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILMappingManager.m; sourceTree = "<group>"; };
+		2320E7561A0602AB008D146F /* ILApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILApiClient.h; sourceTree = "<group>"; };
+		2320E7571A0602AB008D146F /* ILApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILApiClient.m; sourceTree = "<group>"; };
+		2320E7581A0602AB008D146F /* ILSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILSession.h; sourceTree = "<group>"; };
+		2320E7591A0602AB008D146F /* ILSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILSession.m; sourceTree = "<group>"; };
+		2320E75C1A060371008D146F /* ILUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILUser.h; sourceTree = "<group>"; };
+		2320E75D1A060371008D146F /* ILUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILUser.m; sourceTree = "<group>"; };
+		2320E75F1A060423008D146F /* ILUserMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILUserMapping.h; sourceTree = "<group>"; };
+		2320E7601A060423008D146F /* ILUserMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILUserMapping.m; sourceTree = "<group>"; };
 		2335168219FDBF9100456B76 /* ILLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILLoginView.h; sourceTree = "<group>"; };
 		2335168319FDBF9100456B76 /* ILLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILLoginView.m; sourceTree = "<group>"; };
 		23F8812F19F57E0F00D82431 /* MovieTime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieTime.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +162,17 @@
 			name = Lists;
 			sourceTree = "<group>";
 		};
+		2320E7521A060233008D146F /* Mappings */ = {
+			isa = PBXGroup;
+			children = (
+				2320E7531A060297008D146F /* ILMappingManager.h */,
+				2320E7541A060297008D146F /* ILMappingManager.m */,
+				2320E75F1A060423008D146F /* ILUserMapping.h */,
+				2320E7601A060423008D146F /* ILUserMapping.m */,
+			);
+			path = Mappings;
+			sourceTree = "<group>";
+		};
 		23F8812619F57E0F00D82431 = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				23F8815B19F5889200D82431 /* Storyboard */,
+				2320E7521A060233008D146F /* Mappings */,
 				23F8815A19F5878F00D82431 /* Models */,
 				23F8815919F5878800D82431 /* Views and Cells */,
 				23F8815819F5877E00D82431 /* View Controllers */,
@@ -183,6 +210,10 @@
 		23F8813219F57E0F00D82431 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2320E7561A0602AB008D146F /* ILApiClient.h */,
+				2320E7571A0602AB008D146F /* ILApiClient.m */,
+				2320E7581A0602AB008D146F /* ILSession.h */,
+				2320E7591A0602AB008D146F /* ILSession.m */,
 				23F8813619F57E0F00D82431 /* AppDelegate.h */,
 				23F8813719F57E0F00D82431 /* AppDelegate.m */,
 				23F8814119F57E0F00D82431 /* LaunchScreen.xib */,
@@ -240,6 +271,8 @@
 		23F8815A19F5878F00D82431 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2320E75C1A060371008D146F /* ILUser.h */,
+				2320E75D1A060371008D146F /* ILUser.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -415,13 +448,18 @@
 				203B81531A00CF3500F3C954 /* ListsTableViewController.m in Sources */,
 				203B81561A00CF4400F3C954 /* ListsTableViewCell.m in Sources */,
 				204ADB9A19FDAF23006652B6 /* ExploreViewController.m in Sources */,
+				2320E75B1A0602AB008D146F /* ILSession.m in Sources */,
 				203B81481A00BFC200F3C954 /* MovieTableViewController.m in Sources */,
 				23F8815D19F5898B00D82431 /* LoginViewController.m in Sources */,
+				2320E7551A060297008D146F /* ILMappingManager.m in Sources */,
+				2320E75A1A0602AB008D146F /* ILApiClient.m in Sources */,
 				203B81451A00BCC800F3C954 /* MoviesViewController.m in Sources */,
 				203B813F1A00A0BA00F3C954 /* MovieDetailViewController.m in Sources */,
 				204ADB9D19FDAF2E006652B6 /* SettingsViewController.m in Sources */,
 				23F8813819F57E0F00D82431 /* AppDelegate.m in Sources */,
 				203B814C1A00C00100F3C954 /* MovieTableViewCell.m in Sources */,
+				2320E75E1A060371008D146F /* ILUser.m in Sources */,
+				2320E7611A060423008D146F /* ILUserMapping.m in Sources */,
 				203B814F1A00CF0300F3C954 /* ListsViewController.m in Sources */,
 				2335168419FDBF9100456B76 /* ILLoginView.m in Sources */,
 				23F8813519F57E0F00D82431 /* main.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "ILSession.h"
 
 @interface LoginViewController ()<FBLoginViewDelegate>
 @property (weak, nonatomic) IBOutlet ILLoginView *loginView;
@@ -45,41 +46,34 @@
         return;
     }
     
-    UIViewController *initialMainVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
-    [self presentViewController:initialMainVC animated:YES completion:nil];
-    
-//    NSString *accessToken = [FBSession activeSession].accessTokenData.accessToken;
+    NSString *accessToken = [FBSession activeSession].accessTokenData.accessToken;
     
     //Show progress spinner
-//    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    
-//    [ILUser loginWithAccessToken:accessToken
-//                         success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-//                             
-//                             [[UIApplication sharedApplication] setStatusBarHidden:NO];
-//                             
-//                             ILUser *currentUser = mappingResult.array[0];
-//                             [ILSession newSessionForUser:currentUser];
-//                             
-//                             //Hide progress spinner
-//                             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-//                             
-//                             ILRootViewController *rootViewController = [self.storyboard instantiateViewControllerWithIdentifier:ILRootViewControllerIdentifier];
-//                             [self presentViewController:rootViewController
-//                                                animated:YES
-//                                              completion:nil];
-//                             
-//                         } failure:^(RKObjectRequestOperation *operation, NSError *error) {
-//                             
-//                             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-//                             [[FBSession activeSession] closeAndClearTokenInformation];
-//                             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Server down"
-//                                                                             message:@"The server is currently down.\nPlease try to login again later"
-//                                                                            delegate:nil
-//                                                                   cancelButtonTitle:@"OK"
-//                                                                   otherButtonTitles: nil];
-//                             [alert show];
-//                         }];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [ILUser loginWithAccessToken:accessToken
+                         success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                             
+                             [[UIApplication sharedApplication] setStatusBarHidden:NO];
+                             
+                             ILUser *currentUser = mappingResult.array[0];
+                             [ILSession newSessionForUser:currentUser];
+                             
+                             //Hide progress spinner
+                             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                             
+                             UIViewController *initialMainVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
+                             [self presentViewController:initialMainVC animated:YES completion:nil];
+                             
+                         } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                             [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                             [[FBSession activeSession] closeAndClearTokenInformation];
+                             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Server down"
+                                                                             message:@"The server is currently down.\nPlease try to login again later"
+                                                                            delegate:nil
+                                                                   cancelButtonTitle:@"OK"
+                                                                   otherButtonTitles: nil];
+                             [alert show];
+                         }];
 }
 
 - (void)loginView:(FBLoginView *)loginView handleError:(NSError *)error{
