@@ -10,6 +10,8 @@
 
 @interface MovieTableViewCell : UITableViewCell
 
-@property (strong, nonatomic) IBOutlet UILabel *movieLabel;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+
+@property (strong, nonatomic) IBOutlet UILabel *yearLabel;
 
 @end

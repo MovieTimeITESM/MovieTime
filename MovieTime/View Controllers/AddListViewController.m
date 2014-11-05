@@ -1,18 +1,18 @@
 //
-//  ListsViewController.m
+//  AddListViewController.m
 //  MovieTime
 //
-//  Created by Iliana García on 10/29/14.
+//  Created by Iliana García on 11/5/14.
 //  Copyright (c) 2014 ITESM. All rights reserved.
 //
 
-#import "ListsViewController.h"
+#import "AddListViewController.h"
 
-@interface ListsViewController ()
+@interface AddListViewController ()
 
 @end
 
-@implementation ListsViewController
+@implementation AddListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,6 +22,10 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)hideKeyboard:(UITextField *)sender {
+    [sender resignFirstResponder];
 }
 
 /*

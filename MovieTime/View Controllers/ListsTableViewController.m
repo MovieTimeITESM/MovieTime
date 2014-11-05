@@ -13,6 +13,7 @@
 @interface ListsTableViewController ()
 {
     NSMutableArray *lists;
+    NSDictionary *list;
 }
 
 @end
@@ -22,10 +23,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    lists = [[NSMutableArray alloc] initWithObjects:   @"Private",
-                                                        @"Shared",
-                                                        @"Public",
-                                                        nil];
+    NSArray *names = [[NSMutableArray alloc] initWithObjects:   @"Ana's Wishlist",
+                                                                @"Xmas Movies",
+                                                                @"Movies 4 Kids",
+                                                                nil];
+    
+    NSArray *authors = [[NSMutableArray alloc] initWithObjects: @"Ana Garza",
+                                                                @"Juan Perez",
+                                                                @"Gabriel Santos",
+                                                                nil];
+    
+    if(!lists){
+        lists = [[NSMutableArray alloc] init];
+    }
+    
+    for(int i=0; i < [names count]; i++)
+    {
+        list = [[NSDictionary alloc] initWithObjectsAndKeys:
+                 [names objectAtIndex:i], @"name",
+                 [authors objectAtIndex:i], @"author",
+                 nil];
+        
+        [lists addObject:list];
+    }
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -51,16 +71,21 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    ListsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListCell" forIndexPath:indexPath];
-    NSString *object = lists[indexPath.row];
-    cell.listLabel.text = object;
+    ListsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListCell"
+                                                               forIndexPath:indexPath];
+    
+    NSDictionary *object = lists[indexPath.row];
+    
+    cell.nameLabel.text = [object objectForKey:@"name"];
+    cell.authorLabel.text = [object objectForKey:@"author"];
+    
     return cell;
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *listTitle = lists[indexPath.row];
+    NSString *listName = [lists[indexPath.row] objectForKey:@"name"];
     
-    NSLog(@"%@", listTitle);
+    NSLog(@"%@", listName);
     
     /*
      UIViewController *initialMainVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];

@@ -7,19 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2001D96419FAB51B0028605D /* Test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2001D96319FAB51B0028605D /* Test.storyboard */; };
-		2001D96719FAB5B90028605D /* TestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2001D96619FAB5B90028605D /* TestViewController.m */; };
-		203B813A1A009F2800F3C954 /* Lists.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 203B81391A009F2800F3C954 /* Lists.storyboard */; };
+		202B6D581A0A1688007354C1 /* AddListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 202B6D571A0A1688007354C1 /* AddListViewController.m */; };
 		203B813F1A00A0BA00F3C954 /* MovieDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 203B813E1A00A0BA00F3C954 /* MovieDetailViewController.m */; };
 		203B81421A00A0D100F3C954 /* MovieTrailerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 203B81411A00A0D100F3C954 /* MovieTrailerViewController.m */; };
-		203B81451A00BCC800F3C954 /* MoviesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 203B81441A00BCC800F3C954 /* MoviesViewController.m */; };
 		203B81481A00BFC200F3C954 /* MovieTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 203B81471A00BFC200F3C954 /* MovieTableViewController.m */; };
 		203B814C1A00C00100F3C954 /* MovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 203B814B1A00C00100F3C954 /* MovieTableViewCell.m */; };
-		203B814F1A00CF0300F3C954 /* ListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 203B814E1A00CF0300F3C954 /* ListsViewController.m */; };
 		203B81531A00CF3500F3C954 /* ListsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 203B81521A00CF3500F3C954 /* ListsTableViewController.m */; };
 		203B81561A00CF4400F3C954 /* ListsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 203B81551A00CF4400F3C954 /* ListsTableViewCell.m */; };
 		203B81591A00CF7300F3C954 /* ListsDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 203B81581A00CF7300F3C954 /* ListsDetailViewController.m */; };
-		204ADB8C19FDABF5006652B6 /* Movies.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 204ADB8B19FDABF5006652B6 /* Movies.storyboard */; };
 		204ADB9119FDAC9F006652B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 204ADB9019FDAC9F006652B6 /* Main.storyboard */; };
 		204ADB9419FDAF03006652B6 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 204ADB9319FDAF03006652B6 /* HomeViewController.m */; };
 		204ADB9A19FDAF23006652B6 /* ExploreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 204ADB9919FDAF23006652B6 /* ExploreViewController.m */; };
@@ -52,28 +47,22 @@
 
 /* Begin PBXFileReference section */
 		08AA581D2DE025FF86286CA0 /* Pods-MovieTime.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieTime.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieTime/Pods-MovieTime.release.xcconfig"; sourceTree = "<group>"; };
-		2001D96319FAB51B0028605D /* Test.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Test.storyboard; sourceTree = "<group>"; };
-		2001D96619FAB5B90028605D /* TestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestViewController.m; sourceTree = "<group>"; };
-		203B81391A009F2800F3C954 /* Lists.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Lists.storyboard; sourceTree = "<group>"; };
+		202B6D561A0A1688007354C1 /* AddListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddListViewController.h; sourceTree = "<group>"; };
+		202B6D571A0A1688007354C1 /* AddListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddListViewController.m; sourceTree = "<group>"; };
 		203B813D1A00A0BA00F3C954 /* MovieDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieDetailViewController.h; sourceTree = "<group>"; };
 		203B813E1A00A0BA00F3C954 /* MovieDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieDetailViewController.m; sourceTree = "<group>"; };
 		203B81401A00A0D100F3C954 /* MovieTrailerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieTrailerViewController.h; sourceTree = "<group>"; };
 		203B81411A00A0D100F3C954 /* MovieTrailerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieTrailerViewController.m; sourceTree = "<group>"; };
-		203B81431A00BCC800F3C954 /* MoviesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoviesViewController.h; sourceTree = "<group>"; };
-		203B81441A00BCC800F3C954 /* MoviesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoviesViewController.m; sourceTree = "<group>"; };
 		203B81461A00BFC200F3C954 /* MovieTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieTableViewController.h; sourceTree = "<group>"; };
 		203B81471A00BFC200F3C954 /* MovieTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieTableViewController.m; sourceTree = "<group>"; };
 		203B814A1A00C00100F3C954 /* MovieTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieTableViewCell.h; sourceTree = "<group>"; };
 		203B814B1A00C00100F3C954 /* MovieTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MovieTableViewCell.m; sourceTree = "<group>"; };
-		203B814D1A00CF0300F3C954 /* ListsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListsViewController.h; sourceTree = "<group>"; };
-		203B814E1A00CF0300F3C954 /* ListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListsViewController.m; sourceTree = "<group>"; };
 		203B81511A00CF3500F3C954 /* ListsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListsTableViewController.h; sourceTree = "<group>"; };
 		203B81521A00CF3500F3C954 /* ListsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListsTableViewController.m; sourceTree = "<group>"; };
 		203B81541A00CF4400F3C954 /* ListsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListsTableViewCell.h; sourceTree = "<group>"; };
 		203B81551A00CF4400F3C954 /* ListsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListsTableViewCell.m; sourceTree = "<group>"; };
 		203B81571A00CF7300F3C954 /* ListsDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListsDetailViewController.h; sourceTree = "<group>"; };
 		203B81581A00CF7300F3C954 /* ListsDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListsDetailViewController.m; sourceTree = "<group>"; };
-		204ADB8B19FDABF5006652B6 /* Movies.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Movies.storyboard; sourceTree = "<group>"; };
 		204ADB9019FDAC9F006652B6 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		204ADB9219FDAF03006652B6 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
 		204ADB9319FDAF03006652B6 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
@@ -81,7 +70,6 @@
 		204ADB9919FDAF23006652B6 /* ExploreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExploreViewController.m; sourceTree = "<group>"; };
 		204ADB9B19FDAF2E006652B6 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
 		204ADB9C19FDAF2E006652B6 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
-		2320E7511A05F926008D146F /* TestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestViewController.h; sourceTree = "<group>"; };
 		2320E7531A060297008D146F /* ILMappingManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILMappingManager.h; sourceTree = "<group>"; };
 		2320E7541A060297008D146F /* ILMappingManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILMappingManager.m; sourceTree = "<group>"; };
 		2320E7561A0602AB008D146F /* ILApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILApiClient.h; sourceTree = "<group>"; };
@@ -133,12 +121,10 @@
 		203B81491A00BFCF00F3C954 /* Movies */ = {
 			isa = PBXGroup;
 			children = (
-				203B81431A00BCC800F3C954 /* MoviesViewController.h */,
-				203B81441A00BCC800F3C954 /* MoviesViewController.m */,
-				203B814A1A00C00100F3C954 /* MovieTableViewCell.h */,
-				203B814B1A00C00100F3C954 /* MovieTableViewCell.m */,
 				203B81461A00BFC200F3C954 /* MovieTableViewController.h */,
 				203B81471A00BFC200F3C954 /* MovieTableViewController.m */,
+				203B814A1A00C00100F3C954 /* MovieTableViewCell.h */,
+				203B814B1A00C00100F3C954 /* MovieTableViewCell.m */,
 				203B813D1A00A0BA00F3C954 /* MovieDetailViewController.h */,
 				203B813E1A00A0BA00F3C954 /* MovieDetailViewController.m */,
 				203B81401A00A0D100F3C954 /* MovieTrailerViewController.h */,
@@ -150,14 +136,14 @@
 		203B81501A00CF0E00F3C954 /* Lists */ = {
 			isa = PBXGroup;
 			children = (
-				203B814D1A00CF0300F3C954 /* ListsViewController.h */,
-				203B814E1A00CF0300F3C954 /* ListsViewController.m */,
-				203B81541A00CF4400F3C954 /* ListsTableViewCell.h */,
-				203B81551A00CF4400F3C954 /* ListsTableViewCell.m */,
 				203B81511A00CF3500F3C954 /* ListsTableViewController.h */,
 				203B81521A00CF3500F3C954 /* ListsTableViewController.m */,
+				203B81541A00CF4400F3C954 /* ListsTableViewCell.h */,
+				203B81551A00CF4400F3C954 /* ListsTableViewCell.m */,
 				203B81571A00CF7300F3C954 /* ListsDetailViewController.h */,
 				203B81581A00CF7300F3C954 /* ListsDetailViewController.m */,
+				202B6D561A0A1688007354C1 /* AddListViewController.h */,
+				202B6D571A0A1688007354C1 /* AddListViewController.m */,
 			);
 			name = Lists;
 			sourceTree = "<group>";
@@ -243,14 +229,12 @@
 		23F8815819F5877E00D82431 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				203B81491A00BFCF00F3C954 /* Movies */,
-				203B81501A00CF0E00F3C954 /* Lists */,
 				23F8813919F57E0F00D82431 /* LoginViewController.h */,
 				23F8813A19F57E0F00D82431 /* LoginViewController.m */,
-				2320E7511A05F926008D146F /* TestViewController.h */,
-				2001D96619FAB5B90028605D /* TestViewController.m */,
 				204ADB9219FDAF03006652B6 /* HomeViewController.h */,
 				204ADB9319FDAF03006652B6 /* HomeViewController.m */,
+				203B81491A00BFCF00F3C954 /* Movies */,
+				203B81501A00CF0E00F3C954 /* Lists */,
 				204ADB9819FDAF23006652B6 /* ExploreViewController.h */,
 				204ADB9919FDAF23006652B6 /* ExploreViewController.m */,
 				204ADB9B19FDAF2E006652B6 /* SettingsViewController.h */,
@@ -281,10 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				23F8813C19F57E0F00D82431 /* Login.storyboard */,
-				2001D96319FAB51B0028605D /* Test.storyboard */,
 				204ADB9019FDAC9F006652B6 /* Main.storyboard */,
-				204ADB8B19FDABF5006652B6 /* Movies.storyboard */,
-				203B81391A009F2800F3C954 /* Lists.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -390,11 +371,8 @@
 			files = (
 				23F8813E19F57E0F00D82431 /* Login.storyboard in Resources */,
 				23F8814319F57E0F00D82431 /* LaunchScreen.xib in Resources */,
-				2001D96419FAB51B0028605D /* Test.storyboard in Resources */,
 				204ADB9119FDAC9F006652B6 /* Main.storyboard in Resources */,
 				23F8814019F57E0F00D82431 /* Images.xcassets in Resources */,
-				204ADB8C19FDABF5006652B6 /* Movies.storyboard in Resources */,
-				203B813A1A009F2800F3C954 /* Lists.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,19 +431,17 @@
 				23F8815D19F5898B00D82431 /* LoginViewController.m in Sources */,
 				2320E7551A060297008D146F /* ILMappingManager.m in Sources */,
 				2320E75A1A0602AB008D146F /* ILApiClient.m in Sources */,
-				203B81451A00BCC800F3C954 /* MoviesViewController.m in Sources */,
 				203B813F1A00A0BA00F3C954 /* MovieDetailViewController.m in Sources */,
 				204ADB9D19FDAF2E006652B6 /* SettingsViewController.m in Sources */,
+				202B6D581A0A1688007354C1 /* AddListViewController.m in Sources */,
 				23F8813819F57E0F00D82431 /* AppDelegate.m in Sources */,
 				203B814C1A00C00100F3C954 /* MovieTableViewCell.m in Sources */,
 				2320E75E1A060371008D146F /* ILUser.m in Sources */,
 				2320E7611A060423008D146F /* ILUserMapping.m in Sources */,
-				203B814F1A00CF0300F3C954 /* ListsViewController.m in Sources */,
 				2335168419FDBF9100456B76 /* ILLoginView.m in Sources */,
 				23F8813519F57E0F00D82431 /* main.m in Sources */,
 				203B81421A00A0D100F3C954 /* MovieTrailerViewController.m in Sources */,
 				203B81591A00CF7300F3C954 /* ListsDetailViewController.m in Sources */,
-				2001D96719FAB5B90028605D /* TestViewController.m in Sources */,
 				204ADB9419FDAF03006652B6 /* HomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

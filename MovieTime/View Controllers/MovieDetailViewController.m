@@ -40,18 +40,23 @@
     // Update the user interface for the detail item.
     
     if (self.detailItem) {
-        self.movieLabel.text = self.detailItem;
+        self.titleLabel.text = [self.detailItem objectForKey:@"title"];
+        self.yearLabel.text = [self.detailItem objectForKey:@"year"];
     }
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([[segue identifier] isEqualToString:@"ShowTrailerMovie"]) {
+        [[segue destinationViewController] setDetailItem:self.titleLabel.text];
+    }
+    
 }
-*/
+
 
 @end

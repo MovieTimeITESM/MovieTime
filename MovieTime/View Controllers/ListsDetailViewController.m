@@ -40,7 +40,8 @@
     // Update the user interface for the detail item.
     
     if (self.detailItem) {
-        self.listLabel.text = self.detailItem;
+        self.nameLabel.text = [self.detailItem objectForKey:@"name"];
+        self.authorLabel.text = [self.detailItem objectForKey:@"author"];
     }
 }
 

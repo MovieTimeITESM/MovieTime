@@ -13,6 +13,7 @@
 @interface MovieTableViewController ()
 {
     NSMutableArray *movies;
+    NSDictionary *movie;
 }
 
 @end
@@ -22,10 +23,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    movies = [[NSMutableArray alloc] initWithObjects:   @"Monsters Inc.",
-                                                        @"Toy Story",
+    NSArray *titles = [[NSArray alloc] initWithObjects: @"Toy Story",
+                                                        @"Monsters, Inc.",
                                                         @"Finding Nemo",
                                                         nil];
+    
+    NSArray *years = [[NSArray alloc] initWithObjects:  @"1995",
+                                                        @"2001",
+                                                        @"2003",
+                                                        nil];
+    
+    if(!movies){
+        movies = [[NSMutableArray alloc] init];
+    }
+    
+    for(int i=0; i < [titles count]; i++)
+    {
+        movie = [[NSDictionary alloc] initWithObjectsAndKeys:
+                 [titles objectAtIndex:i], @"title",
+                 [years objectAtIndex:i], @"year",
+                 nil];
+        
+        [movies addObject:movie];
+    }
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -50,14 +70,19 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    MovieTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell" forIndexPath:indexPath];
-    NSString *object = movies[indexPath.row];
-    cell.movieLabel.text = object;
+    MovieTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell"
+                                                               forIndexPath:indexPath];
+    
+    NSDictionary *object = movies[indexPath.row];
+    
+    cell.titleLabel.text = [object objectForKey:@"title"];
+    cell.yearLabel.text = [object objectForKey:@"year"];
+    
     return cell;
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *movieTitle = movies[indexPath.row];
+    NSString *movieTitle = [movies[indexPath.row] objectForKey:@"title"];
     
     NSLog(@"%@", movieTitle);
     
