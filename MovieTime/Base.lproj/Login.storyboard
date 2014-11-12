@@ -23,7 +23,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ee2-XJ-eD0" customClass="ILLoginView">
-                                <rect key="frame" x="49" y="399" width="223" height="60"/>
+                                <rect key="frame" x="23" y="389" width="275" height="76"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
