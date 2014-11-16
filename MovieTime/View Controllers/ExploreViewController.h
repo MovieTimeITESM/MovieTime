@@ -10,6 +10,6 @@
 
 @interface ExploreViewController : UIViewController <UISearchBarDelegate>
 
-
+@property (strong, nonatomic) IBOutlet UINavigationBar *titleBar;
 
 @end
