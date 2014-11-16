@@ -33,6 +33,10 @@
 		23F8814F19F57E0F00D82431 /* MovieTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F8814E19F57E0F00D82431 /* MovieTimeTests.m */; };
 		23F8815D19F5898B00D82431 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F8813A19F57E0F00D82431 /* LoginViewController.m */; };
 		2FBB45BB2DB34114AC092637 /* libPods-MovieTime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78155907DB0C4E47A8D79574 /* libPods-MovieTime.a */; };
+		F085A4361A195B6800FAEBDE /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F085A4351A195B6800FAEBDE /* TabBarViewController.m */; };
+		F085A43A1A19633900FAEBDE /* lists.png in Resources */ = {isa = PBXBuildFile; fileRef = F085A4371A19633900FAEBDE /* lists.png */; };
+		F085A43B1A19633900FAEBDE /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = F085A4381A19633900FAEBDE /* profile.png */; };
+		F085A43C1A19633900FAEBDE /* showtime.png in Resources */ = {isa = PBXBuildFile; fileRef = F085A4391A19633900FAEBDE /* showtime.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +101,11 @@
 		23F8814E19F57E0F00D82431 /* MovieTimeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieTimeTests.m; sourceTree = "<group>"; };
 		78155907DB0C4E47A8D79574 /* libPods-MovieTime.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MovieTime.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A20CB7870B1A162FB05B36CF /* Pods-MovieTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieTime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieTime/Pods-MovieTime.debug.xcconfig"; sourceTree = "<group>"; };
+		F085A4341A195B6800FAEBDE /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		F085A4351A195B6800FAEBDE /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		F085A4371A19633900FAEBDE /* lists.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lists.png; sourceTree = "<group>"; };
+		F085A4381A19633900FAEBDE /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		F085A4391A19633900FAEBDE /* showtime.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = showtime.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +197,9 @@
 				23F8815919F5878800D82431 /* Views and Cells */,
 				23F8815819F5877E00D82431 /* View Controllers */,
 				23F8813F19F57E0F00D82431 /* Images.xcassets */,
+				F085A4371A19633900FAEBDE /* lists.png */,
+				F085A4381A19633900FAEBDE /* profile.png */,
+				F085A4391A19633900FAEBDE /* showtime.png */,
 				23F8813219F57E0F00D82431 /* Supporting Files */,
 			);
 			path = MovieTime;
@@ -235,10 +247,10 @@
 				204ADB9319FDAF03006652B6 /* HomeViewController.m */,
 				203B81491A00BFCF00F3C954 /* Movies */,
 				203B81501A00CF0E00F3C954 /* Lists */,
-				204ADB9819FDAF23006652B6 /* ExploreViewController.h */,
-				204ADB9919FDAF23006652B6 /* ExploreViewController.m */,
+				F085A43D1A19646B00FAEBDE /* Explore */,
 				204ADB9B19FDAF2E006652B6 /* SettingsViewController.h */,
 				204ADB9C19FDAF2E006652B6 /* SettingsViewController.m */,
+				F085A4331A195A6900FAEBDE /* tabBar */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -277,6 +289,24 @@
 				08AA581D2DE025FF86286CA0 /* Pods-MovieTime.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F085A4331A195A6900FAEBDE /* tabBar */ = {
+			isa = PBXGroup;
+			children = (
+				F085A4341A195B6800FAEBDE /* TabBarViewController.h */,
+				F085A4351A195B6800FAEBDE /* TabBarViewController.m */,
+			);
+			name = tabBar;
+			sourceTree = "<group>";
+		};
+		F085A43D1A19646B00FAEBDE /* Explore */ = {
+			isa = PBXGroup;
+			children = (
+				204ADB9819FDAF23006652B6 /* ExploreViewController.h */,
+				204ADB9919FDAF23006652B6 /* ExploreViewController.m */,
+			);
+			name = Explore;
 			sourceTree = "<group>";
 		};
 		F1B7147AEBDE4D87ABED06B4 /* Frameworks */ = {
@@ -370,8 +400,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				23F8813E19F57E0F00D82431 /* Login.storyboard in Resources */,
+				F085A43B1A19633900FAEBDE /* profile.png in Resources */,
 				23F8814319F57E0F00D82431 /* LaunchScreen.xib in Resources */,
+				F085A43A1A19633900FAEBDE /* lists.png in Resources */,
 				204ADB9119FDAC9F006652B6 /* Main.storyboard in Resources */,
+				F085A43C1A19633900FAEBDE /* showtime.png in Resources */,
 				23F8814019F57E0F00D82431 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,6 +472,7 @@
 				2320E75E1A060371008D146F /* ILUser.m in Sources */,
 				2320E7611A060423008D146F /* ILUserMapping.m in Sources */,
 				2335168419FDBF9100456B76 /* ILLoginView.m in Sources */,
+				F085A4361A195B6800FAEBDE /* TabBarViewController.m in Sources */,
 				23F8813519F57E0F00D82431 /* main.m in Sources */,
 				203B81421A00A0D100F3C954 /* MovieTrailerViewController.m in Sources */,
 				203B81591A00CF7300F3C954 /* ListsDetailViewController.m in Sources */,

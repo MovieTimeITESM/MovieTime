@@ -160,7 +160,7 @@
         <scene sceneID="m7X-US-Php">
             <objects>
                 <navigationController id="SRr-C8-lqc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Showtime" id="wdV-En-bZc"/>
+                    <tabBarItem key="tabBarItem" title="Showtime" image="tab-bar-showtime" id="wdV-En-bZc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="3PO-kW-dNe">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -187,15 +187,15 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ImK-R1-YC7" id="EmN-Yv-Nai">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srt-52-wcS">
-                                            <rect key="frame" x="8" y="15" width="279" height="24"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Author" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lzP-yL-NFJ">
                                             <rect key="frame" x="8" y="47" width="279" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srt-52-wcS">
+                                            <rect key="frame" x="8" y="15" width="279" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -308,7 +308,7 @@
         <scene sceneID="fMP-Xm-IZF">
             <objects>
                 <navigationController id="AbJ-4s-UNC" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Lists" id="YWH-1h-DgT"/>
+                    <tabBarItem key="tabBarItem" title="Lists" image="tab-bar-lists" id="YWH-1h-DgT"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Q4Q-as-fhK">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -340,7 +340,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Explore" id="Mfs-YW-S8l"/>
+                    <tabBarItem key="tabBarItem" title="Explore" image="tab-bar-explore" id="Mfs-YW-S8l"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="IuB-pE-nKZ" id="Fzd-eU-NMp"/>
                     </connections>
@@ -434,16 +434,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="You" id="hCK-tE-qTA"/>
+                    <tabBarItem key="tabBarItem" title="You" image="tab-bar-profile" id="hCK-tE-qTA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BgT-TH-Fe9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="234" y="2473"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="wbX-Wt-WyX">
             <objects>
-                <tabBarController id="4fR-kA-Rrh" sceneMemberID="viewController">
+                <tabBarController id="4fR-kA-Rrh" customClass="TabBarViewController" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="Lg3-eI-h8u">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
@@ -462,9 +462,16 @@
             <point key="canvasLocation" x="-952" y="1845"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tab-bar-explore" width="25" height="24"/>
+        <image name="tab-bar-lists" width="25" height="23"/>
+        <image name="tab-bar-profile" width="10" height="24"/>
+        <image name="tab-bar-showtime" width="25" height="25"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <color key="tintColor" red="0.27353521260688596" green="1" blue="0.32167893519315283" alpha="1" colorSpace="calibratedRGB"/>
 </document>
