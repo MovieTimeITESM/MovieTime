@@ -33,10 +33,12 @@
 		23F8814F19F57E0F00D82431 /* MovieTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F8814E19F57E0F00D82431 /* MovieTimeTests.m */; };
 		23F8815D19F5898B00D82431 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F8813A19F57E0F00D82431 /* LoginViewController.m */; };
 		2FBB45BB2DB34114AC092637 /* libPods-MovieTime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78155907DB0C4E47A8D79574 /* libPods-MovieTime.a */; };
+		F0292D621A1971AA00D2E12C /* searchbox.png in Resources */ = {isa = PBXBuildFile; fileRef = F0292D611A1971AA00D2E12C /* searchbox.png */; };
 		F085A4361A195B6800FAEBDE /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F085A4351A195B6800FAEBDE /* TabBarViewController.m */; };
 		F085A43A1A19633900FAEBDE /* lists.png in Resources */ = {isa = PBXBuildFile; fileRef = F085A4371A19633900FAEBDE /* lists.png */; };
 		F085A43B1A19633900FAEBDE /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = F085A4381A19633900FAEBDE /* profile.png */; };
 		F085A43C1A19633900FAEBDE /* showtime.png in Resources */ = {isa = PBXBuildFile; fileRef = F085A4391A19633900FAEBDE /* showtime.png */; };
+		F085A4401A19708D00FAEBDE /* iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = F085A43F1A19708D00FAEBDE /* iphone.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,11 +103,13 @@
 		23F8814E19F57E0F00D82431 /* MovieTimeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieTimeTests.m; sourceTree = "<group>"; };
 		78155907DB0C4E47A8D79574 /* libPods-MovieTime.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MovieTime.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A20CB7870B1A162FB05B36CF /* Pods-MovieTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieTime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieTime/Pods-MovieTime.debug.xcconfig"; sourceTree = "<group>"; };
+		F0292D611A1971AA00D2E12C /* searchbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchbox.png; sourceTree = "<group>"; };
 		F085A4341A195B6800FAEBDE /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		F085A4351A195B6800FAEBDE /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
 		F085A4371A19633900FAEBDE /* lists.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lists.png; sourceTree = "<group>"; };
 		F085A4381A19633900FAEBDE /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 		F085A4391A19633900FAEBDE /* showtime.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = showtime.png; sourceTree = "<group>"; };
+		F085A43F1A19708D00FAEBDE /* iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,9 +201,7 @@
 				23F8815919F5878800D82431 /* Views and Cells */,
 				23F8815819F5877E00D82431 /* View Controllers */,
 				23F8813F19F57E0F00D82431 /* Images.xcassets */,
-				F085A4371A19633900FAEBDE /* lists.png */,
-				F085A4381A19633900FAEBDE /* profile.png */,
-				F085A4391A19633900FAEBDE /* showtime.png */,
+				F085A43E1A19708200FAEBDE /* img */,
 				23F8813219F57E0F00D82431 /* Supporting Files */,
 			);
 			path = MovieTime;
@@ -309,6 +311,18 @@
 			name = Explore;
 			sourceTree = "<group>";
 		};
+		F085A43E1A19708200FAEBDE /* img */ = {
+			isa = PBXGroup;
+			children = (
+				F0292D611A1971AA00D2E12C /* searchbox.png */,
+				F085A43F1A19708D00FAEBDE /* iphone.png */,
+				F085A4371A19633900FAEBDE /* lists.png */,
+				F085A4381A19633900FAEBDE /* profile.png */,
+				F085A4391A19633900FAEBDE /* showtime.png */,
+			);
+			name = img;
+			sourceTree = "<group>";
+		};
 		F1B7147AEBDE4D87ABED06B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,6 +413,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0292D621A1971AA00D2E12C /* searchbox.png in Resources */,
+				F085A4401A19708D00FAEBDE /* iphone.png in Resources */,
 				23F8813E19F57E0F00D82431 /* Login.storyboard in Resources */,
 				F085A43B1A19633900FAEBDE /* profile.png in Resources */,
 				23F8814319F57E0F00D82431 /* LaunchScreen.xib in Resources */,
