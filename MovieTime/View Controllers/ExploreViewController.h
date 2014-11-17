@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ExploreViewController : UIViewController <UISearchBarDelegate>
+@interface ExploreViewController : UIViewController <UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UINavigationBar *titleBar;
+@property (strong, nonatomic) IBOutlet UITextField *searchTextField;
 
 @end

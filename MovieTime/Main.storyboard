@@ -353,6 +353,12 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="explore-searchbox" translatesAutoresizingMaskIntoConstraints="NO" id="spg-ST-PKx">
                                         <rect key="frame" x="0.0" y="-11" width="320" height="170"/>
                                     </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sJc-jc-GsU">
+                                        <rect key="frame" x="43" y="61" width="249" height="26"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                                    </textField>
                                 </subviews>
                                 <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
@@ -362,6 +368,7 @@
                     <tabBarItem key="tabBarItem" title="Explore" image="tab-bar-explore" id="Mfs-YW-S8l"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="IuB-pE-nKZ" id="Fzd-eU-NMp"/>
+                        <outlet property="searchTextField" destination="sJc-jc-GsU" id="lN5-6l-j14"/>
                         <outlet property="titleBar" destination="hxz-bt-E74" id="oLw-Qp-tbt"/>
                     </connections>
                 </viewController>
@@ -377,7 +384,7 @@
             </objects>
             <point key="canvasLocation" x="250" y="452"/>
         </scene>
-        <!--You-->
+        <!--Profile-->
         <scene sceneID="kSN-dp-aXD">
             <objects>
                 <viewController id="Tfy-Kx-3Me" customClass="SettingsViewController" sceneMemberID="viewController">
@@ -454,7 +461,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="You" image="tab-bar-profile" id="hCK-tE-qTA"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="tab-bar-profile" id="hCK-tE-qTA"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BgT-TH-Fe9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

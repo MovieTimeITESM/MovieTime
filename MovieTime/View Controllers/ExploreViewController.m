@@ -26,6 +26,8 @@
     self.titleBar.translucent = NO;
     self.titleBar.barTintColor = color;
     
+    self.searchTextField.delegate = self;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,8 +35,13 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    [searchBar resignFirstResponder];
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField == self.searchTextField) {
+        [textField resignFirstResponder];
+        return NO;
+    }
+    return YES;
 }
 
 
