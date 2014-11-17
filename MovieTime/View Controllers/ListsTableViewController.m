@@ -88,6 +88,7 @@
     
     cell.nameLabel.text = [object objectForKey:@"name"];
     cell.authorLabel.text = [object objectForKey:@"author"];
+     cell.backgroundView = [[UIImageView alloc] initWithImage:[ [UIImage imageNamed:@"lists-dashboard-bg"] resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeTile] ];
     
     return cell;
 }

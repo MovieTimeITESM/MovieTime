@@ -37,6 +37,9 @@
 		F0018E721A19A16E00EFD5CB /* profile-facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = F0018E6E1A19A16E00EFD5CB /* profile-facebook.png */; };
 		F0018E731A19A16E00EFD5CB /* profile-logout.png in Resources */ = {isa = PBXBuildFile; fileRef = F0018E6F1A19A16E00EFD5CB /* profile-logout.png */; };
 		F0018E741A19A16E00EFD5CB /* profile-twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = F0018E701A19A16E00EFD5CB /* profile-twitter.png */; };
+		F0018E781A19ABE000EFD5CB /* listas-dashboard-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = F0018E751A19ABE000EFD5CB /* listas-dashboard-bg.png */; };
+		F0018E791A19ABE000EFD5CB /* listas-dashboard-like.png in Resources */ = {isa = PBXBuildFile; fileRef = F0018E761A19ABE000EFD5CB /* listas-dashboard-like.png */; };
+		F0018E7A1A19ABE000EFD5CB /* listas-dashboard-liked.png in Resources */ = {isa = PBXBuildFile; fileRef = F0018E771A19ABE000EFD5CB /* listas-dashboard-liked.png */; };
 		F0292D621A1971AA00D2E12C /* searchbox.png in Resources */ = {isa = PBXBuildFile; fileRef = F0292D611A1971AA00D2E12C /* searchbox.png */; };
 		F085A4361A195B6800FAEBDE /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F085A4351A195B6800FAEBDE /* TabBarViewController.m */; };
 		F085A43A1A19633900FAEBDE /* lists.png in Resources */ = {isa = PBXBuildFile; fileRef = F085A4371A19633900FAEBDE /* lists.png */; };
@@ -114,6 +117,9 @@
 		F0018E6E1A19A16E00EFD5CB /* profile-facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-facebook.png"; sourceTree = "<group>"; };
 		F0018E6F1A19A16E00EFD5CB /* profile-logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-logout.png"; sourceTree = "<group>"; };
 		F0018E701A19A16E00EFD5CB /* profile-twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-twitter.png"; sourceTree = "<group>"; };
+		F0018E751A19ABE000EFD5CB /* listas-dashboard-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "listas-dashboard-bg.png"; sourceTree = "<group>"; };
+		F0018E761A19ABE000EFD5CB /* listas-dashboard-like.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "listas-dashboard-like.png"; sourceTree = "<group>"; };
+		F0018E771A19ABE000EFD5CB /* listas-dashboard-liked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "listas-dashboard-liked.png"; sourceTree = "<group>"; };
 		F0292D611A1971AA00D2E12C /* searchbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchbox.png; sourceTree = "<group>"; };
 		F085A4341A195B6800FAEBDE /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		F085A4351A195B6800FAEBDE /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
@@ -352,6 +358,9 @@
 		F085A43E1A19708200FAEBDE /* img */ = {
 			isa = PBXGroup;
 			children = (
+				F0018E751A19ABE000EFD5CB /* listas-dashboard-bg.png */,
+				F0018E761A19ABE000EFD5CB /* listas-dashboard-like.png */,
+				F0018E771A19ABE000EFD5CB /* listas-dashboard-liked.png */,
 				F0018E6D1A19A16E00EFD5CB /* profile-connect.png */,
 				F0018E6E1A19A16E00EFD5CB /* profile-facebook.png */,
 				F0018E6F1A19A16E00EFD5CB /* profile-logout.png */,
@@ -469,7 +478,10 @@
 				23F8814319F57E0F00D82431 /* LaunchScreen.xib in Resources */,
 				F085A43A1A19633900FAEBDE /* lists.png in Resources */,
 				F09C9E8F1A19955400A02FBD /* profile-blur.png in Resources */,
+				F0018E7A1A19ABE000EFD5CB /* listas-dashboard-liked.png in Resources */,
 				F0018E731A19A16E00EFD5CB /* profile-logout.png in Resources */,
+				F0018E781A19ABE000EFD5CB /* listas-dashboard-bg.png in Resources */,
+				F0018E791A19ABE000EFD5CB /* listas-dashboard-like.png in Resources */,
 				F09C9E931A19977400A02FBD /* profile-counters.png in Resources */,
 				204ADB9119FDAC9F006652B6 /* Main.storyboard in Resources */,
 				F085A43C1A19633900FAEBDE /* showtime.png in Resources */,

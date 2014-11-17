@@ -11,8 +11,7 @@
 @interface ListsTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
-
 @property (strong, nonatomic) IBOutlet UILabel *authorLabel;
-
+- (IBAction)likesButton:(id)sender;
 
 @end
