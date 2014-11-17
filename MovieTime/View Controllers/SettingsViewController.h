@@ -10,4 +10,7 @@
 
 @interface SettingsViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIView *statusBarBg;
+@property (strong, nonatomic) IBOutlet UINavigationBar *titleBar;
+
 @end

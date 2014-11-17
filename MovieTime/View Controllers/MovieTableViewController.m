@@ -23,6 +23,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    NSString *stringColor = @"#22c064";
+    NSUInteger red, green, blue;
+    sscanf([stringColor UTF8String], "#%02X%02X%02X", &red, &green, &blue);
+    
+    UIColor *color = [UIColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1];
+    self.navigationController.navigationBar.barTintColor = color;
+    self.navigationController.navigationBar.translucent = NO;
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    
     NSArray *titles = [[NSArray alloc] initWithObjects: @"Toy Story",
                                                         @"Monsters, Inc.",
                                                         @"Finding Nemo",

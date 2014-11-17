@@ -10,4 +10,6 @@
 
 @interface MovieTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
 
+@property (strong, nonatomic) IBOutlet UINavigationItem *titleBar;
+
 @end

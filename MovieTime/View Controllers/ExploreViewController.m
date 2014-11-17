@@ -26,6 +26,8 @@
     self.titleBar.translucent = NO;
     self.titleBar.barTintColor = color;
     
+    self.statusBarBg.backgroundColor = color;
+    
     self.searchTextField.delegate = self;
     
 }

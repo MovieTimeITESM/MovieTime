@@ -12,5 +12,6 @@
 
 @property (strong, nonatomic) IBOutlet UINavigationBar *titleBar;
 @property (strong, nonatomic) IBOutlet UITextField *searchTextField;
+@property (strong, nonatomic) IBOutlet UIView *statusBarBg;
 
 @end

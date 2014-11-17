@@ -243,15 +243,12 @@
 		23F8815819F5877E00D82431 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				23F8813919F57E0F00D82431 /* LoginViewController.h */,
-				23F8813A19F57E0F00D82431 /* LoginViewController.m */,
-				204ADB9219FDAF03006652B6 /* HomeViewController.h */,
-				204ADB9319FDAF03006652B6 /* HomeViewController.m */,
+				F050F4F51A197DFF00CE2515 /* LoginViewController */,
+				F050F4F41A197DF300CE2515 /* HomeViewController */,
 				203B81491A00BFCF00F3C954 /* Movies */,
 				203B81501A00CF0E00F3C954 /* Lists */,
 				F085A43D1A19646B00FAEBDE /* Explore */,
-				204ADB9B19FDAF2E006652B6 /* SettingsViewController.h */,
-				204ADB9C19FDAF2E006652B6 /* SettingsViewController.m */,
+				F050F4F61A197E0C00CE2515 /* SettingsViewController */,
 				F085A4331A195A6900FAEBDE /* tabBar */,
 			);
 			path = "View Controllers";
@@ -291,6 +288,33 @@
 				08AA581D2DE025FF86286CA0 /* Pods-MovieTime.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F050F4F41A197DF300CE2515 /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				204ADB9219FDAF03006652B6 /* HomeViewController.h */,
+				204ADB9319FDAF03006652B6 /* HomeViewController.m */,
+			);
+			name = HomeViewController;
+			sourceTree = "<group>";
+		};
+		F050F4F51A197DFF00CE2515 /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				23F8813919F57E0F00D82431 /* LoginViewController.h */,
+				23F8813A19F57E0F00D82431 /* LoginViewController.m */,
+			);
+			name = LoginViewController;
+			sourceTree = "<group>";
+		};
+		F050F4F61A197E0C00CE2515 /* SettingsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				204ADB9B19FDAF2E006652B6 /* SettingsViewController.h */,
+				204ADB9C19FDAF2E006652B6 /* SettingsViewController.m */,
+			);
+			name = SettingsViewController;
 			sourceTree = "<group>";
 		};
 		F085A4331A195A6900FAEBDE /* tabBar */ = {
