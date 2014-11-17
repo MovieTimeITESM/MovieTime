@@ -33,12 +33,19 @@
 		23F8814F19F57E0F00D82431 /* MovieTimeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F8814E19F57E0F00D82431 /* MovieTimeTests.m */; };
 		23F8815D19F5898B00D82431 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 23F8813A19F57E0F00D82431 /* LoginViewController.m */; };
 		2FBB45BB2DB34114AC092637 /* libPods-MovieTime.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78155907DB0C4E47A8D79574 /* libPods-MovieTime.a */; };
+		F0018E711A19A16E00EFD5CB /* profile-connect.png in Resources */ = {isa = PBXBuildFile; fileRef = F0018E6D1A19A16E00EFD5CB /* profile-connect.png */; };
+		F0018E721A19A16E00EFD5CB /* profile-facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = F0018E6E1A19A16E00EFD5CB /* profile-facebook.png */; };
+		F0018E731A19A16E00EFD5CB /* profile-logout.png in Resources */ = {isa = PBXBuildFile; fileRef = F0018E6F1A19A16E00EFD5CB /* profile-logout.png */; };
+		F0018E741A19A16E00EFD5CB /* profile-twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = F0018E701A19A16E00EFD5CB /* profile-twitter.png */; };
 		F0292D621A1971AA00D2E12C /* searchbox.png in Resources */ = {isa = PBXBuildFile; fileRef = F0292D611A1971AA00D2E12C /* searchbox.png */; };
 		F085A4361A195B6800FAEBDE /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F085A4351A195B6800FAEBDE /* TabBarViewController.m */; };
 		F085A43A1A19633900FAEBDE /* lists.png in Resources */ = {isa = PBXBuildFile; fileRef = F085A4371A19633900FAEBDE /* lists.png */; };
 		F085A43B1A19633900FAEBDE /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = F085A4381A19633900FAEBDE /* profile.png */; };
 		F085A43C1A19633900FAEBDE /* showtime.png in Resources */ = {isa = PBXBuildFile; fileRef = F085A4391A19633900FAEBDE /* showtime.png */; };
 		F085A4401A19708D00FAEBDE /* iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = F085A43F1A19708D00FAEBDE /* iphone.png */; };
+		F09C9E8F1A19955400A02FBD /* profile-blur.png in Resources */ = {isa = PBXBuildFile; fileRef = F09C9E8C1A19955400A02FBD /* profile-blur.png */; };
+		F09C9E911A19955400A02FBD /* profile-pic.png in Resources */ = {isa = PBXBuildFile; fileRef = F09C9E8E1A19955400A02FBD /* profile-pic.png */; };
+		F09C9E931A19977400A02FBD /* profile-counters.png in Resources */ = {isa = PBXBuildFile; fileRef = F09C9E921A19977400A02FBD /* profile-counters.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +110,10 @@
 		23F8814E19F57E0F00D82431 /* MovieTimeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieTimeTests.m; sourceTree = "<group>"; };
 		78155907DB0C4E47A8D79574 /* libPods-MovieTime.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MovieTime.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A20CB7870B1A162FB05B36CF /* Pods-MovieTime.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieTime.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieTime/Pods-MovieTime.debug.xcconfig"; sourceTree = "<group>"; };
+		F0018E6D1A19A16E00EFD5CB /* profile-connect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-connect.png"; sourceTree = "<group>"; };
+		F0018E6E1A19A16E00EFD5CB /* profile-facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-facebook.png"; sourceTree = "<group>"; };
+		F0018E6F1A19A16E00EFD5CB /* profile-logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-logout.png"; sourceTree = "<group>"; };
+		F0018E701A19A16E00EFD5CB /* profile-twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-twitter.png"; sourceTree = "<group>"; };
 		F0292D611A1971AA00D2E12C /* searchbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchbox.png; sourceTree = "<group>"; };
 		F085A4341A195B6800FAEBDE /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		F085A4351A195B6800FAEBDE /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
@@ -110,6 +121,9 @@
 		F085A4381A19633900FAEBDE /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 		F085A4391A19633900FAEBDE /* showtime.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = showtime.png; sourceTree = "<group>"; };
 		F085A43F1A19708D00FAEBDE /* iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iphone.png; sourceTree = "<group>"; };
+		F09C9E8C1A19955400A02FBD /* profile-blur.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-blur.png"; sourceTree = "<group>"; };
+		F09C9E8E1A19955400A02FBD /* profile-pic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-pic.png"; sourceTree = "<group>"; };
+		F09C9E921A19977400A02FBD /* profile-counters.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-counters.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -338,6 +352,13 @@
 		F085A43E1A19708200FAEBDE /* img */ = {
 			isa = PBXGroup;
 			children = (
+				F0018E6D1A19A16E00EFD5CB /* profile-connect.png */,
+				F0018E6E1A19A16E00EFD5CB /* profile-facebook.png */,
+				F0018E6F1A19A16E00EFD5CB /* profile-logout.png */,
+				F0018E701A19A16E00EFD5CB /* profile-twitter.png */,
+				F09C9E921A19977400A02FBD /* profile-counters.png */,
+				F09C9E8C1A19955400A02FBD /* profile-blur.png */,
+				F09C9E8E1A19955400A02FBD /* profile-pic.png */,
 				F0292D611A1971AA00D2E12C /* searchbox.png */,
 				F085A43F1A19708D00FAEBDE /* iphone.png */,
 				F085A4371A19633900FAEBDE /* lists.png */,
@@ -438,11 +459,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0292D621A1971AA00D2E12C /* searchbox.png in Resources */,
+				F0018E711A19A16E00EFD5CB /* profile-connect.png in Resources */,
 				F085A4401A19708D00FAEBDE /* iphone.png in Resources */,
+				F0018E721A19A16E00EFD5CB /* profile-facebook.png in Resources */,
 				23F8813E19F57E0F00D82431 /* Login.storyboard in Resources */,
+				F09C9E911A19955400A02FBD /* profile-pic.png in Resources */,
 				F085A43B1A19633900FAEBDE /* profile.png in Resources */,
+				F0018E741A19A16E00EFD5CB /* profile-twitter.png in Resources */,
 				23F8814319F57E0F00D82431 /* LaunchScreen.xib in Resources */,
 				F085A43A1A19633900FAEBDE /* lists.png in Resources */,
+				F09C9E8F1A19955400A02FBD /* profile-blur.png in Resources */,
+				F0018E731A19A16E00EFD5CB /* profile-logout.png in Resources */,
+				F09C9E931A19977400A02FBD /* profile-counters.png in Resources */,
 				204ADB9119FDAC9F006652B6 /* Main.storyboard in Resources */,
 				F085A43C1A19633900FAEBDE /* showtime.png in Resources */,
 				23F8814019F57E0F00D82431 /* Images.xcassets in Resources */,

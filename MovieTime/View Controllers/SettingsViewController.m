@@ -8,8 +8,12 @@
 
 #import "SettingsViewController.h"
 #import "ILSession.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface SettingsViewController ()
+{
+    
+}
 
 @end
 
@@ -26,6 +30,12 @@
     self.titleBar.translucent = NO;
     self.titleBar.barTintColor = color;
     self.statusBarBg.backgroundColor = color;
+    
+    self.profileRound.layer.cornerRadius = 50;
+    self.profileRound.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.profileRound.layer.borderWidth = 3;
+    self.profileRound.clipsToBounds = YES;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,9 +44,8 @@
 }
 - (IBAction)logoutButtonDidClicked:(UIButton *)sender {
     [self dismissViewControllerAnimated:YES completion:^(){
-        ILUser *user = [[ILUser alloc] init];
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
-        
+        ILUser *user = [[ILUser alloc] init];
         [user logOutWithSuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
             [activeSession clearSessionAndToken];
             [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
@@ -57,4 +66,9 @@
 }
 */
 
+- (IBAction)botonFacebook:(id)sender {
+}
+
+- (IBAction)botonTwitter:(id)sender {
+}
 @end
