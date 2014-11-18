@@ -6,6 +6,7 @@ PODS:
   - HexColors (2.2.1)
   - ISO8601DateFormatterValueTransformer (0.5.0):
     - RKValueTransformers (~> 1.0.0)
+  - LBBlurredImage (0.2.0)
   - MBProgressHUD (0.9)
   - RestKit (0.22.0):
     - RestKit/Core
@@ -32,6 +33,7 @@ PODS:
 DEPENDENCIES:
   - Facebook-iOS-SDK
   - HexColors
+  - LBBlurredImage
   - MBProgressHUD (~> 0.8)
   - RestKit (from `https://github.com/kurenn/RestKit.git`, branch `paginatorPatternWithParameters`)
 
@@ -46,6 +48,7 @@ SPEC CHECKSUMS:
   Facebook-iOS-SDK: cb7d74759d0b1ba546e6e6f1dde407b0d4e448d6
   HexColors: 01384d2bbe8dc4ffa43c3b4135db6e976952d153
   ISO8601DateFormatterValueTransformer: a7e1ecf4380d0b561306ced1a3f01bd5f65d2213
+  LBBlurredImage: 30cc42be977bbcece286d26d2d9c08b8be7f05e8
   MBProgressHUD: 2038dbcf3dce73215abed6001657043d53aa79a8
   RestKit: 8aedc01890f52f090ff30f60c709eab072dd14c3
   RKValueTransformers: 994503e34bffdbe0159ff6b497290dd1f8d5657f

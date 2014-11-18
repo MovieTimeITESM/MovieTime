@@ -11,37 +11,36 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface SettingsViewController ()
-{
-    
-}
-
+@property (weak, nonatomic) IBOutlet UILabel *starsNumber;
+@property (weak, nonatomic) IBOutlet UILabel *listsNumber;
+@property (weak, nonatomic) IBOutlet UILabel *likesNumber;
+@property (strong, nonatomic) IBOutlet UIImageView *profilePic;
+@property (strong, nonatomic) IBOutlet UIImageView *profileRound;
+@property (strong, nonatomic) IBOutlet UILabel *emailLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userName;
 @end
 
 @implementation SettingsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    NSString *stringColor = @"#22c064";
-    NSUInteger red, green, blue;
-    sscanf([stringColor UTF8String], "#%02X%02X%02X", &red, &green, &blue);
-    
-    UIColor *color = [UIColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1];
-    self.titleBar.translucent = NO;
-    self.titleBar.barTintColor = color;
-    self.statusBarBg.backgroundColor = color;
-    
     self.profileRound.layer.cornerRadius = 50;
     self.profileRound.layer.borderColor = [UIColor whiteColor].CGColor;
     self.profileRound.layer.borderWidth = 3;
     self.profileRound.clipsToBounds = YES;
-    
+    self.profilePic.clipsToBounds = YES;
+    self.userName.text = [activeSession currentUser].name;
+    self.emailLabel.text = [activeSession currentUser].email;
+    [self loadProfilePicture];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)loadProfilePicture {
+    NSString *profilePicURL = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture?type=large", [activeSession currentUser].uid];
+    
+    self.profilePic.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:profilePicURL]]];
+    self.profileRound.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:profilePicURL]]];
 }
+
 - (IBAction)logoutButtonDidClicked:(UIButton *)sender {
     [self dismissViewControllerAnimated:YES completion:^(){
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
@@ -56,19 +55,4 @@
     }];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-- (IBAction)botonFacebook:(id)sender {
-}
-
-- (IBAction)botonTwitter:(id)sender {
-}
 @end

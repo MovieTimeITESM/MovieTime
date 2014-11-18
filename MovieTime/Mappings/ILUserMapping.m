@@ -17,7 +17,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         RKObjectMapping *mapping = [RKObjectMapping mappingForClass:[ILUser class]];
-        [mapping addAttributeMappingsFromArray:@[@"name", @"email"]];
+        [mapping addAttributeMappingsFromArray:@[@"name", @"email", @"uid"]];
         [mapping addAttributeMappingsFromDictionary:@{
                                                       @"id": @"userId",
                                                       @"auth_token": @"authToken"

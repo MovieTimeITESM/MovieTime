@@ -10,15 +10,4 @@
 
 @interface SettingsViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UIView *statusBarBg;
-@property (strong, nonatomic) IBOutlet UINavigationBar *titleBar;
-@property (strong, nonatomic) IBOutlet UIImageView *profilePic;
-@property (strong, nonatomic) IBOutlet UILabel *likesLabel;
-@property (strong, nonatomic) IBOutlet UILabel *listsLabel;
-@property (strong, nonatomic) IBOutlet UILabel *starsLabel;
-@property (strong, nonatomic) IBOutlet UIImageView *profileRound;
-@property (strong, nonatomic) IBOutlet UILabel *emailLabel;
-- (IBAction)botonFacebook:(id)sender;
-- (IBAction)botonTwitter:(id)sender;
-
 @end

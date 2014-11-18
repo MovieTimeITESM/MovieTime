@@ -9,29 +9,20 @@
 #import "MovieTableViewController.h"
 #import "MovieTableViewCell.h"
 #import "MovieDetailViewController.h"
+#import <HexColors/HexColor.h>
 
-@interface MovieTableViewController ()
-{
+@interface MovieTableViewController ()  <UITableViewDelegate, UITableViewDataSource>
+@end
+
+@implementation MovieTableViewController {
     NSMutableArray *movies;
     NSDictionary *movie;
 }
 
-@end
-
-@implementation MovieTableViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    NSString *stringColor = @"#22c064";
-    NSUInteger red, green, blue;
-    sscanf([stringColor UTF8String], "#%02X%02X%02X", &red, &green, &blue);
-    
-    UIColor *color = [UIColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1];
-    self.navigationController.navigationBar.barTintColor = color;
-    self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
-    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithHexString:@"#22c064"];
     
     NSArray *titles = [[NSArray alloc] initWithObjects: @"Toy Story",
                                                         @"Monsters, Inc.",
@@ -59,11 +50,6 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
@@ -96,47 +82,7 @@
     
     NSLog(@"%@", movieTitle);
     
-    /*
-    UIViewController *initialMainVC = [[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateInitialViewController];
-    [self presentViewController:initialMainVC animated:YES completion:nil];
-    */
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

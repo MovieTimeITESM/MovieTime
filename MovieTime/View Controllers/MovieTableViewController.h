@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MovieTableViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource>
-
-@property (strong, nonatomic) IBOutlet UINavigationItem *titleBar;
+@interface MovieTableViewController : UITableViewController
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "TabBarViewController.h"
+#import <HexColor.h>
 
 @interface TabBarViewController ()
 
@@ -45,13 +46,7 @@
     // also repeat for every tab
     fourthTab.image = [[UIImage imageNamed:@"tab-bar-profile"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal ];
     
-    NSString *stringColor = @"#22c064";
-    NSUInteger red, green, blue;
-    sscanf([stringColor UTF8String], "#%02X%02X%02X", &red, &green, &blue);
-    
-    UIColor *color = [UIColor colorWithRed:red/255.0 green:green/255.0 blue:blue/255.0 alpha:1];
-    
-    [[UITabBar appearance] setBarTintColor:color /*#22c064*/];
+    [[UITabBar appearance] setBarTintColor: [UIColor colorWithHexString:@"#22c064"]];
 }
 
 - (void)didReceiveMemoryWarning {
