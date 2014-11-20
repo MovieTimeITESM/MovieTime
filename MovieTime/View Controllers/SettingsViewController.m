@@ -9,6 +9,7 @@
 #import "SettingsViewController.h"
 #import "ILSession.h"
 #import <QuartzCore/QuartzCore.h>
+#import "UIImageView+LBBlurredImage.h"
 
 @interface SettingsViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *starsNumber;
@@ -37,7 +38,9 @@
 - (void)loadProfilePicture {
     NSString *profilePicURL = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture?type=large", [activeSession currentUser].uid];
     
-    self.profilePic.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:profilePicURL]]];
+    [self.profilePic setImageToBlur:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:profilePicURL]]]
+                         blurRadius:2.5f
+                    completionBlock:nil];
     self.profileRound.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:profilePicURL]]];
 }
 
