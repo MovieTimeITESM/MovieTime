@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "012AA50713546D96BA7FBC31"
+               BlueprintIdentifier = "797600D66DA2FB5F1B6AFFC1"
                BuildableName = "libPods-MovieTime-SOCKit.a"
                BlueprintName = "Pods-MovieTime-SOCKit"
                ReferencedContainer = "container:Pods.xcodeproj">

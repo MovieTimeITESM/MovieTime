@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-MovieTime-LBBlurredImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MovieTime-MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,57 +67,62 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>012AA50713546D96BA7FBC31</key>
+		<key>0C687B2A27268497A2B844CE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>02F527A2D0199E986A277A34</key>
+		<key>14FD43BD438E0E1109E2BA5F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>030F5F8F78170D96E66B27B8</key>
+		<key>1958525A60407EEC254C7E6A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0908B717731372A1DB611AA0</key>
+		<key>68FE4E0F2B0E0063105DCFEA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0A42196E5BC8480C0871C5AE</key>
+		<key>79556F993E1C9D687C3716B9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1A4BA4F2FDADDABCCF2355C8</key>
+		<key>797600D66DA2FB5F1B6AFFC1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>235B0CE830B8952E5CD76B3F</key>
+		<key>89F82C02525281EB41285A9E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6DE94C6023FD225676BAD875</key>
+		<key>8ACECF2E557BBAFEDC582992</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AD72FCF95248A8846DEFF38E</key>
+		<key>9BF5A476E37EF25D42F593EC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D193E43126C91F4CFC7F6B05</key>
+		<key>9FCB774B3A3B66DAEE1C67ED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DADDC41CDC2A359696CA8CE0</key>
+		<key>B1BF2F07A6EBCF047FC86073</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E9D9C0C9761940584C289718</key>
 		<dict>
 			<key>primary</key>
 			<true/>

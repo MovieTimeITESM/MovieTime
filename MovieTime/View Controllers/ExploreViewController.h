@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ExploreViewController : UIViewController <UITextFieldDelegate>
+@interface ExploreViewController : UIViewController <UITextFieldDelegate, NSURLConnectionDataDelegate, NSURLConnectionDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *searchTextField;
+@property (strong, nonatomic) NSURLConnection *connection;
+@property (strong, nonatomic) NSMutableData *responseData;
+
 @end
