@@ -44,7 +44,11 @@
         self.titleLabel.text = [self.detailItem objectForKey:@"title"];
         self.yearLabel.text = [NSString stringWithFormat:@"%@",[self.detailItem objectForKey:@"year"]];
         id posters = [self.detailItem objectForKey:@"posters"];
-        self.moviePoster.image  = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[posters objectForKey:@"profile"]]]];
+        NSLog(@"%@",[posters objectForKey:@"profile"]);
+        
+        NSString *posterUrl = [[posters objectForKey:@"profile"]stringByReplacingOccurrencesOfString:@"_tmb" withString:@"_det"];
+        
+        self.moviePoster.image  = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:posterUrl]]];
     }
 }
 
