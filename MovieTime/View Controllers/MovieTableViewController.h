@@ -10,4 +10,5 @@
 
 @interface MovieTableViewController : UITableViewController
 @property BOOL searchBool;
+@property (strong, nonatomic) NSMutableArray *movies;
 @end

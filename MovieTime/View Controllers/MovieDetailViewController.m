@@ -42,7 +42,9 @@
     
     if (self.detailItem) {
         self.titleLabel.text = [self.detailItem objectForKey:@"title"];
-        self.yearLabel.text = [self.detailItem objectForKey:@"year"];
+        self.yearLabel.text = [NSString stringWithFormat:@"%@",[self.detailItem objectForKey:@"year"]];
+        id posters = [self.detailItem objectForKey:@"posters"];
+        self.moviePoster.image  = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[posters objectForKey:@"profile"]]]];
     }
 }
 

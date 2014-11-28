@@ -40,7 +40,6 @@
         NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60];
         self.connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
         self.responseData = [[NSMutableData alloc] init];
-        [self performSegueWithIdentifier:@"search" sender:self];
         return NO;
     }
     return YES;
@@ -70,8 +69,9 @@
     if(self.movies.count == 0){
         NSLog(@"No hay movies");
     }else{
-        NSLog(@"title: %@, movies: %i",[self.movies[0] objectForKey:@"title"], self.movies.count);
+        //NSLog(@"title: %@, movies: %i",[self.movies[0] objectForKey:@"title"], self.movies.count);
     }
+    [self performSegueWithIdentifier:@"search" sender:self];
 }
 
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
@@ -88,6 +88,7 @@
     {
         MovieTableViewController *movieVC = [segue destinationViewController];
         movieVC.searchBool = YES;
+        movieVC.movies = (NSMutableArray*)self.movies;
     }
 }
 

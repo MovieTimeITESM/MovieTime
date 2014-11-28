@@ -15,14 +15,7 @@
 @end
 
 @implementation MovieTableViewController {
-    NSMutableArray *movies;
     NSDictionary *movie;
-}
-
--(void)viewWillAppear:(BOOL)animated
-{
-    [self.navigationController setNavigationBarHidden:NO animated:NO];
-    [self.navigationController setToolbarHidden:NO animated:NO];
 }
 
 - (void)viewDidLoad {
@@ -33,30 +26,32 @@
     
     if(self.searchBool){
         NSLog(@"SI JALA");
-    }
-    
-    NSArray *titles = [[NSArray alloc] initWithObjects: @"Toy Story",
-                                                        @"Monsters, Inc.",
-                                                        @"Finding Nemo",
-                                                        nil];
-    
-    NSArray *years = [[NSArray alloc] initWithObjects:  @"1995",
-                                                        @"2001",
-                                                        @"2003",
-                                                        nil];
-    
-    if(!movies){
-        movies = [[NSMutableArray alloc] init];
-    }
-    
-    for(int i=0; i < [titles count]; i++)
-    {
-        movie = [[NSDictionary alloc] initWithObjectsAndKeys:
-                 [titles objectAtIndex:i], @"title",
-                 [years objectAtIndex:i], @"year",
-                 nil];
+        [self.tableView reloadData];
+        NSLog(@"title: %@, movies: %i",[self.movies[0] objectForKey:@"title"], self.movies.count);
+    }else{
+        if(!self.movies){
+            self.movies = [[NSMutableArray alloc] init];
+        }
         
-        [movies addObject:movie];
+        NSArray *titles = [[NSArray alloc] initWithObjects: @"Toy Story",
+                           @"Monsters, Inc.",
+                           @"Finding Nemo",
+                           nil];
+        
+        NSArray *years = [[NSArray alloc] initWithObjects:  @"1995",
+                          @"2001",
+                          @"2003",
+                          nil];
+        
+        for(int i=0; i < [titles count]; i++)
+        {
+            movie = [[NSDictionary alloc] initWithObjectsAndKeys:
+                     [titles objectAtIndex:i], @"title",
+                     [years objectAtIndex:i], @"year",
+                     nil];
+            
+            [self.movies addObject:movie];
+        }
     }
     
     self.tableView.delegate = self;
@@ -72,7 +67,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
-    return [movies count];
+    return self.movies.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -80,16 +75,16 @@
     MovieTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"MovieCell"
                                                                forIndexPath:indexPath];
     
-    NSDictionary *object = movies[indexPath.row];
+    //NSDictionary *object = self.movies[indexPath.row];
     
-    cell.titleLabel.text = [object objectForKey:@"title"];
-    cell.yearLabel.text = [object objectForKey:@"year"];
+    cell.titleLabel.text = [self.movies[indexPath.row] objectForKey:@"title"];
+    cell.yearLabel.text = [NSString stringWithFormat:@"%@",[self.movies[indexPath.row] objectForKey:@"year"]];
     
     return cell;
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSString *movieTitle = [movies[indexPath.row] objectForKey:@"title"];
+    NSString *movieTitle = [self.movies[indexPath.row] objectForKey:@"title"];
     
     NSLog(@"%@", movieTitle);
     
@@ -102,7 +97,8 @@
     
     if ([[segue identifier] isEqualToString:@"ShowDetailMovie"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDictionary *object = movies[indexPath.row];
+        
+        NSDictionary *object = self.movies[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
     }
 }

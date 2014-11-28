@@ -16,5 +16,6 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *yearLabel;
 
+@property (strong, nonatomic) IBOutlet UIImageView *moviePoster;
 
 @end

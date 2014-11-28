@@ -99,11 +99,15 @@
                                     <segue destination="DMQ-0h-JUh" kind="push" identifier="ShowTrailerMovie" id="Aco-YO-tGn"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CUe-fj-LoN">
+                                <rect key="frame" x="16" y="82" width="105" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ehx-IO-OLR"/>
                     <connections>
+                        <outlet property="moviePoster" destination="CUe-fj-LoN" id="aBg-Zw-IUr"/>
                         <outlet property="titleLabel" destination="PHB-Pj-pdF" id="B5R-Hi-CJc"/>
                         <outlet property="yearLabel" destination="xjI-Dc-Xz1" id="mjJ-A1-bWb"/>
                     </connections>
