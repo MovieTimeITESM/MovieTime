@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MovieTableViewController : UITableViewController
-
+@property BOOL searchBool;
 @end

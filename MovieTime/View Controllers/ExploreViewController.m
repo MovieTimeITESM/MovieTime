@@ -7,6 +7,7 @@
 //
 
 #import "ExploreViewController.h"
+#import "MovieTableViewController.h"
 #import <HexColors/HexColor.h>
 
 @interface ExploreViewController ()
@@ -23,6 +24,9 @@
     self.searchTextField.delegate = self;
     self.searchView.layer.cornerRadius = 15;
     self.topView.backgroundColor = [UIColor colorWithHexString:@"#22c064"];
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithHexString:@"#22c064"];
+    self.navigationController.navigationBar.translucent = NO;
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -36,6 +40,7 @@
         NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60];
         self.connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
         self.responseData = [[NSMutableData alloc] init];
+        [self performSegueWithIdentifier:@"search" sender:self];
         return NO;
     }
     return YES;
@@ -77,5 +82,13 @@
     NSLog(@"Error en la conexion");
 }
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"search"])
+    {
+        MovieTableViewController *movieVC = [segue destinationViewController];
+        movieVC.searchBool = YES;
+    }
+}
 
 @end

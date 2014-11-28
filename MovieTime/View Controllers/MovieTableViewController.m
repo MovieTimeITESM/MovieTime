@@ -19,10 +19,21 @@
     NSDictionary *movie;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:NO];
+    [self.navigationController setToolbarHidden:NO animated:NO];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithHexString:@"#22c064"];
+    self.navigationController.navigationBar.translucent = NO;
+    
+    if(self.searchBool){
+        NSLog(@"SI JALA");
+    }
     
     NSArray *titles = [[NSArray alloc] initWithObjects: @"Toy Story",
                                                         @"Monsters, Inc.",
