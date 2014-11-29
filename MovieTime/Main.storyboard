@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4fR-kA-Rrh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4fR-kA-Rrh">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
@@ -195,12 +195,15 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KFU-gB-q2G">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="241"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8fx-Rl-kK6">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="241"/>
+                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UL1-nQ-92K">
                                         <rect key="frame" x="279" y="21" width="33" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="X">
-                                            <color key="titleColor" red="0.40784313729999999" green="0.40784313729999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="0.13333333333333333" green="0.75294117647058822" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="unwindToLists:" destination="7MK-I3-q0o" eventType="touchUpInside" id="YSP-9o-HR3"/>
@@ -212,6 +215,9 @@
                                             <color key="titleColor" red="0.40784313725490196" green="0.40784313725490196" blue="0.40784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="addAvatarButtonPressed:" destination="7MK-I3-q0o" eventType="touchUpInside" id="qbC-dc-xoJ"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add cover" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYf-DZ-Kgs">
                                         <rect key="frame" x="121" y="152" width="79" height="21"/>
@@ -228,6 +234,12 @@
                                 <state key="normal" title="Create">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <state key="disabled">
+                                    <color key="titleColor" red="0.40784313729999999" green="0.40784313729999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="createListDidClicked:" destination="7MK-I3-q0o" eventType="touchUpInside" id="FZd-Xt-V1h"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NEp-OK-mmM">
                                 <rect key="frame" x="16" y="256" width="288" height="30"/>
@@ -241,6 +253,12 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="New list" id="wOb-KR-JZf"/>
+                    <connections>
+                        <outlet property="addAvatar" destination="fas-aA-TVq" id="fBD-Gh-97D"/>
+                        <outlet property="avatar" destination="8fx-Rl-kK6" id="dBW-k4-9Tm"/>
+                        <outlet property="continueButton" destination="ZH8-YI-IJQ" id="CuU-YJ-3Jw"/>
+                        <outlet property="name" destination="NEp-OK-mmM" id="rZA-vw-ap8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fpi-bt-phx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

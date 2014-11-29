@@ -436,6 +436,7 @@
 				TargetAttributes = {
 					23F8812E19F57E0F00D82431 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = TAGM86AK24;
 					};
 					23F8814719F57E0F00D82431 = {
 						CreatedOnToolsVersion = 6.0.1;
