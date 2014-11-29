@@ -10,6 +10,7 @@
 #import <MobileCoreServices/UTCoreTypes.h>
 #import <QuartzCore/QuartzCore.h>
 #import <HexColors/HexColor.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface AddListViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *continueButton;
@@ -46,6 +47,8 @@
     return YES;
 }
 - (IBAction)createListDidClicked:(UIButton *)sender {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    // make the request... on success dismiss view controller, on failure show alert
     NSLog(@"HEEY - ESAFNSF");
 }
 

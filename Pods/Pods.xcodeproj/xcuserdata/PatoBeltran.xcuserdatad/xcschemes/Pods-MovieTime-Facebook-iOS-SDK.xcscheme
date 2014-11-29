@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4669EA9DB27801B7E1F25278"
+               BlueprintIdentifier = "E53AD5830E1905742DE58BB1"
                BuildableName = "libPods-MovieTime-Facebook-iOS-SDK.a"
                BlueprintName = "Pods-MovieTime-Facebook-iOS-SDK"
                ReferencedContainer = "container:Pods.xcodeproj">

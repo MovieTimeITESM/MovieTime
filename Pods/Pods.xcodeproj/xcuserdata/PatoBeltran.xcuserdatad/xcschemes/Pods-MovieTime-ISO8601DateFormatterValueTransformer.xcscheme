@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "619273312248409962612DF8"
+               BlueprintIdentifier = "F792C2325E7CEA8C1C9E7D03"
                BuildableName = "libPods-MovieTime-ISO8601DateFormatterValueTransformer.a"
                BlueprintName = "Pods-MovieTime-ISO8601DateFormatterValueTransformer"
                ReferencedContainer = "container:Pods.xcodeproj">
