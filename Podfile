@@ -7,6 +7,7 @@ pod 'MBProgressHUD', '~> 0.8'
 pod 'RestKit', git: 'https://github.com/kurenn/RestKit.git', branch: 'paginatorPatternWithParameters'
 pod 'HexColors'
 pod 'LBBlurredImage'
+pod 'UIImage+ImageCompress'
 end
 
 target "MovieTimeTests" do

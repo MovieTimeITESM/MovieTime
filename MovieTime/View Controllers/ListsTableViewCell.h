@@ -8,10 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol PBListCellDelegate <NSObject>
+
+- (void)shouldReloadTable;
+
+@end
+
 @interface ListsTableViewCell : UITableViewCell
-
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (strong, nonatomic) IBOutlet UILabel *authorLabel;
-- (IBAction)likesButton:(id)sender;
-
+@property (strong, nonatomic) id<PBListCellDelegate> delegate;
 @end

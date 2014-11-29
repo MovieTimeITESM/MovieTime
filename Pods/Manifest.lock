@@ -29,6 +29,7 @@ PODS:
   - RKValueTransformers (1.0.1)
   - SOCKit (1.1)
   - TransitionKit (2.0.0)
+  - UIImage+ImageCompress (0.0.1)
 
 DEPENDENCIES:
   - Facebook-iOS-SDK
@@ -36,6 +37,7 @@ DEPENDENCIES:
   - LBBlurredImage
   - MBProgressHUD (~> 0.8)
   - RestKit (from `https://github.com/kurenn/RestKit.git`, branch `paginatorPatternWithParameters`)
+  - UIImage+ImageCompress
 
 EXTERNAL SOURCES:
   RestKit:
@@ -54,5 +56,6 @@ SPEC CHECKSUMS:
   RKValueTransformers: 994503e34bffdbe0159ff6b497290dd1f8d5657f
   SOCKit: d8d0dd3688ae1026c12367570da8fa8e1a6980fb
   TransitionKit: 7877021649a734f3239ed176b7967de29321dcf3
+  UIImage+ImageCompress: 170241cb980e3f5057d74122480a24c92d25d8a8
 
 COCOAPODS: 0.34.4

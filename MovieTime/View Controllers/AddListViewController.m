@@ -11,6 +11,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import <HexColors/HexColor.h>
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "PBList.h"
+#import "ILSession.h"
 
 @interface AddListViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIActionSheetDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *continueButton;
@@ -47,9 +49,27 @@
     return YES;
 }
 - (IBAction)createListDidClicked:(UIButton *)sender {
+    NSDictionary *params = @{ @"name" : self.name.text,
+                              @"avatar" : self.avatar.image,
+                              @"user_id" : [activeSession currentUser].userId
+                              };
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    // make the request... on success dismiss view controller, on failure show alert
-    NSLog(@"HEEY - ESAFNSF");
+    [PBList createListWithParameters:params
+                             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                 [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                 [self dismissViewControllerAnimated:YES completion:^{
+                                     //Refresh lists
+                                 }];
+                             }
+                             failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                 [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Server is down."
+                                                                                 message:@"The server is having some troubles.\nPlease try again later."
+                                                                                delegate:nil
+                                                                       cancelButtonTitle:@"Ok"
+                                                                       otherButtonTitles: nil];
+                                 [alert show];
+                             }];
 }
 
 #pragma mark - Add Image

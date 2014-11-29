@@ -9,7 +9,9 @@
 #import "ListsDetailViewController.h"
 
 @interface ListsDetailViewController ()
-
+@property (weak, nonatomic) IBOutlet UILabel *likesLabel;
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *authorLabel;
 @end
 
 @implementation ListsDetailViewController
@@ -20,16 +22,10 @@
     [self configureView];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void)setDetailItem:(id)newDetailItem
+- (void)setDetailItem:(PBList *)newDetailItem
 {
     if (_detailItem != newDetailItem) {
         _detailItem = newDetailItem;
-        
         // Update the view.
         [self configureView];
     }
@@ -38,21 +34,11 @@
 - (void)configureView
 {
     // Update the user interface for the detail item.
-    
     if (self.detailItem) {
-        self.nameLabel.text = [self.detailItem objectForKey:@"name"];
-        self.authorLabel.text = [self.detailItem objectForKey:@"author"];
+        self.nameLabel.text = self.detailItem.name;
+        self.authorLabel.text = self.detailItem.owner;
+        self.likesLabel.text = self.detailItem.likes.stringValue;
     }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

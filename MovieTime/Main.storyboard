@@ -350,6 +350,7 @@
                     <navigationItem key="navigationItem" id="kEX-13-Fqb"/>
                     <connections>
                         <outlet property="authorLabel" destination="D2r-rr-2eZ" id="jrV-mn-Bsw"/>
+                        <outlet property="likesLabel" destination="4Sv-f5-JcM" id="8Fc-AC-vBo"/>
                         <outlet property="nameLabel" destination="ObP-LN-4c3" id="bqM-Qk-6E3"/>
                     </connections>
                 </viewController>
@@ -376,6 +377,9 @@
                                     <segment title="My lists"/>
                                 </segments>
                                 <color key="tintColor" red="0.1333333333" green="0.75294117650000003" blue="0.3921568627" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="listTabsValueDidChanged:" destination="Xwr-YD-T0R" eventType="valueChanged" id="Gu4-ih-Iah"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="83" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Snk-Yb-oC6">
                                 <rect key="frame" x="0.0" y="123" width="320" height="396"/>
@@ -415,6 +419,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="authorLabel" destination="I92-S4-ttI" id="6JL-Hw-neq"/>
+                                            <outlet property="likeButton" destination="V8u-Tj-CjS" id="ZfK-IC-vY4"/>
                                             <outlet property="nameLabel" destination="CPD-zs-Q3i" id="5Rd-Uc-gT0"/>
                                             <segue destination="D8Z-Ag-8bN" kind="push" identifier="ShowDetailList" id="lZz-Qz-ogk"/>
                                         </connections>
@@ -432,6 +437,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="listTab" destination="H2z-zm-8ML" id="dNq-IM-3Ix"/>
                         <outlet property="listsTableView" destination="Snk-Yb-oC6" id="LAg-2u-Bzf"/>
                     </connections>
                 </viewController>

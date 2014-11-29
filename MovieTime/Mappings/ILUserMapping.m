@@ -62,7 +62,6 @@
                                                                                           keyPath:@"user"
                                                                                       statusCodes:[ILMappingManager statusCodeSet]];
     
-    
     return @[logOutDescriptor, showDescriptor, loginDescriptor];
 }
 
