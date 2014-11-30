@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -16,18 +17,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loginbg" translatesAutoresizingMaskIntoConstraints="NO" id="oKU-Zh-FLx">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="loginbg" translatesAutoresizingMaskIntoConstraints="NO" id="oKU-Zh-FLx">
                                 <rect key="frame" x="0.0" y="-2" width="320" height="573"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ee2-XJ-eD0" customClass="ILLoginView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ee2-XJ-eD0" customClass="ILLoginView">
                                 <rect key="frame" x="23" y="389" width="275" height="76"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="E0m-jL-tzE"/>
+                                    <constraint firstAttribute="width" constant="275" id="T77-6W-kHR"/>
+                                </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="6fi-ri-U6q">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="6fi-ri-U6q">
                                 <rect key="frame" x="24" y="137" width="273" height="67"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.12549019607843137" green="0.13725490196078433" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="6fi-ri-U6q" secondAttribute="centerX" id="0mk-a1-E6I"/>
+                            <constraint firstItem="oKU-Zh-FLx" firstAttribute="top" secondItem="6fi-ri-U6q" secondAttribute="bottom" constant="-206" id="Ufx-VA-EDB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oKU-Zh-FLx" secondAttribute="trailing" constant="-16" id="XRQ-iy-IVZ"/>
+                            <constraint firstItem="oKU-Zh-FLx" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="cza-y5-XJj"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="oKU-Zh-FLx" secondAttribute="bottom" constant="-3" id="d2R-xi-Wb8"/>
+                            <constraint firstItem="Ee2-XJ-eD0" firstAttribute="top" secondItem="oKU-Zh-FLx" secondAttribute="bottom" constant="-182" id="ebR-0y-0Qj"/>
+                            <constraint firstItem="oKU-Zh-FLx" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" constant="-2" id="ofc-Qk-RqD"/>
+                            <constraint firstAttribute="centerX" secondItem="Ee2-XJ-eD0" secondAttribute="centerX" id="tKM-jt-Upi"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="loginView" destination="Ee2-XJ-eD0" id="1VB-7V-VRQ"/>
