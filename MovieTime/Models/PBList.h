@@ -35,6 +35,14 @@
                   failure:(RKFailureBlock)failure;
 
 /**
+ Sends a PUT request to server to make private a list with
+ the specified ID.
+ **/
++ (void)makePrivateForListWithId:(NSNumber *)listId
+                         success:(RKSuccessBlock)success
+                         failure:(RKFailureBlock)failure;
+
+/**
  Sends a GET request to server to get a list of all the 
  lists.
  **/

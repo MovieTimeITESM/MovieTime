@@ -171,8 +171,30 @@
 }
 
 - (IBAction)saveListLocally:(id)sender {
-    NSLog(@"List should be saved on a database");
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [PBList makePrivateForListWithId:self.detailItem.listId
+                             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                 NSLog(@"List should be saved on a database");
+                                 [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success"
+                                                                                 message:@"The list have been saved to your local storage and will not be shown to the public."
+                                                                                delegate:nil
+                                                                       cancelButtonTitle:@"Ok"
+                                                                       otherButtonTitles: nil];
+                                 [alert show];
+                             }
+                             failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                                     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Server is down."
+                                                                                     message:@"The server is having some troubles.\nPlease try again later."
+                                                                                    delegate:nil
+                                                                           cancelButtonTitle:@"Ok"
+                                                                           otherButtonTitles: nil];
+                                     [alert show];
+                                 }];
+                                 NSLog(@"ERROR - Failed to make list private");
+                             }];
 }
-
 
 @end
