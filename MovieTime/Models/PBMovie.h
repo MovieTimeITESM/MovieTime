@@ -9,9 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface PBMovie : NSObject
+@property (nonatomic, strong) NSNumber *movieId;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, strong) NSNumber *year;
-@property (nonatomic, copy) NSString *movId;
+@property (nonatomic, copy) NSString *rottenId;
 @property (nonatomic, copy) NSString *poster;
 @property (nonatomic, strong) NSNumber *ratings;
 @property (nonatomic, copy) NSString *mpaaRatings;

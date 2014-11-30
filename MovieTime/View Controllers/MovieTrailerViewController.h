@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PBMovie.h"
 
 @interface MovieTrailerViewController : UIViewController
 
-@property (strong, nonatomic) id detailItem;
+@property (strong, nonatomic) PBMovie *detailItem;
 
-@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 
 @end

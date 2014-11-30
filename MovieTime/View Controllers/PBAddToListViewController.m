@@ -15,16 +15,15 @@
 @property (weak, nonatomic) IBOutlet UIButton *continueButton;
 @property (weak, nonatomic) IBOutlet UITableView *userLists;
 @property (strong, nonatomic) NSArray *lists;
+@property (strong, nonatomic) NSIndexPath *selectedCellIndexPath;
 @end
 
 @implementation PBAddToListViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    //load lists
-    [self loadData];
     self.lists = [[NSArray alloc] init];
+    [self loadData];
     self.continueButton.enabled = NO;
     self.userLists.delegate = self;
     self.userLists.dataSource = self;
@@ -35,6 +34,8 @@
 }
 
 - (IBAction)addButtonClicked:(id)sender {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    //Call to PBList's add movie method with movie params
 }
 
 
@@ -60,9 +61,18 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"addListCell"];
     }
     
+    if ([self.selectedCellIndexPath isEqual:indexPath]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
     cell.textLabel.text = ((PBList *)self.lists[indexPath.row]).name;
     return cell;
 }
+
+#pragma mark - Helper methods
 
 - (void)loadData {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -86,6 +96,20 @@
                             }];
                             NSLog(@"ERROR - Could not load lists successfully.");
                         }];
+}
+
+- (void)tableView:(UITableView *)tableView toogleChoosenCardOnIndexPathForPayment:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (self.selectedCellIndexPath == indexPath) {
+        self.selectedCellIndexPath = nil;
+        self.continueButton.enabled = NO;
+    }
+    else {
+        self.selectedCellIndexPath = indexPath;
+        self.continueButton.enabled = YES;
+    }
+    [tableView reloadData];
 }
 
 @end

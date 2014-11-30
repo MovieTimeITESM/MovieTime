@@ -21,7 +21,7 @@
     if (self) {
         _name = name;
         _year = year;
-        _movId = movId;
+        _rottenId = movId;
         _poster = poster;
         _ratings = ratings;
         _mpaaRatings = mpaaRating;
