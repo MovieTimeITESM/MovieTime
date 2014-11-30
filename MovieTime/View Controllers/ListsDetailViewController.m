@@ -9,6 +9,7 @@
 #import "ListsDetailViewController.h"
 
 @interface ListsDetailViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *coverPhoto;
 @property (weak, nonatomic) IBOutlet UILabel *likesLabel;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *authorLabel;
@@ -35,6 +36,7 @@
 {
     // Update the user interface for the detail item.
     if (self.detailItem) {
+        self.coverPhoto.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.detailItem.avatar]]];
         self.nameLabel.text = self.detailItem.name;
         self.authorLabel.text = self.detailItem.owner;
         self.likesLabel.text = self.detailItem.likes.stringValue;

@@ -48,4 +48,12 @@
 + (void)loadlistsWithUserId:(NSNumber *)userId
                     success:(RKSuccessBlock)success
                     failure:(RKFailureBlock)failure;
+
+/**
+ Sends a DELETE request to server to delete a list with
+ a given id.
+ **/
++ (void)deleteListWithId:(NSNumber *)listId
+                 success:(RKSuccessBlock)success
+                 failure:(RKFailureBlock)failure;
 @end

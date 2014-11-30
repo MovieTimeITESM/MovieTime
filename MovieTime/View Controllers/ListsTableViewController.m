@@ -22,7 +22,10 @@
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @end
 
-@implementation ListsTableViewController
+@implementation ListsTableViewController {
+    PBList *_editingPBList;
+    NSIndexPath *_editingListIndexPath;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -130,6 +133,57 @@
 
 #pragma mark - Table view data source
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
+    return YES;
+}
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        _editingPBList = ([self.listTab selectedSegmentIndex] == 0) ? self.allLists[indexPath.row] : self.myLists[indexPath.row];
+        _editingListIndexPath = indexPath;
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Confirm"
+                                                        message:@"Are you sure you want to delete this list?"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Cancel"
+                                              otherButtonTitles:@"Yes", nil];
+        alert.tag = 103;
+        [alert show];
+    }
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (alertView.tag == 103) {
+        if (buttonIndex == 0) {
+            NSLog(@"Delete list confirmation user clicked on cancel");
+        }
+        else {
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            [PBList deleteListWithId:_editingPBList.listId
+                             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                                     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                     if ([self.listTab selectedSegmentIndex] == 0) {
+                                         [self.allLists removeObjectAtIndex:_editingListIndexPath.row];
+                                     }
+                                     else {
+                                         [self.myLists removeObjectAtIndex:_editingListIndexPath.row];
+                                     }
+                                     [self.listsTableView deleteRowsAtIndexPaths:@[_editingListIndexPath]
+                                                                withRowAnimation:UITableViewRowAnimationFade];
+                                 }];
+                             }
+                             failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                                     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                 }];
+                                 NSLog(@"ERROR - Failed to delete list");
+                             }];
+        }
+    }
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
     return 1;
@@ -152,6 +206,7 @@
     cell.nameLabel.text = object.name;
     cell.authorLabel.text = object.owner;
     cell.likeButton.enabled = !object.likedByUser;
+    cell.likesCount.text = object.likes.stringValue;
     cell.delegate = self;
     if ([self.listTab selectedSegmentIndex] == 0) {
         cell.likeButton.tag = ((PBList* )self.allLists[indexPath.row]).listId.integerValue;

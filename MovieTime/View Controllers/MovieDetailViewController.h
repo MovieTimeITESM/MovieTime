@@ -7,15 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PBMovie.h"
 
 @interface MovieDetailViewController : UIViewController
-
-@property (strong, nonatomic) id detailItem;
-
-@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
-
-@property (strong, nonatomic) IBOutlet UILabel *yearLabel;
-
-@property (strong, nonatomic) IBOutlet UIImageView *moviePoster;
-
+@property (strong, nonatomic) PBMovie *detailItem;
 @end

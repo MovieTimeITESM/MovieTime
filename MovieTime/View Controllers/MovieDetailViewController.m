@@ -9,7 +9,12 @@
 #import "MovieDetailViewController.h"
 
 @interface MovieDetailViewController ()
-
+@property (weak, nonatomic) IBOutlet UILabel *runtimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ratingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *mpaaRatingLabel;
+@property (strong, nonatomic) IBOutlet UILabel *titleLabel;
+@property (strong, nonatomic) IBOutlet UILabel *yearLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *moviePoster;
 @end
 
 @implementation MovieDetailViewController
@@ -39,16 +44,14 @@
 - (void)configureView
 {
     // Update the user interface for the detail item.
-    
     if (self.detailItem) {
-        self.titleLabel.text = [self.detailItem objectForKey:@"title"];
-        self.yearLabel.text = [NSString stringWithFormat:@"%@",[self.detailItem objectForKey:@"year"]];
-        id posters = [self.detailItem objectForKey:@"posters"];
-        NSLog(@"%@",[posters objectForKey:@"profile"]);
-        
-        NSString *posterUrl = [[posters objectForKey:@"profile"]stringByReplacingOccurrencesOfString:@"_tmb" withString:@"_det"];
-        
-        self.moviePoster.image  = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:posterUrl]]];
+        self.titleLabel.text = self.detailItem.name;
+        self.yearLabel.text = self.detailItem.year.stringValue;
+        self.runtimeLabel.text = self.detailItem.runtime.stringValue;
+        self.mpaaRatingLabel.text = self.detailItem.mpaaRatings;
+        self.ratingLabel.text = self.detailItem.ratings.stringValue;
+        self.moviePoster.image  = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.detailItem.poster]]];
+        self.moviePoster.clipsToBounds = YES;
     }
 }
 

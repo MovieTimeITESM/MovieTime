@@ -70,4 +70,15 @@
                                        failure:failure];
 }
 
++ (void)deleteListWithId:(NSNumber *)listId
+                 success:(RKSuccessBlock)success
+                 failure:(RKFailureBlock)failure {
+    
+    [[RKObjectManager sharedManager] deleteObject:[[PBList alloc] init]
+                                             path:[NSString stringWithFormat:@"lists/%@", listId]
+                                       parameters:nil
+                                          success:success
+                                          failure:failure];
+}
+
 @end

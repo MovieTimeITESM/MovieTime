@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MovieTableViewController : UITableViewController
-@property BOOL searchBool;
-@property (strong, nonatomic) NSMutableArray *movies;
+@interface MovieCollectionViewController : UICollectionViewController
+- (void)setIsFromSearch:(BOOL)isFromSearch;
+- (void)setMovies:(NSMutableArray *)movies;
 @end

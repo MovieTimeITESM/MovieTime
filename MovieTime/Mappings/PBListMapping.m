@@ -68,7 +68,13 @@
                                                                                             keyPath:@"users"
                                                                                         statusCodes:[ILMappingManager statusCodeSet]];
     
-    return @[createListDescriptor, likeListDescriptor, listsDescriptor, userListsDescriptor];
+    RKResponseDescriptor *deleteListDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[self mappingWithRelationships]
+                                                                                             method:RKRequestMethodDELETE
+                                                                                        pathPattern:@"lists/:listId"
+                                                                                            keyPath:@"list"
+                                                                                        statusCodes:[ILMappingManager statusCodeSet]];
+    
+    return @[createListDescriptor, likeListDescriptor, listsDescriptor, userListsDescriptor, deleteListDescriptor];
 }
 
 + (NSArray *)requestDescriptors

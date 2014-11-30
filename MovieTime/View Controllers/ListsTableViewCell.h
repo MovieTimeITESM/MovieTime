@@ -15,6 +15,7 @@
 @end
 
 @interface ListsTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *likesCount;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (strong, nonatomic) IBOutlet UILabel *authorLabel;

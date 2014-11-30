@@ -7,7 +7,7 @@
 //
 
 #import "ExploreViewController.h"
-#import "MovieTableViewController.h"
+#import "MovieCollectionViewController.h"
 #import <HexColors/HexColor.h>
 
 @interface ExploreViewController ()
@@ -86,9 +86,9 @@
 {
     if ([[segue identifier] isEqualToString:@"search"])
     {
-        MovieTableViewController *movieVC = [segue destinationViewController];
-        movieVC.searchBool = YES;
-        movieVC.movies = (NSMutableArray*)self.movies;
+        MovieCollectionViewController *movieVC = [segue destinationViewController];
+        [movieVC setIsFromSearch:YES];
+        [movieVC setMovies:(NSMutableArray*)self.movies];
     }
 }
 
