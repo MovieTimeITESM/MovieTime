@@ -166,4 +166,9 @@
     return [self.movies count];
 }
 
+- (IBAction)saveListLocally:(id)sender {
+    NSLog(@"List should be saved on a database");
+}
+
+
 @end
