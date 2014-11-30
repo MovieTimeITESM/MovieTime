@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "244AAB09E3ACB0506B8E0C50"
+               BlueprintIdentifier = "0F41F5DE4B7EB796125FCF3F"
                BuildableName = "libPods-MovieTime-RestKit.a"
                BlueprintName = "Pods-MovieTime-RestKit"
                ReferencedContainer = "container:Pods.xcodeproj">

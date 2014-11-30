@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-MovieTime-LBBlurredImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MovieTime-MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -54,6 +59,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-MovieTime-UIImage+ImageCompress.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MovieTime.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -62,57 +72,67 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>05274588FDF58175DD9B3467</key>
+		<key>0F41F5DE4B7EB796125FCF3F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>244AAB09E3ACB0506B8E0C50</key>
+		<key>20B2A809DFD3AAA0BF7F3594</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>31741E753C22936010C0C8AC</key>
+		<key>34410F31E5E4295D3DF53A0B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>39FA6BB9298B0D1495F94B75</key>
+		<key>53B5BC39658F1AA62828B243</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>84D37E1488B6818D1D50D07E</key>
+		<key>557B23DC4744374211BB0B55</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>87C5138D0D788A9E40B19C6B</key>
+		<key>6C0D09E54E2B75800DDEC966</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>929F9473AEAADDA4EF928AD7</key>
+		<key>6DD18AA4637E5986CD83AB21</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AD725879DE48FA5430890C54</key>
+		<key>94F20F2AAA156B805B5CC3F6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BFE33775C91048B0FB6F5B6B</key>
+		<key>D2D611C547CF6F31FBD1D333</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CBCFF3830D1F031F0DAA8657</key>
+		<key>DB8BA71ED850306E1D51F7DC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CD538D807F5B7AABFD0E5E22</key>
+		<key>E3126852171350FB4256DB94</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E8C0FAF2381A8475363E8BC1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F194708E454C7A6AA537E71D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
