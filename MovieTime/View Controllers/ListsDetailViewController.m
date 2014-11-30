@@ -20,6 +20,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *authorLabel;
 @property (strong, nonatomic) NSMutableArray *movies;
 @property (weak, nonatomic) IBOutlet UITableView *moviesTableView;
+@property (weak, nonatomic) IBOutlet UIButton *saveLocally;
 @end
 
 @implementation ListsDetailViewController {
@@ -34,6 +35,9 @@
     self.moviesTableView.dataSource = self;
     [self configureView];
     [self loadMovies];
+    if (![self.detailItem.owner isEqualToString:[activeSession currentUser].name]) {
+        self.saveLocally.hidden = YES;
+    }
 }
 
 - (void)setDetailItem:(PBList *)newDetailItem

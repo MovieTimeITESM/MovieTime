@@ -472,6 +472,7 @@
                         <outlet property="likesLabel" destination="4Sv-f5-JcM" id="8Fc-AC-vBo"/>
                         <outlet property="moviesTableView" destination="OZq-HT-ScT" id="7xl-Wc-OKD"/>
                         <outlet property="nameLabel" destination="ObP-LN-4c3" id="bqM-Qk-6E3"/>
+                        <outlet property="saveLocally" destination="42E-Db-c9V" id="lxk-A9-05j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lkY-tG-cQV" userLabel="First Responder" sceneMemberID="firstResponder"/>
