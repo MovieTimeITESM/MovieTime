@@ -118,11 +118,16 @@
 
 - (IBAction)listTabsValueDidChanged:(UISegmentedControl *)sender
 {
-    if (!self.allLists || !self.myLists) {
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    if ([self.listTab selectedSegmentIndex] == 1 && !self.myLists) {
         [self startRefreshControl];
     }
+    [self.listsTableView reloadData];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    }];
 }
+
 
 #pragma mark - Table view data source
 
@@ -201,18 +206,14 @@
     ListsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListCell"
                                                                forIndexPath:indexPath];
     
-    PBList *object = self.allLists[indexPath.row];
+    PBList *object = ([self.listTab selectedSegmentIndex] == 0) ? self.allLists[indexPath.row] : self.myLists[indexPath.row];
     cell.nameLabel.text = object.name;
     cell.authorLabel.text = object.owner;
     cell.likeButton.enabled = !object.likedByUser;
     cell.likesCount.text = object.likes.stringValue;
     cell.delegate = self;
-    if ([self.listTab selectedSegmentIndex] == 0) {
-        cell.likeButton.tag = ((PBList* )self.allLists[indexPath.row]).listId.integerValue;
-    }
-    else {
-        cell.likeButton.tag = ((PBList* )self.myLists[indexPath.row]).listId.integerValue;
-    }
+    cell.likeButton.tag = object.listId.integerValue;
+    
     cell.backgroundView = [[UIImageView alloc] initWithImage:[[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:object.avatar]]] resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeTile]];
     
     return cell;

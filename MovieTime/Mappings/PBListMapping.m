@@ -51,10 +51,16 @@
                                                                                          statusCodes:[ILMappingManager statusCodeSet]];
     
     RKResponseDescriptor *likeListDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[self mappingWithRelationships]
-                                                                                              method:RKRequestMethodPUT
-                                                                                         pathPattern:@"lists/:listId/vote"
-                                                                                             keyPath:@"list"
-                                                                                         statusCodes:[ILMappingManager statusCodeSet]];
+                                                                                            method:RKRequestMethodPUT
+                                                                                       pathPattern:@"lists/:listId/vote"
+                                                                                           keyPath:@"list"
+                                                                                       statusCodes:[ILMappingManager statusCodeSet]];
+    
+    RKResponseDescriptor *makePrivateListDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[self mappingWithRelationships]
+                                                                                                   method:RKRequestMethodPUT
+                                                                                              pathPattern:@"lists/:listId/make_private"
+                                                                                                  keyPath:@"list"
+                                                                                              statusCodes:[ILMappingManager statusCodeSet]];
     
     RKResponseDescriptor *listsDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[self mappingWithRelationships]
                                                                                          method:RKRequestMethodGET
@@ -69,12 +75,12 @@
                                                                                         statusCodes:[ILMappingManager statusCodeSet]];
     
     RKResponseDescriptor *deleteListDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[self mappingWithRelationships]
-                                                                                             method:RKRequestMethodDELETE
-                                                                                        pathPattern:@"lists/:listId"
-                                                                                            keyPath:@"list"
-                                                                                        statusCodes:[ILMappingManager statusCodeSet]];
+                                                                                              method:RKRequestMethodDELETE
+                                                                                         pathPattern:@"lists/:listId"
+                                                                                             keyPath:@"list"
+                                                                                         statusCodes:[ILMappingManager statusCodeSet]];
     
-    return @[createListDescriptor, likeListDescriptor, listsDescriptor, userListsDescriptor, deleteListDescriptor];
+    return @[createListDescriptor, likeListDescriptor, listsDescriptor, userListsDescriptor, deleteListDescriptor, makePrivateListDescriptor];
 }
 
 + (NSArray *)requestDescriptors

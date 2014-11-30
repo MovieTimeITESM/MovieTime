@@ -49,6 +49,17 @@
                                        failure:failure];
 }
 
++ (void)makePrivateForListWithId:(NSNumber *)listId
+                         success:(RKSuccessBlock)success
+                         failure:(RKFailureBlock)failure {
+    
+    [[RKObjectManager sharedManager] putObject:[[PBList alloc] init]
+                                          path:[NSString stringWithFormat:@"lists/%@/make_private", listId]
+                                    parameters:nil
+                                       success:success
+                                       failure:failure];
+}
+
 + (void)loadAllListsWithsuccess:(RKSuccessBlock)success
                         failure:(RKFailureBlock)failure {
     
