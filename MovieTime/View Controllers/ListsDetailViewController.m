@@ -18,11 +18,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *likesLabel;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *authorLabel;
-@property (strong, nonatomic) NSArray *movies;
+@property (strong, nonatomic) NSMutableArray *movies;
 @property (weak, nonatomic) IBOutlet UITableView *moviesTableView;
+@property (weak, nonatomic) IBOutlet UIButton *saveLocally;
 @end
 
-@implementation ListsDetailViewController
+@implementation ListsDetailViewController {
+    PBMovie *_editingPBMovie;
+    NSIndexPath *_editingMovieIndexPath;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,6 +35,9 @@
     self.moviesTableView.dataSource = self;
     [self configureView];
     [self loadMovies];
+    if (![self.detailItem.owner isEqualToString:[activeSession currentUser].name]) {
+        self.saveLocally.hidden = YES;
+    }
 }
 
 - (void)setDetailItem:(PBList *)newDetailItem
@@ -103,6 +110,58 @@
     return cell;
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        _editingPBMovie = self.movies[indexPath.row];
+        _editingMovieIndexPath = indexPath;
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Confirm"
+                                                        message:@"Are you sure you want to delete this movie?"
+                                                       delegate:self
+                                              cancelButtonTitle:@"Cancel"
+                                              otherButtonTitles:@"Yes", nil];
+        alert.tag = 104;
+        [alert show];
+    }
+}
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (alertView.tag == 104) {
+        if (buttonIndex == 0) {
+            NSLog(@"Delete movie confirmation user clicked on cancel");
+        }
+        else {
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+            [PBMovie deleteMovieWithListId:self.detailItem.listId
+                                   movieId:_editingPBMovie.movieId
+                             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                                     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                     [self.movies removeObjectAtIndex:_editingMovieIndexPath.row];
+                                     [self.moviesTableView deleteRowsAtIndexPaths:@[_editingMovieIndexPath]
+                                                                 withRowAnimation:UITableViewRowAnimationFade];
+                                 }];
+                             }
+                             failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                                     [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Server is down."
+                                                                                     message:@"The server is having some troubles.\nPlease try again later."
+                                                                                    delegate:nil
+                                                                           cancelButtonTitle:@"Ok"
+                                                                           otherButtonTitles: nil];
+                                     [alert show];
+                                 }];
+                                 NSLog(@"ERROR - Failed to delete list");
+                             }];
+        }
+    }
+}
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
@@ -110,5 +169,10 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.movies count];
 }
+
+- (IBAction)saveListLocally:(id)sender {
+    NSLog(@"List should be saved on a database");
+}
+
 
 @end

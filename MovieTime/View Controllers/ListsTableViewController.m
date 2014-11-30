@@ -122,13 +122,6 @@
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         [self startRefreshControl];
     }
-    
-    if ([self tableView:self.listsTableView numberOfRowsInSection:0] > 0) {
-        NSIndexPath *topIndexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-        [self.listsTableView scrollToRowAtIndexPath:topIndexPath
-                                   atScrollPosition:UITableViewScrollPositionTop
-                                           animated:NO];
-    }
 }
 
 #pragma mark - Table view data source
@@ -177,6 +170,12 @@
                              failure:^(RKObjectRequestOperation *operation, NSError *error) {
                                  [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                                      [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Server is down."
+                                                                                     message:@"The server is having some troubles.\nPlease try again later."
+                                                                                    delegate:nil
+                                                                           cancelButtonTitle:@"Ok"
+                                                                           otherButtonTitles: nil];
+                                     [alert show];
                                  }];
                                  NSLog(@"ERROR - Failed to delete list");
                              }];

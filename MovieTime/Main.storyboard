@@ -404,6 +404,15 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="42E-Db-c9V">
+                                        <rect key="frame" x="272" y="15" width="32" height="32"/>
+                                        <state key="normal" image="saveList">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="saveListLocally:" destination="D8Z-Ag-8bN" eventType="touchUpInside" id="v1i-ia-8VL"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -463,6 +472,7 @@
                         <outlet property="likesLabel" destination="4Sv-f5-JcM" id="8Fc-AC-vBo"/>
                         <outlet property="moviesTableView" destination="OZq-HT-ScT" id="7xl-Wc-OKD"/>
                         <outlet property="nameLabel" destination="ObP-LN-4c3" id="bqM-Qk-6E3"/>
+                        <outlet property="saveLocally" destination="42E-Db-c9V" id="lxk-A9-05j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lkY-tG-cQV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -868,6 +878,7 @@
         <image name="profile-counters" width="407" height="41"/>
         <image name="profile-logout" width="150" height="45"/>
         <image name="profile-pic" width="294" height="211"/>
+        <image name="saveList" width="64" height="64"/>
         <image name="searchicon" width="13" height="13"/>
         <image name="tab-bar-explore" width="25" height="24"/>
         <image name="tab-bar-lists" width="25" height="23"/>
