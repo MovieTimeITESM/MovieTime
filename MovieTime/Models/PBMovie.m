@@ -29,4 +29,42 @@
     }
     return self;
 }
+
++ (void)createMovieWithListId:(NSNumber *)listId
+                   parameters:(NSDictionary *)parameters
+                  Withsuccess:(RKSuccessBlock)success
+                        failure:(RKFailureBlock)failure {
+    
+    [[RKObjectManager sharedManager] postObject:[[PBMovie alloc] init]
+                                          path:[NSString stringWithFormat:@"lists/%@/movies", listId]
+                                     parameters:@{ @"list_id" : listId.stringValue,
+                                                   @"movie" : parameters
+                                                   }
+                                       success:success
+                                       failure:failure];
+}
+
++ (void)loadMoviesWithListId:(NSNumber *)listId
+                 Withsuccess:(RKSuccessBlock)success
+                        failure:(RKFailureBlock)failure {
+    
+    [[RKObjectManager sharedManager] getObject:[[PBMovie alloc] init]
+                                          path:[NSString stringWithFormat:@"lists/%@/movies", listId]
+                                    parameters:nil
+                                       success:success
+                                       failure:failure];
+}
+
++ (void)deleteMovieWithListId:(NSNumber *)listId
+                      movieId:(NSNumber *)movieId
+                 success:(RKSuccessBlock)success
+                 failure:(RKFailureBlock)failure {
+    
+    [[RKObjectManager sharedManager] deleteObject:[[PBMovie alloc] init]
+                                             path:[NSString stringWithFormat:@"lists/%@/movies/%@", listId, movieId]
+                                       parameters:nil
+                                          success:success
+                                          failure:failure];
+}
+
 @end

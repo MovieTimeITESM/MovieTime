@@ -35,7 +35,34 @@
 
 - (IBAction)addButtonClicked:(id)sender {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    //Call to PBList's add movie method with movie params
+    [PBMovie createMovieWithListId:((PBList *)self.lists[self.selectedCellIndexPath.row]).listId
+                        parameters:@{
+                                     @"name" : self.movie.name,
+                                     @"year" : self.movie.year.stringValue,
+                                     @"rotten_id" : self.movie.rottenId,
+                                     @"poster" : self.movie.poster,
+                                     @"ratings" : self.movie.ratings.stringValue,
+                                     @"mpaa_ratings" : self.movie.mpaaRatings,
+                                     @"runtime" : self.movie.runtime.stringValue,
+                                     }
+                       Withsuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+                           [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                               [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                               [self dismissViewControllerAnimated:YES completion:nil];
+                           }];
+                       }
+                           failure:^(RKObjectRequestOperation *operation, NSError *error) {
+                               [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                                   [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+                                   UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Server is down."
+                                                                                   message:@"The server is having some troubles.\nPlease try again later."
+                                                                                  delegate:nil
+                                                                         cancelButtonTitle:@"Ok"
+                                                                         otherButtonTitles: nil];
+                                   [alert show];
+                               }];
+                               NSLog(@"ERROR - Could not create movie successfully.");
+                           }];
 }
 
 

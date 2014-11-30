@@ -9,6 +9,7 @@
 #import "ILApiClient.h"
 #import "ILUserMapping.h"
 #import "PBListMapping.h"
+#import "PBMovieMapping.h"
 
 @implementation ILMappingManager
 
@@ -17,7 +18,7 @@
     RKObjectManager *manager = [[RKObjectManager alloc] initWithHTTPClient:[ILApiClient sharedClient]];
     [RKObjectManager setSharedManager:manager];
     
-    NSArray *mappingClasses = @[[ILUserMapping class], [PBListMapping class]];
+    NSArray *mappingClasses = @[[ILUserMapping class], [PBListMapping class], [PBMovieMapping class]];
     
     // preload mappings
     [self preloadMappings:mappingClasses];
