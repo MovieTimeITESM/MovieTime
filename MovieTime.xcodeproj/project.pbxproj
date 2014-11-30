@@ -26,6 +26,7 @@
 		2335168419FDBF9100456B76 /* ILLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2335168319FDBF9100456B76 /* ILLoginView.m */; };
 		2336D4721A2AD94A0092F429 /* PBAddToListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2336D4711A2AD94A0092F429 /* PBAddToListViewController.m */; };
 		2336D4751A2B05A90092F429 /* PBMovieMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 2336D4741A2B05A90092F429 /* PBMovieMapping.m */; };
+		2336D4781A2B113B0092F429 /* PBListMovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2336D4771A2B113B0092F429 /* PBListMovieTableViewCell.m */; };
 		239BE3D81A2A9ACB00036BF5 /* PBMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 239BE3D71A2A9ACB00036BF5 /* PBMovie.m */; };
 		239BE3DB1A2AA59500036BF5 /* MovieCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 239BE3DA1A2AA59500036BF5 /* MovieCollectionViewCell.m */; };
 		23EB60371A2969330063BA1F /* PBList.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EB60361A2969330063BA1F /* PBList.m */; };
@@ -105,6 +106,8 @@
 		2336D4711A2AD94A0092F429 /* PBAddToListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBAddToListViewController.m; sourceTree = "<group>"; };
 		2336D4731A2B05A90092F429 /* PBMovieMapping.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBMovieMapping.h; sourceTree = "<group>"; };
 		2336D4741A2B05A90092F429 /* PBMovieMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBMovieMapping.m; sourceTree = "<group>"; };
+		2336D4761A2B113B0092F429 /* PBListMovieTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBListMovieTableViewCell.h; sourceTree = "<group>"; };
+		2336D4771A2B113B0092F429 /* PBListMovieTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBListMovieTableViewCell.m; sourceTree = "<group>"; };
 		239BE3D61A2A9ACB00036BF5 /* PBMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBMovie.h; sourceTree = "<group>"; };
 		239BE3D71A2A9ACB00036BF5 /* PBMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBMovie.m; sourceTree = "<group>"; };
 		239BE3D91A2AA59500036BF5 /* MovieCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCollectionViewCell.h; sourceTree = "<group>"; };
@@ -194,6 +197,8 @@
 				203B81581A00CF7300F3C954 /* ListsDetailViewController.m */,
 				202B6D561A0A1688007354C1 /* AddListViewController.h */,
 				202B6D571A0A1688007354C1 /* AddListViewController.m */,
+				2336D4761A2B113B0092F429 /* PBListMovieTableViewCell.h */,
+				2336D4771A2B113B0092F429 /* PBListMovieTableViewCell.m */,
 			);
 			name = Lists;
 			sourceTree = "<group>";
@@ -568,6 +573,7 @@
 				2320E75B1A0602AB008D146F /* ILSession.m in Sources */,
 				203B81481A00BFC200F3C954 /* MovieCollectionViewController.m in Sources */,
 				23F8815D19F5898B00D82431 /* LoginViewController.m in Sources */,
+				2336D4781A2B113B0092F429 /* PBListMovieTableViewCell.m in Sources */,
 				2320E7551A060297008D146F /* ILMappingManager.m in Sources */,
 				2320E75A1A0602AB008D146F /* ILApiClient.m in Sources */,
 				203B813F1A00A0BA00F3C954 /* MovieDetailViewController.m in Sources */,
