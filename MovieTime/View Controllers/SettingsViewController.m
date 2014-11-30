@@ -30,6 +30,9 @@
     self.profileRound.layer.borderWidth = 3;
     self.profileRound.clipsToBounds = YES;
     self.profilePic.clipsToBounds = YES;
+    self.starsNumber.text = [activeSession currentUser].likesToUser.stringValue;
+    self.likesNumber.text = [activeSession currentUser].likes.stringValue;
+    self.listsNumber.text = [activeSession currentUser].lists.stringValue;
     self.userName.text = [activeSession currentUser].name;
     self.emailLabel.text = [activeSession currentUser].email;
     [self loadProfilePicture];

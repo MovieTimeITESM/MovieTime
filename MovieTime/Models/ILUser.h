@@ -15,6 +15,9 @@
 @property (strong, nonatomic) NSString *authToken;
 @property (strong, nonatomic) NSString *email;
 @property (strong, nonatomic) NSString *uid;
+@property (strong, nonatomic) NSNumber *likes;
+@property (strong, nonatomic) NSNumber *lists;
+@property (strong, nonatomic) NSNumber *likesToUser;
 
 /**
  Sends a request to login to the app given a access token.

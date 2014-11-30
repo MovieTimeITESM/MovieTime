@@ -20,7 +20,10 @@
         [mapping addAttributeMappingsFromArray:@[@"name", @"email", @"uid"]];
         [mapping addAttributeMappingsFromDictionary:@{
                                                       @"id": @"userId",
-                                                      @"auth_token": @"authToken"
+                                                      @"auth_token": @"authToken",
+                                                      @"likes_count" : @"likes",
+                                                      @"lists_count" : @"lists",
+                                                      @"likes_to" : @"likesToUser"
                                                       }];
         _mapping = mapping;
     });
