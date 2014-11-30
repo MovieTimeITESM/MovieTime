@@ -11,7 +11,7 @@
 @interface PBMovie : NSObject
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, strong) NSNumber *year;
-@property (nonatomic, strong) NSNumber *movId;
+@property (nonatomic, copy) NSString *movId;
 @property (nonatomic, copy) NSString *poster;
 @property (nonatomic, strong) NSNumber *ratings;
 @property (nonatomic, copy) NSString *mpaaRatings;
@@ -19,7 +19,7 @@
 
 - (instancetype)initWithName:(NSString *)name
                         year:(NSNumber *)year
-                       movId:(NSNumber *)movId
+                       movId:(NSString *)movId
                       poster:(NSString *)poster
                      ratings:(NSNumber *)ratings
                  mpaaRatings:(NSString *)mpaaRating

@@ -9,11 +9,13 @@
 #import "ExploreViewController.h"
 #import "MovieCollectionViewController.h"
 #import <HexColors/HexColor.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface ExploreViewController ()
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UIView *searchView;
 @property (strong, nonatomic) NSArray *movies;
+
 @end
 
 @implementation ExploreViewController
@@ -40,6 +42,7 @@
         NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60];
         self.connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
         self.responseData = [[NSMutableData alloc] init];
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         return NO;
     }
     return YES;
@@ -48,8 +51,8 @@
 -(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
 {
     NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
-    int statusCode = [httpResponse statusCode];
-    NSLog(@"status de conexion %i", statusCode);
+    NSInteger statusCode = [httpResponse statusCode];
+    NSLog(@"Rotten Tomatoes Search - Status %li", (long)statusCode);
     
     [self.responseData setLength:0];
 }
@@ -71,6 +74,7 @@
     }else{
         //NSLog(@"title: %@, movies: %i",[self.movies[0] objectForKey:@"title"], self.movies.count);
     }
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     [self performSegueWithIdentifier:@"search" sender:self];
 }
 

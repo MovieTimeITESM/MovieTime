@@ -46,7 +46,7 @@
                                                       poster:[movie[@"posters"][@"original"] stringByReplacingOccurrencesOfString:@"_tmb" withString:@"_det" ]
                                                      ratings:movie[@"ratings"][@"audience_score"]
                                                  mpaaRatings:movie[@"mpaa_rating"]
-                                                     runtime:movie[@"runtime"]];
+                                                     runtime:([movie[@"runtime"] isEqual:@""]) ? nil : movie[@"runtime"]];
         [tempMappingArray addObject:movieObject];
     }
     _movies = tempMappingArray;
@@ -62,10 +62,12 @@
     MovieCollectionViewCell* cell = [self.collectionView dequeueReusableCellWithReuseIdentifier:@"MovieCell"
                                                                                    forIndexPath:indexPath];
     cell.mpaaRating.text = ((PBMovie *)self.movies[indexPath.row]).mpaaRatings;
-    cell.rating.text = ((PBMovie *)self.movies[indexPath.row]).ratings.stringValue;
     cell.name.text = ((PBMovie *)self.movies[indexPath.row]).name;
-    cell.runtime.text = ((PBMovie *)self.movies[indexPath.row]).runtime.stringValue;
+    if (((PBMovie *)self.movies[indexPath.row]).runtime != nil) {
+        cell.runtime.text = ((PBMovie *)self.movies[indexPath.row]).runtime.stringValue;
+    }
     cell.year.text = ((PBMovie *)self.movies[indexPath.row]).year.stringValue;
+    cell.rating.text = ((PBMovie *)self.movies[indexPath.row]).ratings.stringValue;
     
     [cell.coverImage setImageToBlur:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:((PBMovie *)self.movies[indexPath.row]).poster]]]
                          blurRadius:0.5f

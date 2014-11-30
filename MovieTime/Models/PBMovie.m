@@ -12,7 +12,7 @@
 
 - (instancetype)initWithName:(NSString *)name
                         year:(NSNumber *)year
-                       movId:(NSNumber *)movId
+                       movId:(NSString *)movId
                       poster:(NSString *)poster
                      ratings:(NSNumber *)ratings
                  mpaaRatings:(NSString *)mpaaRating

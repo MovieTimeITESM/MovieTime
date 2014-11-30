@@ -24,6 +24,7 @@
 		2320E75E1A060371008D146F /* ILUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 2320E75D1A060371008D146F /* ILUser.m */; };
 		2320E7611A060423008D146F /* ILUserMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 2320E7601A060423008D146F /* ILUserMapping.m */; };
 		2335168419FDBF9100456B76 /* ILLoginView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2335168319FDBF9100456B76 /* ILLoginView.m */; };
+		2336D4721A2AD94A0092F429 /* PBAddToListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2336D4711A2AD94A0092F429 /* PBAddToListViewController.m */; };
 		239BE3D81A2A9ACB00036BF5 /* PBMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 239BE3D71A2A9ACB00036BF5 /* PBMovie.m */; };
 		239BE3DB1A2AA59500036BF5 /* MovieCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 239BE3DA1A2AA59500036BF5 /* MovieCollectionViewCell.m */; };
 		23EB60371A2969330063BA1F /* PBList.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EB60361A2969330063BA1F /* PBList.m */; };
@@ -99,6 +100,8 @@
 		2320E7601A060423008D146F /* ILUserMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILUserMapping.m; sourceTree = "<group>"; };
 		2335168219FDBF9100456B76 /* ILLoginView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILLoginView.h; sourceTree = "<group>"; };
 		2335168319FDBF9100456B76 /* ILLoginView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILLoginView.m; sourceTree = "<group>"; };
+		2336D4701A2AD94A0092F429 /* PBAddToListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBAddToListViewController.h; sourceTree = "<group>"; };
+		2336D4711A2AD94A0092F429 /* PBAddToListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBAddToListViewController.m; sourceTree = "<group>"; };
 		239BE3D61A2A9ACB00036BF5 /* PBMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBMovie.h; sourceTree = "<group>"; };
 		239BE3D71A2A9ACB00036BF5 /* PBMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBMovie.m; sourceTree = "<group>"; };
 		239BE3D91A2AA59500036BF5 /* MovieCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCollectionViewCell.h; sourceTree = "<group>"; };
@@ -171,6 +174,8 @@
 				203B81411A00A0D100F3C954 /* MovieTrailerViewController.m */,
 				239BE3D91A2AA59500036BF5 /* MovieCollectionViewCell.h */,
 				239BE3DA1A2AA59500036BF5 /* MovieCollectionViewCell.m */,
+				2336D4701A2AD94A0092F429 /* PBAddToListViewController.h */,
+				2336D4711A2AD94A0092F429 /* PBAddToListViewController.m */,
 			);
 			name = Movies;
 			sourceTree = "<group>";
@@ -562,6 +567,7 @@
 				2320E75A1A0602AB008D146F /* ILApiClient.m in Sources */,
 				203B813F1A00A0BA00F3C954 /* MovieDetailViewController.m in Sources */,
 				204ADB9D19FDAF2E006652B6 /* SettingsViewController.m in Sources */,
+				2336D4721A2AD94A0092F429 /* PBAddToListViewController.m in Sources */,
 				202B6D581A0A1688007354C1 /* AddListViewController.m in Sources */,
 				239BE3DB1A2AA59500036BF5 /* MovieCollectionViewCell.m in Sources */,
 				23F8813819F57E0F00D82431 /* AppDelegate.m in Sources */,
