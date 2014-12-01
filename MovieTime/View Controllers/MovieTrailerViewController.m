@@ -9,7 +9,8 @@
 #import "MovieTrailerViewController.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 
-@interface MovieTrailerViewController ()
+@interface MovieTrailerViewController () <UIWebViewDelegate>
+@property (weak, nonatomic) IBOutlet UIWebView *trailerBrowser;
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
 @property (strong, nonatomic) NSDictionary *trailer;
 @property (strong, nonatomic) NSURLConnection *connection;
@@ -21,8 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    self.trailerBrowser.delegate = self;
     [self configureView];
 }
 
@@ -60,7 +60,12 @@
     
     
     if(!self.trailer){
-        NSLog(@"No hay Trailer");
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
+                                                        message:@"There are no records of trailer for this movie."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles: nil];
+        [alert show];
     }else{
         NSURL *url = [NSURL URLWithString:[self.trailer objectForKey:@"href"]];
         NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
@@ -80,19 +85,19 @@
 
 - (void)configureView {
     // Update the user interface for the detail item.
-    
     if (self.detailItem) {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         self.titleLabel.text = self.detailItem.name;
-        
         NSString *searchTerm = [self.detailItem.name stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-        
         NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://gdata.youtube.com/feeds/api/videos?v=2&alt=json&max-results=1&q=allintitle:%@&format=5&prettyprint=true", searchTerm]];
-        
         NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60];
         self.connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
         self.responseData = [[NSMutableData alloc] init];
-        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     }
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 }
 
 @end
