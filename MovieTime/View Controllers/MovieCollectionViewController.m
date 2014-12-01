@@ -45,7 +45,9 @@
     
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    if (!self.isFromSearch) {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    }
 }
 
 -(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
@@ -88,17 +90,23 @@
 }
 
 - (void)setMovies:(NSMutableArray *)movies {
-    NSMutableArray *tempMappingArray = [[NSMutableArray alloc] init];
-    for (NSDictionary *movie in movies) {
-        PBMovie *movieObject = [[PBMovie alloc] initWithName:movie[@"title"]
-                                                        year:movie[@"year"]
-                                                       movId:movie[@"id"]
-                                                      poster:[movie[@"posters"][@"original"] stringByReplacingOccurrencesOfString:@"_tmb" withString:@"_det" ]
-                                                     ratings:movie[@"ratings"][@"audience_score"]
-                                                 mpaaRatings:movie[@"mpaa_rating"]
-                                                     runtime:([movie[@"runtime"] isEqual:@""]) ? nil : movie[@"runtime"]
-                                                alternateLink:movie[@"links"][@"alternate"]];
-        [tempMappingArray addObject:movieObject];
+    NSMutableArray *tempMappingArray;
+    if (!self.isFromSearch) {
+        tempMappingArray = [[NSMutableArray alloc] init];
+        for (NSDictionary *movie in movies) {
+            PBMovie *movieObject = [[PBMovie alloc] initWithName:movie[@"title"]
+                                                            year:movie[@"year"]
+                                                           movId:movie[@"id"]
+                                                          poster:[movie[@"posters"][@"original"] stringByReplacingOccurrencesOfString:@"_tmb" withString:@"_det" ]
+                                                         ratings:movie[@"ratings"][@"audience_score"]
+                                                     mpaaRatings:movie[@"mpaa_rating"]
+                                                         runtime:([movie[@"runtime"] isEqual:@""]) ? nil : movie[@"runtime"]
+                                                   alternateLink:movie[@"links"][@"alternate"]];
+            [tempMappingArray addObject:movieObject];
+        }
+    }
+    else {
+        tempMappingArray = movies;
     }
     _movies = tempMappingArray;
 }
