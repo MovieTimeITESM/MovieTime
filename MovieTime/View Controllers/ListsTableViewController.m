@@ -207,6 +207,11 @@
     PBList *object = ([self.listTab selectedSegmentIndex] == 0) ? self.allLists[indexPath.row] : self.myLists[indexPath.row];
     cell.nameLabel.text = object.name;
     cell.authorLabel.text = object.owner;
+    if (object.likedByUser) {
+        [cell.likeButton setImage:[UIImage imageNamed:@"lists-dashboard-liked"] forState:UIControlStateNormal];
+    } else {
+       [cell.likeButton setImage:[UIImage imageNamed:@"lists-dashboard-like"] forState:UIControlStateNormal];
+    }
     cell.likeButton.enabled = !object.likedByUser;
     cell.likesCount.text = object.likes.stringValue;
     cell.delegate = self;
