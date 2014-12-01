@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "803ABA12D1A5E31915F6B64A"
+               BlueprintIdentifier = "1A1FDBFD8763D0F250D9D1DA"
                BuildableName = "libPods-MovieTime-TransitionKit.a"
                BlueprintName = "Pods-MovieTime-TransitionKit"
                ReferencedContainer = "container:Pods.xcodeproj">

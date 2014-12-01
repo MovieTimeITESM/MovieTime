@@ -12,12 +12,6 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking 3
 #define COCOAPODS_VERSION_PATCH_AFNetworking 4
 
-// AsyncImageView
-#define COCOAPODS_POD_AVAILABLE_AsyncImageView
-#define COCOAPODS_VERSION_MAJOR_AsyncImageView 1
-#define COCOAPODS_VERSION_MINOR_AsyncImageView 5
-#define COCOAPODS_VERSION_PATCH_AsyncImageView 1
-
 // Bolts
 #define COCOAPODS_POD_AVAILABLE_Bolts
 #define COCOAPODS_VERSION_MAJOR_Bolts 1
@@ -95,6 +89,18 @@
 #define COCOAPODS_VERSION_MAJOR_RestKit_Support 0
 #define COCOAPODS_VERSION_MINOR_RestKit_Support 22
 #define COCOAPODS_VERSION_PATCH_RestKit_Support 0
+
+// SDWebImage
+#define COCOAPODS_POD_AVAILABLE_SDWebImage
+#define COCOAPODS_VERSION_MAJOR_SDWebImage 3
+#define COCOAPODS_VERSION_MINOR_SDWebImage 7
+#define COCOAPODS_VERSION_PATCH_SDWebImage 1
+
+// SDWebImage/Core
+#define COCOAPODS_POD_AVAILABLE_SDWebImage_Core
+#define COCOAPODS_VERSION_MAJOR_SDWebImage_Core 3
+#define COCOAPODS_VERSION_MINOR_SDWebImage_Core 7
+#define COCOAPODS_VERSION_PATCH_SDWebImage_Core 1
 
 // SOCKit
 #define COCOAPODS_POD_AVAILABLE_SOCKit

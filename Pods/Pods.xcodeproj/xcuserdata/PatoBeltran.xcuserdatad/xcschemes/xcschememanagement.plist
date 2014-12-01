@@ -9,11 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-MovieTime-AsyncImageView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-MovieTime-Bolts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -54,6 +49,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-MovieTime-SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MovieTime-SOCKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -77,72 +77,72 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>079891E31739BD317EF41B11</key>
+		<key>0A246EF756FB70D2C9AFDD78</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>0D335927857AC6751C5B2756</key>
+		<key>0A2ADB549F327A4622CD39A8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>13EEE141FD20C47C1C333206</key>
+		<key>0B061578E9DA65F575CF2A46</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>172C965A07D568FF782C90FC</key>
+		<key>14DBC6CC46DC9CB72E351625</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4053DA502B76FC24F6A492F9</key>
+		<key>1A1FDBFD8763D0F250D9D1DA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5A152EFAC92EED594E7722AC</key>
+		<key>3A2DDA6511A0E9CEA7B59B3F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>803ABA12D1A5E31915F6B64A</key>
+		<key>3A3720DCA0997911EAC02C91</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9E54E9D5735078188B66EB4A</key>
+		<key>645FAE372A9424A86B773263</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A867397224C03963AD196077</key>
+		<key>7EFE893634A8D78626D94CD1</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AD8DAE8C35292A2BAC598508</key>
+		<key>9C0575994B78CF59E3274DCB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CA1FA15754103C13D78A0FF9</key>
+		<key>A8A434D77D4F1714627AA99C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D21FDE81E2C5B29F49E2E9EA</key>
+		<key>AE2EEC0A90C371632B35C72A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D5C0ABFDB0E29280B6214558</key>
+		<key>C620F75EB3635203CA7069DE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D8572DDBF653D170BBDAC08B</key>
+		<key>E16AC0104A9C7D52917B1BBE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
