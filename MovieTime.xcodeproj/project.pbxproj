@@ -27,6 +27,8 @@
 		2336D4721A2AD94A0092F429 /* PBAddToListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2336D4711A2AD94A0092F429 /* PBAddToListViewController.m */; };
 		2336D4751A2B05A90092F429 /* PBMovieMapping.m in Sources */ = {isa = PBXBuildFile; fileRef = 2336D4741A2B05A90092F429 /* PBMovieMapping.m */; };
 		2336D4781A2B113B0092F429 /* PBListMovieTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2336D4771A2B113B0092F429 /* PBListMovieTableViewCell.m */; };
+		23730A7A1A2D019C0064163A /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 23730A791A2D019C0064163A /* DBManager.m */; };
+		23730A7C1A2D11220064163A /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 23730A7B1A2D11220064163A /* libsqlite3.dylib */; };
 		239BE3D81A2A9ACB00036BF5 /* PBMovie.m in Sources */ = {isa = PBXBuildFile; fileRef = 239BE3D71A2A9ACB00036BF5 /* PBMovie.m */; };
 		239BE3DB1A2AA59500036BF5 /* MovieCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 239BE3DA1A2AA59500036BF5 /* MovieCollectionViewCell.m */; };
 		23EB60371A2969330063BA1F /* PBList.m in Sources */ = {isa = PBXBuildFile; fileRef = 23EB60361A2969330063BA1F /* PBList.m */; };
@@ -108,6 +110,9 @@
 		2336D4741A2B05A90092F429 /* PBMovieMapping.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBMovieMapping.m; sourceTree = "<group>"; };
 		2336D4761A2B113B0092F429 /* PBListMovieTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBListMovieTableViewCell.h; sourceTree = "<group>"; };
 		2336D4771A2B113B0092F429 /* PBListMovieTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBListMovieTableViewCell.m; sourceTree = "<group>"; };
+		23730A781A2D019C0064163A /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		23730A791A2D019C0064163A /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		23730A7B1A2D11220064163A /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		239BE3D61A2A9ACB00036BF5 /* PBMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBMovie.h; sourceTree = "<group>"; };
 		239BE3D71A2A9ACB00036BF5 /* PBMovie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBMovie.m; sourceTree = "<group>"; };
 		239BE3D91A2AA59500036BF5 /* MovieCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MovieCollectionViewCell.h; sourceTree = "<group>"; };
@@ -155,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23730A7C1A2D11220064163A /* libsqlite3.dylib in Frameworks */,
 				2FBB45BB2DB34114AC092637 /* libPods-MovieTime.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -265,6 +271,8 @@
 				23F8814119F57E0F00D82431 /* LaunchScreen.xib */,
 				23F8813319F57E0F00D82431 /* Info.plist */,
 				23F8813419F57E0F00D82431 /* main.m */,
+				23730A781A2D019C0064163A /* DBManager.h */,
+				23730A791A2D019C0064163A /* DBManager.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -410,6 +418,7 @@
 		F1B7147AEBDE4D87ABED06B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				23730A7B1A2D11220064163A /* libsqlite3.dylib */,
 				78155907DB0C4E47A8D79574 /* libPods-MovieTime.a */,
 			);
 			name = Frameworks;
@@ -574,6 +583,7 @@
 				203B81481A00BFC200F3C954 /* MovieCollectionViewController.m in Sources */,
 				23F8815D19F5898B00D82431 /* LoginViewController.m in Sources */,
 				2336D4781A2B113B0092F429 /* PBListMovieTableViewCell.m in Sources */,
+				23730A7A1A2D019C0064163A /* DBManager.m in Sources */,
 				2320E7551A060297008D146F /* ILMappingManager.m in Sources */,
 				2320E75A1A0602AB008D146F /* ILApiClient.m in Sources */,
 				203B813F1A00A0BA00F3C954 /* MovieDetailViewController.m in Sources */,

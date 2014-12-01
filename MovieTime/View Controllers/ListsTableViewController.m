@@ -15,6 +15,7 @@
 #import "ILSession.h"
 #import "UIImageView+LBBlurredImage.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "DBManager.h"
 
 @interface ListsTableViewController ()  <UITableViewDelegate, UITableViewDataSource, PBListCellDelegate>
 @property (weak, nonatomic) IBOutlet UISegmentedControl *listTab;
@@ -27,12 +28,14 @@
 @implementation ListsTableViewController {
     PBList *_editingPBList;
     NSIndexPath *_editingListIndexPath;
+    BOOL _appendToList;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    [self loadLists];
+
+    self.allLists = [[NSMutableArray alloc] init];
+    self.myLists = [[NSMutableArray alloc] init];
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithHexString:@"#22c064"];
     
@@ -54,9 +57,35 @@
 }
 
 - (void)loadLists {
+    _appendToList = NO;
+    [self loadPublicLists];
+    [self loadPrivateLists];
+}
+
+- (void)loadPrivateLists {
+    if ([self.listTab selectedSegmentIndex] == 1) {
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        if (_appendToList) {
+            [self.myLists addObjectsFromArray:[[DBManager getSharedInstance] findAllLists]];
+        }
+        else {
+            self.myLists = [NSMutableArray arrayWithArray:[[DBManager getSharedInstance] findAllLists]];
+            _appendToList = YES;
+        }
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+    }
+}
+
+- (void)loadPublicLists {
     if ([self.listTab selectedSegmentIndex] == 0) {
         [PBList loadAllListsWithsuccess:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-            self.allLists = [NSMutableArray arrayWithArray:mappingResult.array];
+            if (_appendToList) {
+                [self.allLists addObjectsFromArray:mappingResult.array];
+            }
+            else {
+                self.allLists = [NSMutableArray arrayWithArray:mappingResult.array];
+                _appendToList = YES;
+            }
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 [self.listsTableView reloadData];
                 [self.refreshControl endRefreshing];
@@ -80,7 +109,13 @@
     else {
         [PBList loadlistsWithUserId:[activeSession currentUser].userId
                             success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                self.myLists = [NSMutableArray arrayWithArray:mappingResult.array];
+                                if (_appendToList) {
+                                    [self.myLists addObjectsFromArray:mappingResult.array];
+                                }
+                                else {
+                                    self.myLists = [NSMutableArray arrayWithArray:mappingResult.array];
+                                    _appendToList = YES;
+                                }
                                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                                     [self.listsTableView reloadData];
                                     [self.refreshControl endRefreshing];
@@ -123,7 +158,7 @@
     if ([self.listTab selectedSegmentIndex] == 1 && !self.myLists) {
         [self startRefreshControl];
     }
-    [self.listsTableView reloadData];
+    [self loadLists];
 }
 
 

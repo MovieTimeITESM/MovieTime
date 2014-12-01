@@ -13,7 +13,7 @@
 #import "PBListMovieTableViewCell.h"
 #import "UIImageView+LBBlurredImage.h"
 #import <SDWebImage/UIImageView+WebCache.h>
-
+#import "DBManager.h"
 
 @interface ListsDetailViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *coverPhoto;
@@ -39,6 +39,13 @@
     [self loadMovies];
     if (![self.detailItem.owner isEqualToString:[activeSession currentUser].name]) {
         self.saveLocally.hidden = YES;
+    }
+    else if (self.detailItem.type == PBListTypePrivate) {
+        [self.saveLocally setImage:[UIImage imageNamed:@"saveListDisabled"] forState:UIControlStateDisabled];
+        self.saveLocally.enabled = NO;
+    }
+    else {
+        [self.saveLocally setImage:[UIImage imageNamed:@"saveList"] forState:UIControlStateNormal];
     }
 }
 
@@ -186,7 +193,7 @@
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [PBList makePrivateForListWithId:self.detailItem.listId
                              success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                                 NSLog(@"List should be saved on a database");
+                                 [[DBManager getSharedInstance] saveList:self.detailItem];
                                  [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
                                  UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success"
                                                                                  message:@"The list have been saved to your local storage and will not be shown to the public."

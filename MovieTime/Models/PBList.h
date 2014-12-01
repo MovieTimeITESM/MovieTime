@@ -10,12 +10,28 @@
 
 @interface PBList : NSObject
 
+typedef NS_ENUM(NSInteger, PBListType){
+    PBListTypeNotSpecified = 0,
+    PBListTypePrivate
+};
+
 @property (strong, nonatomic) NSNumber *listId;
 @property (copy, nonatomic) NSString *name;
 @property (copy, nonatomic) NSString *avatar;
 @property (strong, nonatomic) NSNumber *likes;
 @property (copy, nonatomic) NSString *owner;
 @property (assign, nonatomic) BOOL likedByUser;
+@property (assign, nonatomic) PBListType type;
+
+/**
+ Designated initializer
+ **/
+- (instancetype)initWithId:(NSNumber *)listId
+                      name:(NSString *)name
+                    avatar:(NSString *)avatar
+                     likes:(NSNumber *)likes
+                     owner:(NSString *)owner
+               likedByUser:(BOOL)likedByUser;
 
 /**
  Sends a POST request to server to the create list

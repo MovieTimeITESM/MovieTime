@@ -11,6 +11,25 @@
 
 @implementation PBList
 
+- (instancetype)initWithId:(NSNumber *)listId
+                      name:(NSString *)name
+                    avatar:(NSString *)avatar
+                     likes:(NSNumber *)likes
+                     owner:(NSString *)owner
+               likedByUser:(BOOL)likedByUser {
+    self = [super init];
+    if (self) {
+        _listId = listId;
+        _name = name;
+        _avatar = avatar;
+        _likes = likes;
+        _owner = owner;
+        _likedByUser = likedByUser;
+    }
+    return self;
+}
+
+
 + (void)createListWithParameters:(NSDictionary *)parameters
                          success:(RKSuccessBlock)success
                          failure:(RKFailureBlock)failure {
