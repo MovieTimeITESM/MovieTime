@@ -35,10 +35,11 @@
     self.exploreImageView.userInteractionEnabled = YES;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(verPelicula:)];
     UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(randomMovie:)];
+    swipe.direction = UISwipeGestureRecognizerDirectionLeft|UISwipeGestureRecognizerDirectionRight;
     swipe.delegate = self;
     tap.delegate = self;
     [self.exploreImageView addGestureRecognizer:tap];
-    [self.exploreImageView addGestureRecognizer:swipe];
+    [self.view addGestureRecognizer:swipe];
     self.shakeRandom = NO;
 }
 
