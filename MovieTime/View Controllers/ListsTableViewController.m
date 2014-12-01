@@ -167,6 +167,9 @@
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return YES if you want the specified item to be editable.
+    if ([self.listTab selectedSegmentIndex] == 0) {
+        return [((PBList *)self.allLists[indexPath.row]).owner isEqualToString:[activeSession currentUser].name];
+    }
     return YES;
 }
 
