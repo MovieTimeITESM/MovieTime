@@ -12,6 +12,8 @@
 #import "PBMovie.h"
 #import "PBListMovieTableViewCell.h"
 #import "UIImageView+LBBlurredImage.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+
 
 @interface ListsDetailViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *coverPhoto;
@@ -53,7 +55,9 @@
 {
     // Update the user interface for the detail item.
     if (self.detailItem) {
-        self.coverPhoto.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.detailItem.avatar]]];
+        [self.coverPhoto sd_setImageWithURL:[NSURL URLWithString:self.detailItem.avatar]
+                           placeholderImage:[UIImage imageNamed:@""]];
+        self.coverPhoto.clipsToBounds = YES;
         self.nameLabel.text = self.detailItem.name;
         self.authorLabel.text = self.detailItem.owner;
         self.likesLabel.text = self.detailItem.likes.stringValue;
@@ -100,14 +104,22 @@
         cell = [[PBListMovieTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"listMovieIdent"];
     }
     
-    
     cell.nameLabel.text = ((PBMovie *)self.movies[indexPath.row]).name;
     cell.ratingNumber.text =((PBMovie *)self.movies[indexPath.row]).ratings.stringValue;
-    [cell.movieImage setImageToBlur:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:((PBMovie *)self.movies[indexPath.row]).poster]]]
-                         blurRadius:5.0f
-                    completionBlock:nil];
+    
+    [cell.movieImage sd_setImageWithURL:[NSURL URLWithString:((PBMovie *)self.movies[indexPath.row]).poster]
+                       placeholderImage:[UIImage imageNamed:@""]
+                              completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                  [self setBackgroundBluredForCell:cell];
+                              }];
     cell.movieImage.clipsToBounds = YES;
     return cell;
+}
+
+- (void)setBackgroundBluredForCell:(PBListMovieTableViewCell *)cell {
+    [cell.movieImage setImageToBlur:cell.movieImage.image
+                         blurRadius:5.0f
+                    completionBlock:nil];
 }
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

@@ -10,6 +10,7 @@
 #import "ILSession.h"
 #import <QuartzCore/QuartzCore.h>
 #import "UIImageView+LBBlurredImage.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface SettingsViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *starsNumber;
@@ -40,11 +41,17 @@
 
 - (void)loadProfilePicture {
     NSString *profilePicURL = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture?type=large", [activeSession currentUser].uid];
-    
-    [self.profilePic setImageToBlur:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:profilePicURL]]]
+    [self.profileRound sd_setImageWithURL:[NSURL URLWithString:profilePicURL]
+                         placeholderImage:[UIImage imageNamed:@"profilePicPlaceholder"]
+                                completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                    [self setProfileBlured];
+                                }];
+}
+
+- (void)setProfileBlured {
+    [self.profilePic setImageToBlur:self.profileRound.image
                          blurRadius:2.5f
                     completionBlock:nil];
-    self.profileRound.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:profilePicURL]]];
 }
 
 - (IBAction)logoutButtonDidClicked:(UIButton *)sender {

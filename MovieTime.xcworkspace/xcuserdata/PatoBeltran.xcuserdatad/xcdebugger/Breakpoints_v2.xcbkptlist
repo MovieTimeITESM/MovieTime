@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MovieTime/View Controllers/ListsTableViewController.m"
-            timestampString = "439035357.180399"
+            timestampString = "439152884.823833"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "-listTabsValueDidChanged:"
             landmarkType = "5">
          </BreakpointContent>

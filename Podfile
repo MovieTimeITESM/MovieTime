@@ -8,6 +8,7 @@ pod 'RestKit', git: 'https://github.com/kurenn/RestKit.git', branch: 'paginatorP
 pod 'HexColors'
 pod 'LBBlurredImage'
 pod 'UIImage+ImageCompress'
+pod 'SDWebImage'
 end
 
 target "MovieTimeTests" do

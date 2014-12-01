@@ -13,6 +13,8 @@
 #import "PBList.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 #import "ILSession.h"
+#import "UIImageView+LBBlurredImage.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface ListsTableViewController ()  <UITableViewDelegate, UITableViewDataSource, PBListCellDelegate>
 @property (weak, nonatomic) IBOutlet UISegmentedControl *listTab;
@@ -118,14 +120,10 @@
 
 - (IBAction)listTabsValueDidChanged:(UISegmentedControl *)sender
 {
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     if ([self.listTab selectedSegmentIndex] == 1 && !self.myLists) {
         [self startRefreshControl];
     }
     [self.listsTableView reloadData];
-    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-    }];
 }
 
 
@@ -213,10 +211,22 @@
     cell.likesCount.text = object.likes.stringValue;
     cell.delegate = self;
     cell.likeButton.tag = object.listId.integerValue;
-    
-    cell.backgroundView = [[UIImageView alloc] initWithImage:[[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:object.avatar]]] resizableImageWithCapInsets:UIEdgeInsetsZero resizingMode:UIImageResizingModeTile]];
+    cell.backgroundView = [[UIImageView alloc] init];
+    [(UIImageView *)cell.backgroundView sd_setImageWithURL:[NSURL URLWithString:object.avatar]
+                                          placeholderImage:[UIImage imageNamed:@""]
+                                                 completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                                     [self setBackgroundBluredForCell:cell];
+                                                 }];
     
     return cell;
+}
+
+- (void)setBackgroundBluredForCell:(ListsTableViewCell *)cell {
+    ((UIImageView *)cell.backgroundView).contentMode = UIViewContentModeScaleAspectFill;
+    ((UIImageView *)cell.backgroundView).clipsToBounds = YES;
+    [((UIImageView *)cell.backgroundView) setImageToBlur:((UIImageView *)cell.backgroundView).image
+                         blurRadius:2.5f
+                    completionBlock:nil];
 }
 
 #pragma mark - Navigation

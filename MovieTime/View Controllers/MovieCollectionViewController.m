@@ -116,6 +116,7 @@
     cell.year.text = ((PBMovie *)self.movies[indexPath.row]).year.stringValue;
     cell.rating.text = ((PBMovie *)self.movies[indexPath.row]).ratings.stringValue;
     
+    
     [cell.coverImage setImageToBlur:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:((PBMovie *)self.movies[indexPath.row]).poster]]]
                          blurRadius:0.5f
                     completionBlock:nil];
