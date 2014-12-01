@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "AB95A5DB1C3E83EC0D6DA974"
-               BuildableName = "libPods-MovieTime-UIImage+ImageCompress.a"
-               BlueprintName = "Pods-MovieTime-UIImage+ImageCompress"
+               BlueprintIdentifier = "2A661DE0674DBB4B4E563FA7"
+               BuildableName = "libPods-MovieTime-SDWebImage.a"
+               BlueprintName = "Pods-MovieTime-SDWebImage"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

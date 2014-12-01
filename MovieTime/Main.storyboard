@@ -338,6 +338,7 @@
                     <navigationItem key="navigationItem" id="1nS-Pr-ERE"/>
                     <connections>
                         <outlet property="titleLabel" destination="3VS-a4-cmT" id="9Wv-cg-XqL"/>
+                        <outlet property="trailerWebView" destination="mvZ-JQ-vqV" id="KbL-hO-DVf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgu-Fu-xFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>

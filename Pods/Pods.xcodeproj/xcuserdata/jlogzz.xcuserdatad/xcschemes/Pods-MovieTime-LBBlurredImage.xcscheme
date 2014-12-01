@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E9C81105B2560A0E1FDF848A"
+               BlueprintIdentifier = "F444B5F07D41569F9E4A1CCD"
                BuildableName = "libPods-MovieTime-LBBlurredImage.a"
                BlueprintName = "Pods-MovieTime-LBBlurredImage"
                ReferencedContainer = "container:Pods.xcodeproj">

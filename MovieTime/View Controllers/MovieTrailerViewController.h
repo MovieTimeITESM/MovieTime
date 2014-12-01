@@ -12,5 +12,6 @@
 @interface MovieTrailerViewController : UIViewController
 
 @property (strong, nonatomic) PBMovie *detailItem;
+@property (strong, nonatomic) IBOutlet UIWebView *trailerWebView;
 
 @end
