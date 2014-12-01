@@ -10,13 +10,14 @@
 #import "ILSession.h"
 #import <QuartzCore/QuartzCore.h>
 #import "UIImageView+LBBlurredImage.h"
+#import "AsyncImageView.h"
 
 @interface SettingsViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *starsNumber;
 @property (weak, nonatomic) IBOutlet UILabel *listsNumber;
 @property (weak, nonatomic) IBOutlet UILabel *likesNumber;
-@property (strong, nonatomic) IBOutlet UIImageView *profilePic;
-@property (strong, nonatomic) IBOutlet UIImageView *profileRound;
+@property (strong, nonatomic) IBOutlet AsyncImageView *profilePic;
+@property (strong, nonatomic) IBOutlet AsyncImageView *profileRound;
 @property (strong, nonatomic) IBOutlet UILabel *emailLabel;
 @property (weak, nonatomic) IBOutlet UILabel *userName;
 @end
@@ -25,6 +26,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveTestNotification:)
+                                                 name:@"AsyncImageLoadDidFinish"
+                                               object:nil];
+    
     self.profileRound.layer.cornerRadius = 50;
     self.profileRound.layer.borderColor = [UIColor whiteColor].CGColor;
     self.profileRound.layer.borderWidth = 3;
@@ -41,11 +48,17 @@
 - (void)loadProfilePicture {
     NSString *profilePicURL = [NSString stringWithFormat:@"http://graph.facebook.com/%@/picture?type=large", [activeSession currentUser].uid];
     
-    [self.profilePic setImageToBlur:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:profilePicURL]]]
+    self.profilePic.imageURL = [NSURL URLWithString:profilePicURL];
+    
+    self.profileRound
+    self.profileRound.imageURL = [NSURL URLWithString:profilePicURL];
+    
+    [self.profilePic setImageToBlur:self.profilePic.image
                          blurRadius:2.5f
                     completionBlock:nil];
-    self.profileRound.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:profilePicURL]]];
 }
+
+- (void)setProfile
 
 - (IBAction)logoutButtonDidClicked:(UIButton *)sender {
     [self dismissViewControllerAnimated:YES completion:^(){

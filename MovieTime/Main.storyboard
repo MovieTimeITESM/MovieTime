@@ -328,6 +328,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mvZ-JQ-vqV">
+                                <rect key="frame" x="40" y="207" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1080,7 +1084,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-pic" translatesAutoresizingMaskIntoConstraints="NO" id="eho-lk-G3S">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePicPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="eho-lk-G3S" customClass="AsyncImageView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="290"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="290" id="acD-zg-kA7"/>
@@ -1113,7 +1117,7 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile-pic" translatesAutoresizingMaskIntoConstraints="NO" id="tm3-lO-8FJ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePicPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="tm3-lO-8FJ" customClass="AsyncImageView">
                                 <rect key="frame" x="110" y="75" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Taj-hc-6fy"/>
@@ -1220,7 +1224,7 @@
         <image name="profile-blur" width="294" height="211"/>
         <image name="profile-counters" width="407" height="41"/>
         <image name="profile-logout" width="150" height="45"/>
-        <image name="profile-pic" width="294" height="211"/>
+        <image name="profilePicPlaceholder" width="110" height="137"/>
         <image name="saveList" width="64" height="64"/>
         <image name="searchicon" width="13" height="13"/>
         <image name="tab-bar-explore" width="25" height="24"/>

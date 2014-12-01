@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-MovieTime-AsyncImageView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MovieTime-Bolts.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -72,67 +77,72 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>059944D350889081B0607FD2</key>
+		<key>079891E31739BD317EF41B11</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>14263451191E7435DF58CEA6</key>
+		<key>0D335927857AC6751C5B2756</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>21CF95799836F30E41AE8413</key>
+		<key>13EEE141FD20C47C1C333206</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>2BE6CB99F0CDB21C9FB5EF2F</key>
+		<key>172C965A07D568FF782C90FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3EE05F0593F0901D915F77C1</key>
+		<key>4053DA502B76FC24F6A492F9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>47749FF4E398335E456618F5</key>
+		<key>5A152EFAC92EED594E7722AC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4BA0C590A6608BF0D86FB0E4</key>
+		<key>803ABA12D1A5E31915F6B64A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7769512C9EE3BA548C11C780</key>
+		<key>9E54E9D5735078188B66EB4A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>84CA502D73F84188CFCFD95F</key>
+		<key>A867397224C03963AD196077</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C8D74A32EC03D4496C186894</key>
+		<key>AD8DAE8C35292A2BAC598508</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E5B2A204C7FE2ED9BC0BCFD5</key>
+		<key>CA1FA15754103C13D78A0FF9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F842FFC6D4A4DFD590C2830F</key>
+		<key>D21FDE81E2C5B29F49E2E9EA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FC40381B5D2A471430A5034E</key>
+		<key>D5C0ABFDB0E29280B6214558</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D8572DDBF653D170BBDAC08B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
