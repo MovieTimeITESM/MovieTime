@@ -34,9 +34,23 @@
     self.navigationController.navigationBar.translucent = NO;
     self.exploreImageView.userInteractionEnabled = YES;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(verPelicula:)];
+    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(randomMovie:)];
+    swipe.delegate = self;
     tap.delegate = self;
     [self.exploreImageView addGestureRecognizer:tap];
+    [self.exploreImageView addGestureRecognizer:swipe];
     self.shakeRandom = NO;
+}
+
+-(void)randomMovie:(UISwipeGestureRecognizer *)swipeGestureRecognizer{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    self.shakeRandom = YES;
+    NSURL *url = [NSURL URLWithString:@"http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?limit=30&country=us&apikey=aecvqpq4d9px7b87gj97psn6"];
+    
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60];
+    self.searchMovie = NO;
+    self.connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+    self.responseData = [[NSMutableData alloc] init];
 }
 
 -(void)verPelicula:(UITapGestureRecognizer *)tapGestureRecognizer{
