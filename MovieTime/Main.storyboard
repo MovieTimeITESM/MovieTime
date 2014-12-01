@@ -959,6 +959,7 @@
                         <outlet property="searchView" destination="aBf-xD-cdM" id="TIY-T5-lla"/>
                         <outlet property="topView" destination="wmd-5H-5gL" id="xM8-dP-qzV"/>
                         <segue destination="bEt-Lc-GT0" kind="push" identifier="search" id="1CM-5P-m8g"/>
+                        <segue destination="qzD-Ue-KK1" kind="push" identifier="random" id="zKo-IB-j0h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n5n-Vh-NX5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1240,8 +1241,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="zKo-IB-j0h"/>
         <segue reference="1CM-5P-m8g"/>
-        <segue reference="6ta-Kw-HiL"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.27353521260688596" green="1" blue="0.32167893519315283" alpha="1" colorSpace="calibratedRGB"/>
 </document>

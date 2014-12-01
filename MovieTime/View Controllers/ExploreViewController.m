@@ -8,14 +8,17 @@
 
 #import "ExploreViewController.h"
 #import "MovieCollectionViewController.h"
+#import "MovieDetailViewController.h"
 #import <HexColors/HexColor.h>
 #import <MBProgressHUD/MBProgressHUD.h>
 
 @interface ExploreViewController ()
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UIView *searchView;
-@property (strong, nonatomic) NSArray *movies;
+@property (strong, nonatomic) NSMutableArray *movies;
 @property BOOL searchMovie;
+@property BOOL shakeRandom;
+@property int randNum;
 @end
 
 @implementation ExploreViewController
@@ -29,6 +32,18 @@
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithHexString:@"#22c064"];
     self.navigationController.navigationBar.translucent = NO;
+    self.exploreImageView.userInteractionEnabled = YES;
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(verPelicula:)];
+    tap.delegate = self;
+    [self.exploreImageView addGestureRecognizer:tap];
+    self.shakeRandom = NO;
+}
+
+-(void)verPelicula:(UITapGestureRecognizer *)tapGestureRecognizer{
+    if(self.shakeRandom){
+        NSLog(@"SI JALA EL TAP!");
+        [self performSegueWithIdentifier:@"random" sender:self];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -50,6 +65,7 @@
     if (motion == UIEventSubtypeMotionShake)
     {
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        self.shakeRandom = YES;
         NSURL *url = [NSURL URLWithString:@"http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?limit=30&country=us&apikey=aecvqpq4d9px7b87gj97psn6"];
         
         NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60];
@@ -75,6 +91,22 @@
         return NO;
     }
     return YES;
+}
+
+- (void)setMovies:(NSMutableArray *)movies {
+    NSMutableArray *tempMappingArray = [[NSMutableArray alloc] init];
+    for (NSDictionary *movie in movies) {
+        PBMovie *movieObject = [[PBMovie alloc] initWithName:movie[@"title"]
+                                                        year:movie[@"year"]
+                                                       movId:movie[@"id"]
+                                                      poster:[movie[@"posters"][@"original"] stringByReplacingOccurrencesOfString:@"_tmb" withString:@"_det" ]
+                                                     ratings:movie[@"ratings"][@"audience_score"]
+                                                 mpaaRatings:movie[@"mpaa_rating"]
+                                                     runtime:([movie[@"runtime"] isEqual:@""]) ? nil : movie[@"runtime"]
+                                               alternateLink:movie[@"links"][@"alternate"]];
+        [tempMappingArray addObject:movieObject];
+    }
+    _movies = tempMappingArray;
 }
 
 -(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
@@ -108,9 +140,9 @@
         [self performSegueWithIdentifier:@"search" sender:self];
     }else{
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        int randNum = arc4random() % (29 - 0) + 0;
-        NSLog(@"%@",self.movies[randNum][@"title"]);
-        self.exploreImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[self.movies[randNum][@"posters"][@"original"] stringByReplacingOccurrencesOfString:@"_tmb" withString:@"_det" ]]]];
+        self.randNum = arc4random() % (29 - 0) + 0;
+        NSLog(@"%@",((PBMovie *)self.movies[self.randNum]).name);
+        self.exploreImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:((PBMovie *)self.movies[self.randNum]).poster]]];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     }
 }
@@ -130,6 +162,10 @@
         MovieCollectionViewController *movieVC = [segue destinationViewController];
         [movieVC setIsFromSearch:YES];
         [movieVC setMovies:(NSMutableArray*)self.movies];
+    }else if ([[segue identifier] isEqualToString:@"random"])
+    {
+        MovieDetailViewController *movieVC = [segue destinationViewController];
+        [movieVC setDetailItem:self.movies[self.randNum]];
     }
 }
 
