@@ -12,5 +12,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *searchTextField;
 @property (strong, nonatomic) NSURLConnection *connection;
 @property (strong, nonatomic) NSMutableData *responseData;
+@property (strong, nonatomic) IBOutlet UIImageView *exploreImageView;
 
 @end

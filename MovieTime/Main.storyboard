@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4fR-kA-Rrh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4fR-kA-Rrh">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -338,6 +338,7 @@
                     <navigationItem key="navigationItem" id="1nS-Pr-ERE"/>
                     <connections>
                         <outlet property="titleLabel" destination="3VS-a4-cmT" id="9Wv-cg-XqL"/>
+                        <outlet property="trailerWebView" destination="mvZ-JQ-vqV" id="KbL-hO-DVf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cgu-Fu-xFZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -952,6 +953,7 @@
                     <tabBarItem key="tabBarItem" title="Explore" image="tab-bar-explore" id="Mfs-YW-S8l"/>
                     <navigationItem key="navigationItem" title="MovieTime 2.0" id="b5S-Ql-2ut"/>
                     <connections>
+                        <outlet property="exploreImageView" destination="cCw-LJ-xhk" id="nEx-GM-R8O"/>
                         <outlet property="searchDisplayController" destination="IuB-pE-nKZ" id="Fzd-eU-NMp"/>
                         <outlet property="searchTextField" destination="sJc-jc-GsU" id="lN5-6l-j14"/>
                         <outlet property="searchView" destination="aBf-xD-cdM" id="TIY-T5-lla"/>

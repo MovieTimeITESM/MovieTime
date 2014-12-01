@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "14FD43BD438E0E1109E2BA5F"
+               BlueprintIdentifier = "E6EA138650832D433A0E37C1"
                BuildableName = "libPods-MovieTime-HexColors.a"
                BlueprintName = "Pods-MovieTime-HexColors"
                ReferencedContainer = "container:Pods.xcodeproj">

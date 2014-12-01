@@ -20,6 +20,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [ILMappingManager setup];
     // Override point for customization after application launch.
+    application.applicationSupportsShakeToEdit = YES;
     return YES;
 }
 
