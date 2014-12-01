@@ -16,7 +16,8 @@
                       poster:(NSString *)poster
                      ratings:(NSNumber *)ratings
                  mpaaRatings:(NSString *)mpaaRating
-                     runtime:(NSNumber *)runtime {
+                     runtime:(NSNumber *)runtime
+               alternateLink:(NSString *)alternateLink{
     self = [super init];
     if (self) {
         _name = name;
@@ -26,6 +27,7 @@
         _ratings = ratings;
         _mpaaRatings = mpaaRating;
         _runtime = runtime;
+        _alternateLink = alternateLink;
     }
     return self;
 }

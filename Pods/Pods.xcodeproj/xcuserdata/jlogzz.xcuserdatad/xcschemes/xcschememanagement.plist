@@ -59,6 +59,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-MovieTime-UIImage+ImageCompress.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-MovieTime.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -67,62 +72,67 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0C687B2A27268497A2B844CE</key>
+		<key>0FB109A4E814464CB58775BB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>14FD43BD438E0E1109E2BA5F</key>
+		<key>107E7974F84467628FD52421</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>1958525A60407EEC254C7E6A</key>
+		<key>179B7C0C858CB949F7F4DC81</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>68FE4E0F2B0E0063105DCFEA</key>
+		<key>293A3FF731A4458123B84130</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>79556F993E1C9D687C3716B9</key>
+		<key>57483C3E133A2F323131C4CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>797600D66DA2FB5F1B6AFFC1</key>
+		<key>9F792E4915D23445FDD6B6AB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>89F82C02525281EB41285A9E</key>
+		<key>AE0AD0F0FFF3D998290610B5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8ACECF2E557BBAFEDC582992</key>
+		<key>C5C982A3590C4B5A959E3BCF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9BF5A476E37EF25D42F593EC</key>
+		<key>CEA8AC657EDA6B2F02EE4A99</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9FCB774B3A3B66DAEE1C67ED</key>
+		<key>DCE927BC37CDE1F90A4774AC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B1BF2F07A6EBCF047FC86073</key>
+		<key>E0D180DBED3B25C7868FF34D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E9D9C0C9761940584C289718</key>
+		<key>E9C81105B2560A0E1FDF848A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F36CE0A85BB139AF11D16AB1</key>
 		<dict>
 			<key>primary</key>
 			<true/>

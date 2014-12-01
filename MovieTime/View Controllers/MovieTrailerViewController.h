@@ -13,5 +13,4 @@
 
 @property (strong, nonatomic) PBMovie *detailItem;
 
-
 @end

@@ -36,6 +36,7 @@
     
     if (self.detailItem) {
         self.titleLabel.text = self.detailItem.name;
+        NSLog(@"%@trailer/", self.detailItem.alternateLink);
     }
 }
 

@@ -15,7 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIView *topView;
 @property (weak, nonatomic) IBOutlet UIView *searchView;
 @property (strong, nonatomic) NSArray *movies;
-
+@property BOOL searchMovie;
 @end
 
 @implementation ExploreViewController
@@ -31,6 +31,34 @@
     self.navigationController.navigationBar.translucent = NO;
 }
 
+- (void)viewWillDisappear:(BOOL)animated {
+    [self resignFirstResponder];
+    [super viewWillDisappear:animated];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [self becomeFirstResponder];
+}
+
+-(BOOL)canBecomeFirstResponder {
+    return YES;
+}
+
+- (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event
+{
+    if (motion == UIEventSubtypeMotionShake)
+    {
+        // your code
+        NSURL *url = [NSURL URLWithString:@"http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?limit=30&country=us&apikey=aecvqpq4d9px7b87gj97psn6"];
+        
+        NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60];
+        self.searchMovie = NO;
+        self.connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        self.responseData = [[NSMutableData alloc] init];
+    }
+}
+
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     if (textField == self.searchTextField) {
@@ -40,6 +68,7 @@
         NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.rottentomatoes.com/api/public/v1.0/movies.json?q=%@&page_limit=10&page=1&apikey=aecvqpq4d9px7b87gj97psn6",searchTerm]];
         
         NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60];
+        self.searchMovie = YES;
         self.connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
         self.responseData = [[NSMutableData alloc] init];
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
@@ -74,8 +103,13 @@
     }else{
         //NSLog(@"title: %@, movies: %i",[self.movies[0] objectForKey:@"title"], self.movies.count);
     }
-    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
-    [self performSegueWithIdentifier:@"search" sender:self];
+    if(self.searchMovie){
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        [self performSegueWithIdentifier:@"search" sender:self];
+    }else{
+        int randNum = arc4random() % (29 - 0) + 0;
+        NSLog(@"%@",self.movies[randNum][@"title"]);
+    }
 }
 
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error

@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSNumber *ratings;
 @property (nonatomic, copy) NSString *mpaaRatings;
 @property (nonatomic, strong) NSNumber *runtime;
+@property (nonatomic, copy) NSString *alternateLink;
 
 /**
  Designated Initailizer for PBMovie
@@ -27,7 +28,8 @@
                       poster:(NSString *)poster
                      ratings:(NSNumber *)ratings
                  mpaaRatings:(NSString *)mpaaRating
-                     runtime:(NSNumber *)runtime;
+                     runtime:(NSNumber *)runtime
+               alternateLink:(NSString *)alternateLink;
 
 /**
  Sends a POST request to server to create a movie within a given

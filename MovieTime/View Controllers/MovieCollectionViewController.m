@@ -16,6 +16,8 @@
 @interface MovieCollectionViewController ()  <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (strong, nonatomic) NSMutableArray *movies;
 @property (nonatomic) BOOL isFromSearch;
+@property (strong, nonatomic) NSURLConnection *connection;
+@property (strong, nonatomic) NSMutableData *responseData;
 @end
 
 @implementation MovieCollectionViewController
@@ -31,10 +33,54 @@
     }
     else{
       //Load showtime movies
+        NSURL *url = [NSURL URLWithString:@"http://api.rottentomatoes.com/api/public/v1.0/lists/movies/in_theaters.json?page_limit=15&page=1&country=us&apikey=aecvqpq4d9px7b87gj97psn6"];
+        
+        NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60];
+        self.connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+        self.responseData = [[NSMutableData alloc] init];
+        self.isFromSearch = false;
     }
     
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
+}
+
+-(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
+{
+    NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse*)response;
+    NSInteger statusCode = [httpResponse statusCode];
+    NSLog(@"Rotten Tomatoes Search - Status %li", (long)statusCode);
+    
+    [self.responseData setLength:0];
+}
+
+-(void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
+{
+    [self.responseData appendData:data];
+}
+
+-(void)connectionDidFinishLoading:(NSURLConnection *)connection
+{
+    NSError *error;
+    
+    NSDictionary *datos = [NSJSONSerialization JSONObjectWithData:self.responseData options:kNilOptions error:&error];
+    
+    [self setMovies:(NSMutableArray *)[datos objectForKey:@"movies"]];
+    
+    if(self.movies.count == 0){
+        NSLog(@"No hay movies");
+    }else{
+        [self.collectionView reloadData];
+        NSLog(@"title: %@, movies: %i",((PBMovie *)self.movies[0]).name, self.movies.count);
+    }
+}
+
+-(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
+{
+    self.responseData = nil;
+    self.connection = nil;
+    
+    NSLog(@"Error en la conexion");
 }
 
 - (void)setMovies:(NSMutableArray *)movies {
@@ -46,7 +92,8 @@
                                                       poster:[movie[@"posters"][@"original"] stringByReplacingOccurrencesOfString:@"_tmb" withString:@"_det" ]
                                                      ratings:movie[@"ratings"][@"audience_score"]
                                                  mpaaRatings:movie[@"mpaa_rating"]
-                                                     runtime:([movie[@"runtime"] isEqual:@""]) ? nil : movie[@"runtime"]];
+                                                     runtime:([movie[@"runtime"] isEqual:@""]) ? nil : movie[@"runtime"]
+                                                alternateLink:movie[@"links"][@"alternate"]];
         [tempMappingArray addObject:movieObject];
     }
     _movies = tempMappingArray;
