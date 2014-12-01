@@ -12,6 +12,8 @@
 #import <HexColors/HexColor.h>
 #import "PBMovie.h"
 #import "UIImageView+LBBlurredImage.h"
+#import <MBProgressHUD/MBProgressHUD.h>
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface MovieCollectionViewController ()  <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (strong, nonatomic) NSMutableArray *movies;
@@ -43,6 +45,7 @@
     
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
 }
 
 -(void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
@@ -71,8 +74,9 @@
         NSLog(@"No hay movies");
     }else{
         [self.collectionView reloadData];
-        NSLog(@"title: %@, movies: %i",((PBMovie *)self.movies[0]).name, self.movies.count);
+        NSLog(@"title: %@, movies: %lu",((PBMovie *)self.movies[0]).name, (unsigned long)self.movies.count);
     }
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 }
 
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error
@@ -117,10 +121,18 @@
     cell.rating.text = ((PBMovie *)self.movies[indexPath.row]).ratings.stringValue;
     
     
-    [cell.coverImage setImageToBlur:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:((PBMovie *)self.movies[indexPath.row]).poster]]]
+    [cell.coverImage sd_setImageWithURL:[NSURL URLWithString:((PBMovie *)self.movies[indexPath.row]).poster]
+                       placeholderImage:[UIImage imageNamed:@""]
+                              completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+                                  [self setBackgroundBluredForCell:cell];
+                              }];
+    return cell;
+}
+
+- (void)setBackgroundBluredForCell:(MovieCollectionViewCell *)cell {
+    [cell.coverImage setImageToBlur:cell.coverImage.image
                          blurRadius:0.5f
                     completionBlock:nil];
-    return cell;
 }
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView*)collectionView {

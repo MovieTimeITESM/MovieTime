@@ -72,6 +72,7 @@
             self.myLists = [NSMutableArray arrayWithArray:[[DBManager getSharedInstance] findAllLists]];
             _appendToList = YES;
         }
+        [self.listsTableView reloadData];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     }
 }
