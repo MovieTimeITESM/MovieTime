@@ -8,6 +8,7 @@
 
 #import "MovieDetailViewController.h"
 #import "PBAddToListViewController.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @interface MovieDetailViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *runtimeLabel;
@@ -41,7 +42,8 @@
         self.runtimeLabel.text = self.detailItem.runtime.stringValue;
         self.mpaaRatingLabel.text = self.detailItem.mpaaRatings;
         self.ratingLabel.text = self.detailItem.ratings.stringValue;
-        self.moviePoster.image  = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:self.detailItem.poster]]];
+        [self.moviePoster sd_setImageWithURL:[NSURL URLWithString:self.detailItem.poster]
+                                              placeholderImage:[UIImage imageNamed:@""]];
         self.moviePoster.clipsToBounds = YES;
     }
 }
