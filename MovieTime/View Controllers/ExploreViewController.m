@@ -49,7 +49,7 @@
 {
     if (motion == UIEventSubtypeMotionShake)
     {
-        // your code
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         NSURL *url = [NSURL URLWithString:@"http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?limit=30&country=us&apikey=aecvqpq4d9px7b87gj97psn6"];
         
         NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60];
@@ -71,7 +71,7 @@
         self.searchMovie = YES;
         self.connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
         self.responseData = [[NSMutableData alloc] init];
-        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+        
         return NO;
     }
     return YES;
@@ -107,8 +107,11 @@
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
         [self performSegueWithIdentifier:@"search" sender:self];
     }else{
+        [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         int randNum = arc4random() % (29 - 0) + 0;
         NSLog(@"%@",self.movies[randNum][@"title"]);
+        self.exploreImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:[self.movies[randNum][@"posters"][@"original"] stringByReplacingOccurrencesOfString:@"_tmb" withString:@"_det" ]]]];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     }
 }
 

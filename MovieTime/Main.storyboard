@@ -953,6 +953,7 @@
                     <tabBarItem key="tabBarItem" title="Explore" image="tab-bar-explore" id="Mfs-YW-S8l"/>
                     <navigationItem key="navigationItem" title="MovieTime 2.0" id="b5S-Ql-2ut"/>
                     <connections>
+                        <outlet property="exploreImageView" destination="cCw-LJ-xhk" id="nEx-GM-R8O"/>
                         <outlet property="searchDisplayController" destination="IuB-pE-nKZ" id="Fzd-eU-NMp"/>
                         <outlet property="searchTextField" destination="sJc-jc-GsU" id="lN5-6l-j14"/>
                         <outlet property="searchView" destination="aBf-xD-cdM" id="TIY-T5-lla"/>
