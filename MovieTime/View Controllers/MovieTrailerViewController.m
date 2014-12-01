@@ -7,6 +7,7 @@
 //
 
 #import "MovieTrailerViewController.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface MovieTrailerViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *titleLabel;
@@ -21,6 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [self configureView];
 }
 
@@ -89,7 +91,7 @@
         NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60];
         self.connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
         self.responseData = [[NSMutableData alloc] init];
-
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     }
 }
 

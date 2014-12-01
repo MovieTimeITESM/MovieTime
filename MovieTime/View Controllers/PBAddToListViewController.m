@@ -10,19 +10,22 @@
 #import "PBList.h"
 #import "ILSession.h"
 #import <MBProgressHUD/MBProgressHUD.h>
+#import "DBManager.h"
 
 @interface PBAddToListViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *continueButton;
 @property (weak, nonatomic) IBOutlet UITableView *userLists;
-@property (strong, nonatomic) NSArray *lists;
+@property (strong, nonatomic) NSMutableArray *lists;
 @property (strong, nonatomic) NSIndexPath *selectedCellIndexPath;
 @end
 
-@implementation PBAddToListViewController
+@implementation PBAddToListViewController {
+    BOOL _appendToList;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.lists = [[NSArray alloc] init];
+    self.lists = [[NSMutableArray alloc] init];
     [self loadData];
     self.continueButton.enabled = NO;
     self.userLists.delegate = self;
@@ -102,10 +105,22 @@
 #pragma mark - Helper methods
 
 - (void)loadData {
+    _appendToList = NO;
+    [self loadPublicLists];
+    [self loadPrivateLists];
+}
+
+- (void)loadPublicLists {
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     [PBList loadlistsWithUserId:[activeSession currentUser].userId
                         success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
-                            self.lists = [NSMutableArray arrayWithArray:mappingResult.array];
+                            if (_appendToList) {
+                                [self.lists addObjectsFromArray:mappingResult.array];
+                            }
+                            else {
+                                self.lists = [NSMutableArray arrayWithArray:mappingResult.array];
+                                _appendToList = YES;
+                            }
                             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                                 [self.userLists reloadData];
                                 [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
@@ -123,6 +138,19 @@
                             }];
                             NSLog(@"ERROR - Could not load lists successfully.");
                         }];
+}
+
+- (void)loadPrivateLists {
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    if (_appendToList) {
+        [self.lists addObjectsFromArray:[[DBManager getSharedInstance] findAllLists]];
+    }
+    else {
+        self.lists = [NSMutableArray arrayWithArray:[[DBManager getSharedInstance] findAllLists]];
+        _appendToList = YES;
+    }
+    [self.userLists reloadData];
+    [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
 }
 
 - (void)tableView:(UITableView *)tableView toogleChoosenCardOnIndexPathForPayment:(NSIndexPath *)indexPath
