@@ -48,6 +48,7 @@
 }
 
 -(void)closeKeyboard:(UISwipeGestureRecognizer *)swipeGestureRecognizer{
+    if([self.searchTextField isFirstResponder])
     [self.searchTextField resignFirstResponder];
 }
 
