@@ -16,15 +16,21 @@
                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="KgF-UC-Mcr">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="KgF-UC-Mcr">
                     <rect key="frame" x="43" y="154" width="394" height="172"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="172" id="REl-Xh-IxT"/>
+                    </constraints>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="8ie-xW-0ye" secondAttribute="bottom" constant="20" id="Kzo-t9-V3l"/>
+                <constraint firstItem="KgF-UC-Mcr" firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="LGF-Ol-NLB"/>
                 <constraint firstItem="8ie-xW-0ye" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="MfP-vx-nX0"/>
                 <constraint firstAttribute="centerX" secondItem="8ie-xW-0ye" secondAttribute="centerX" id="ZEH-qu-HZ9"/>
+                <constraint firstItem="KgF-UC-Mcr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="43" id="aHE-CY-rmM"/>
+                <constraint firstItem="KgF-UC-Mcr" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="xm8-GW-0jr"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
