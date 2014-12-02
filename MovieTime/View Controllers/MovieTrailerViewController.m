@@ -88,7 +88,7 @@
     if (self.detailItem) {
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         self.titleLabel.text = self.detailItem.name;
-        NSString *searchTerm = [self.detailItem.name stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        NSString *searchTerm  = [[NSString stringWithFormat:@"%@ trailer %@",self.detailItem.name, self.detailItem.year] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://gdata.youtube.com/feeds/api/videos?v=2&alt=json&max-results=1&q=allintitle:%@&format=5&prettyprint=true", searchTerm]];
         NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60];
         self.connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
