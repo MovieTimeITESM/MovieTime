@@ -63,6 +63,12 @@
     self.responseData = [[NSMutableData alloc] init];
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.shakeRandom = NO;
+    self.exploreImageView.image = [UIImage imageNamed:@"explore-iphone"];
+}
+
 -(void)verPelicula:(UITapGestureRecognizer *)tapGestureRecognizer{
     if(self.shakeRandom){
         [self.searchTextField resignFirstResponder];
