@@ -21,6 +21,15 @@
     [ILMappingManager setup];
     // Override point for customization after application launch.
     application.applicationSupportsShakeToEdit = YES;
+    if ([UIApplication instancesRespondToSelector:@selector(registerUserNotificationSettings:)]){
+        [application registerUserNotificationSettings:[UIUserNotificationSettings settingsForTypes:UIUserNotificationTypeAlert|UIUserNotificationTypeBadge|UIUserNotificationTypeSound categories:nil]];
+    }
+    UILocalNotification *localNotification =
+    [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
+    if (localNotification) {
+        NSLog(@"Recieved Notification %@", localNotification);
+    }
+    [[UIApplication sharedApplication] cancelAllLocalNotifications];
     return YES;
 }
 
@@ -42,6 +51,25 @@
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    UIApplication* app = [UIApplication sharedApplication];
+    UILocalNotification* notifyAlarm = [[UILocalNotification alloc]
+                                        init];
+    if (notifyAlarm)
+    {
+        notifyAlarm.fireDate = [[NSDate date] dateByAddingTimeInterval:-(5*60)];
+        //notifyAlarm.fireDate = alertTime;
+        notifyAlarm.timeZone = [NSTimeZone defaultTimeZone];
+        notifyAlarm.repeatInterval = NSCalendarUnitWeekOfMonth;
+        notifyAlarm.alertBody = @"We miss you! :'(";
+        notifyAlarm.soundName = UILocalNotificationDefaultSoundName;
+        [app scheduleLocalNotification:notifyAlarm];
+        NSLog(@"Alert time: %@",[[NSDate date] dateByAddingTimeInterval:-(5*60)]);
+    }
+}
+
+- (void)application:(UIApplication *)app didReceiveLocalNotification:(UILocalNotification *)notification {
+    // Handle the notificaton when the app is running
+    NSLog(@"Recieved Notification %@", notification);
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
