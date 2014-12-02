@@ -56,14 +56,13 @@
                                         init];
     if (notifyAlarm)
     {
-        notifyAlarm.fireDate = [[NSDate date] dateByAddingTimeInterval:-(5*60)];
+        notifyAlarm.fireDate = [[NSDate date] dateByAddingTimeInterval:(60)];
         //notifyAlarm.fireDate = alertTime;
         notifyAlarm.timeZone = [NSTimeZone defaultTimeZone];
         notifyAlarm.repeatInterval = NSCalendarUnitWeekOfMonth;
         notifyAlarm.alertBody = @"We miss you! :'(";
         notifyAlarm.soundName = UILocalNotificationDefaultSoundName;
         [app scheduleLocalNotification:notifyAlarm];
-        NSLog(@"Alert time: %@",[[NSDate date] dateByAddingTimeInterval:-(5*60)]);
     }
 }
 
