@@ -64,6 +64,7 @@
 
 -(void)verPelicula:(UITapGestureRecognizer *)tapGestureRecognizer{
     if(self.shakeRandom){
+        [self.searchTextField resignFirstResponder];
         [self performSegueWithIdentifier:@"random" sender:self];
     }
 }
