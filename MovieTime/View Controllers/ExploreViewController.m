@@ -35,12 +35,20 @@
     self.exploreImageView.userInteractionEnabled = YES;
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(verPelicula:)];
     UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(randomMovie:)];
+    UISwipeGestureRecognizer *keyboardSwipe = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(closeKeyboard:)];
+    keyboardSwipe.direction = UISwipeGestureRecognizerDirectionDown|UISwipeGestureRecognizerDirectionUp;
     swipe.direction = UISwipeGestureRecognizerDirectionLeft|UISwipeGestureRecognizerDirectionRight;
+    keyboardSwipe.delegate = self;
     swipe.delegate = self;
     tap.delegate = self;
     [self.exploreImageView addGestureRecognizer:tap];
     [self.view addGestureRecognizer:swipe];
+    [self.view addGestureRecognizer:keyboardSwipe];
     self.shakeRandom = NO;
+}
+
+-(void)closeKeyboard:(UISwipeGestureRecognizer *)swipeGestureRecognizer{
+    [self.searchTextField resignFirstResponder];
 }
 
 -(void)randomMovie:(UISwipeGestureRecognizer *)swipeGestureRecognizer{

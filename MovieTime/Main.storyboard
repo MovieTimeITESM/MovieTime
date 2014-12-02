@@ -1248,8 +1248,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="zKo-IB-j0h"/>
         <segue reference="1CM-5P-m8g"/>
-        <segue reference="Usb-qu-gP1"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.27353521260688596" green="1" blue="0.32167893519315283" alpha="1" colorSpace="calibratedRGB"/>
 </document>
