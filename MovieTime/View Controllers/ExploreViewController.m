@@ -29,7 +29,7 @@
     self.searchTextField.delegate = self;
     self.searchView.layer.cornerRadius = 15;
     self.topView.backgroundColor = [UIColor colorWithHexString:@"#22c064"];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.titleTextAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], NSForegroundColorAttributeName, nil];
     self.navigationController.navigationBar.barTintColor = [UIColor colorWithHexString:@"#22c064"];
     self.navigationController.navigationBar.translucent = NO;
     self.exploreImageView.userInteractionEnabled = YES;

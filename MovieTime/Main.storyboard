@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4fR-kA-Rrh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4fR-kA-Rrh">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -7,7 +7,7 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Movie Collection View Controller-->
+        <!--Showtime-->
         <scene sceneID="Ngp-Gv-uY7">
             <objects>
                 <collectionViewController id="bEt-Lc-GT0" customClass="MovieCollectionViewController" sceneMemberID="viewController">
@@ -105,7 +105,7 @@
                             <outlet property="delegate" destination="bEt-Lc-GT0" id="cHh-Jd-W5y"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="ddZ-uy-FSZ"/>
+                    <navigationItem key="navigationItem" title="Showtime" id="ddZ-uy-FSZ"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7LU-fQ-CZM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -958,7 +958,6 @@
                             <constraint firstItem="cgJ-Xc-Q8P" firstAttribute="leading" secondItem="T8m-Vb-Clc" secondAttribute="leadingMargin" constant="-16" id="lns-9o-p8Y"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Explore" image="tab-bar-explore" id="Mfs-YW-S8l"/>
                     <navigationItem key="navigationItem" title="MovieTime 2.0" id="b5S-Ql-2ut"/>
                     <connections>
                         <outlet property="exploreImageView" destination="cCw-LJ-xhk" id="nEx-GM-R8O"/>
@@ -1249,8 +1248,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="zKo-IB-j0h"/>
         <segue reference="1CM-5P-m8g"/>
+        <segue reference="Usb-qu-gP1"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.27353521260688596" green="1" blue="0.32167893519315283" alpha="1" colorSpace="calibratedRGB"/>
 </document>
