@@ -46,7 +46,7 @@
 -(void)randomMovie:(UISwipeGestureRecognizer *)swipeGestureRecognizer{
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     self.shakeRandom = YES;
-    NSURL *url = [NSURL URLWithString:@"http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?limit=30&country=us&apikey=aecvqpq4d9px7b87gj97psn6"];
+    NSURL *url = [NSURL URLWithString:@"http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?limit=50&country=us&apikey=aecvqpq4d9px7b87gj97psn6"];
     
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60];
     self.searchMovie = NO;
@@ -56,7 +56,6 @@
 
 -(void)verPelicula:(UITapGestureRecognizer *)tapGestureRecognizer{
     if(self.shakeRandom){
-        NSLog(@"SI JALA EL TAP!");
         [self performSegueWithIdentifier:@"random" sender:self];
     }
 }
@@ -81,7 +80,7 @@
     {
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
         self.shakeRandom = YES;
-        NSURL *url = [NSURL URLWithString:@"http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?limit=30&country=us&apikey=aecvqpq4d9px7b87gj97psn6"];
+        NSURL *url = [NSURL URLWithString:@"http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?limit=50&country=us&apikey=aecvqpq4d9px7b87gj97psn6"];
         
         NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url cachePolicy:NSURLRequestReloadIgnoringCacheData timeoutInterval:60];
         self.searchMovie = NO;
@@ -146,7 +145,7 @@
     self.movies = [datos objectForKey:@"movies"];
     
     if(self.movies.count == 0){
-        NSLog(@"No hay movies");
+        //NSLog(@"No hay movies");
     }else{
         //NSLog(@"title: %@, movies: %i",[self.movies[0] objectForKey:@"title"], self.movies.count);
     }
@@ -155,8 +154,8 @@
         [self performSegueWithIdentifier:@"search" sender:self];
     }else{
         [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-        self.randNum = arc4random() % (29 - 0) + 0;
-        NSLog(@"%@",((PBMovie *)self.movies[self.randNum]).name);
+        self.randNum = arc4random() % (49 - 0) + 0;
+        //NSLog(@"%@",((PBMovie *)self.movies[self.randNum]).name);
         self.exploreImageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:((PBMovie *)self.movies[self.randNum]).poster]]];
         [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
     }
