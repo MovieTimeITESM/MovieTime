@@ -60,12 +60,7 @@
     
     
     if(!self.trailer){
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
-                                                        message:@"There are no records of trailer for this movie."
-                                                       delegate:nil
-                                              cancelButtonTitle:@"Ok"
-                                              otherButtonTitles: nil];
-        [alert show];
+        NSLog(@"No trailer");
     }else{
         NSURL *url = [NSURL URLWithString:[self.trailer objectForKey:@"href"]];
         NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
